@@ -1,0 +1,134 @@
+.booking {
+  width: 50vw;
+  background-color: #fff;
+  height: 50px;
+  position: absolute;
+  bottom: 100px;
+  z-index: 999;
+  left: 25vw;
+
+  p {
+    font-size: 0.7rem;
+    font-weight: 400;
+    padding: 10px 30px;
+    height: calc(100% - 20px);
+  }
+
+  p + p {
+    border-left: 1px solid $light-gray;
+  }
+
+  .gold {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  .research-bar {
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .research-bar__item {
+      display: flex;
+      padding-left: 20px;
+
+      .research-bar__item--input {
+        border: none;
+        height: 40px;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+      }
+    }
+
+    .research-bar__item + .research-bar__item {
+      border-left: 1px solid $light-gray;
+      padding-left: 20px;
+    }
+
+    .button {
+      padding-left: 0 !important;
+
+      input {
+        background: $primary-color;
+        border-radius: 0;
+        height: 50px;
+
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        border: none;
+        color: $light;
+        padding: 0px 20px;
+      }
+    }
+  }
+}
+
+#booking-search {
+  padding: 100px 0;
+  .vbdivsearch .vb-search-inner {
+    justify-content: space-around;
+  }
+
+  .vbo-search-submit .btn,
+  .btn {
+    padding: 10px 50px !important;
+    background: $primary-color;
+    font-size: 0.8rem;
+    color: $light;
+    position: relative;
+    border-radius: 0;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  .vbo-results-head .vbo-results-head-det-lbl {
+    display: block;
+    font-size: 0.9em;
+    font-family: "Montserrat";
+    font-weight: 400;
+  }
+
+  ol.vbo-stepbar li.vbo-step-complete:before {
+    background-color: $primary-color;
+  }
+}
+
+/* Front-page search Vik */
+
+.vbdivsearch {
+  padding: 10px;
+  form {
+    padding-top: 0;
+
+    .vb-search-inner {
+      justify-content: space-between;
+      gap: 30px;
+
+      .vbo-search-inpblock {
+        .input-group {
+          input,
+          i {
+            margin-top: -30px !important;
+            background: none;
+          }
+        }
+      }
+
+      .vbo-search-submit .btn {
+        padding: 10px 50px !important;
+        background: $primary-color;
+        font-size: 0.8rem;
+        color: $light;
+        position: relative;
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-family: "Jost", sans-serif;
+      }
+    }
+  }
+}

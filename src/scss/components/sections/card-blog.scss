@@ -1,0 +1,59 @@
+.card-news.-left {
+  gap: 0;
+  position: relative;
+  margin-bottom: 50px;
+
+  .col-g {
+    margin-top: 100px;
+    padding: 30px 80px;
+    background: $light;
+    position: relative;
+    width: calc(50% - 160px);
+
+    p {
+      margin-top: 20px;
+    }
+
+    .cta-border {
+      margin-left: 0;
+      color: $primary-color;
+    }
+  }
+
+  .col-d {
+    width: 70%;
+    margin-left: -20%;
+    overflow: hidden;
+    max-height: 500px;
+  }
+}
+
+.card-news.-right {
+  gap: 0;
+  position: relative;
+  margin-bottom: 50px;
+
+  .col-g {
+    width: 70%;
+    margin-right: -20%;
+    overflow: hidden;
+    max-height: 500px;
+  }
+
+  .col-d {
+    margin-top: 100px;
+    padding: 30px 80px;
+    background: $light;
+    position: relative;
+    width: calc(50% - 160px);
+
+    p {
+      margin-top: 20px;
+    }
+
+    .cta-border {
+      margin-left: 0;
+      color: $primary-color;
+    }
+  }
+}

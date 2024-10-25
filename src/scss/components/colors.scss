@@ -1,0 +1,50 @@
+$primary-color: #ebaf00;
+$light-primary : #f3cd51;
+$hover: #a78300;
+$hover-transparent: #a3855a9e;
+
+$secondary-color: #3e453a;
+$hover-blue: #292e26;
+
+$text-color: #2e292a;
+$red-color : #b40a2c;
+
+$graysTransparent: #bdbdbdad;
+
+$light: #fff;
+$dark: #000;
+$light-gray: #f7f8f9;
+$middle-gray: #b0b0b0;
+$dark-gray: #525454;
+$dark-dark-gray: #202024;
+
+/* Mixins Dégradés */
+
+@mixin liGray-to-white {
+  background: rgb(255, 255, 255);
+  background: -moz-linear-gradient(
+   180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(247, 248, 249, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(247, 248, 249, 1) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(247, 248, 249, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#f7f8f9",GradientType=1);
+}
+
+.bgSec {
+  background-color: $secondary-color !important;
+  border: 1px solid $secondary-color;
+}
+
+.txtBlue {
+  color: $secondary-color !important;
+}

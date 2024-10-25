@@ -1,0 +1,40 @@
+#section-introduction {
+  padding: 100px 0;
+  
+  .container{
+    display: block;
+
+    .col-g {
+      h2 {
+        margin-bottom: 50px;
+        font-family: "Montserrat", sans-serif;  
+        font-weight: 400;
+        color: $primary-color;
+  
+        strong {
+          color: $dark-dark-gray;
+          font-weight: 600;
+        }
+      }
+  
+      .img-content {
+        width: 100%;
+        max-height: 800px;
+        overflow: hidden;
+      }
+    }
+  
+    .col-d {
+      padding-left: 30%;
+      width: 70%;
+  
+      .cta-border {
+        display: block;
+        width: fit-content;
+        margin-top: 50px;
+        color: $primary-color;
+        margin-left: 0;
+      }
+    }
+  }
+}

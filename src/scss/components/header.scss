@@ -1,0 +1,234 @@
+header{
+  @include liGray-to-white;
+
+  top: 0;
+  left: 0;
+  width: 100vw;
+  position: relative;
+  padding: 20px 0;
+  z-index: 16;
+
+  .bg_top_header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+  }
+
+  .top_banner_header {
+    height: 40px;
+    width: 100vw;
+    background-color: $primary-color;
+  
+    p {
+      text-align: center;
+      color: $light;
+      line-height: 40px;
+      letter-spacing: 5px;
+      font-size: 0.7rem;
+    }
+  }
+  
+  .header {
+    width: 75vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  
+    .col-g {
+      width: 15%;
+      position: relative;
+      z-index: 10;
+  
+      .logo {
+        max-height: 250px;
+        margin-top: 20px;
+
+        img{
+          object-fit: contain;
+        }
+      }
+    }
+  
+    .col-d {
+      width: 80%;
+
+      .top-menu{
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        margin-top: 50px;
+
+        a{
+          color: $dark-gray;
+        }
+
+        p{
+          border-right: 1px solid $primary-color;
+          padding-right: 20px;
+        }
+
+        .rs{
+          width: 20px;
+
+          img{
+            object-fit: contain;
+          }
+        }
+
+        a,
+        p,
+        .rs{
+          margin-bottom: 0;
+        }
+      }
+
+  
+      .primary-navigation {
+        margin-top: 10px;
+    
+        #menu-navigation-principale,
+        #menu-navigation-principale-neerlandais {
+          list-style: none;
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-start;
+          gap: 30px;
+    
+          li {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            padding-top: 10px;
+            position: relative;
+    
+            a {
+              color: $dark-gray;
+              font-weight: 400;
+              font-size: 0.9rem;
+              transition: all ease-out 300ms;
+              position: relative;
+
+              &::before{
+                content:'';
+                height: 2px;
+                width: 50%;
+                position: absolute;
+                background-color: $primary-color;
+                bottom: 0;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: all ease-in 300ms;
+              }
+    
+              &:hover {
+                font-weight: 600;
+
+                &::before{
+                  transform: scale(1);
+                }
+              }
+            }
+          }
+         
+    
+          .menu-item-has-children {
+            .sub-menu {
+              display: none;
+            }
+    
+            &:hover {
+              min-height: 400px;
+    
+              .sub-menu {
+                display: block;
+                position: absolute;
+                background-color: $light;
+                border-bottom: 2px solid $primary-color;
+                top: 45px;
+                min-width: 300px;
+    
+                li {
+                  color: $primary-color;
+                  list-style: none;
+                  display: block;
+                  border-bottom: 1px solid $light-gray;
+                  position: relative;
+                  max-height: 50px;
+                  padding: 0;
+                  margin: 0;
+    
+                  a {
+                    color: $secondary-color;
+                    text-transform: none;
+                    letter-spacing: 0;
+                    width: 90%;
+                    display: block;
+                    padding: 2% 5%;
+                    margin: 0;
+                  }
+    
+                  &:hover {
+                    background-color: $primary-color;
+                    border-color: $primary-color;
+                    min-height: auto;
+    
+                    a {
+                      color: $light;
+                    }
+    
+                    .sub-menu {
+                      display: block;
+                    }
+                  }
+    
+                  .sub-menu {
+                    display: none;
+                    position: absolute;
+                    right: -300px;
+                    top: 0;
+    
+                    li {
+                      a {
+                        color: $secondary-color;
+                        text-transform: none;
+                        font-size: 0.8rem;
+                        font-weight: 300;
+    
+                        &:hover {
+                          color: $light;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .hamburger-menu {
+      display: none;
+      stroke: #fff;
+    }
+  }
+
+  .megamenu{
+    display: none;
+  }
+
+  .title-frontPage{
+    padding-left: 350px;
+    width: calc(80vw - 350px);
+    margin: -30px auto 150px;
+
+    h1{
+      font-size: 3rem;
+      line-height: 3.5rem;
+    }
+  }
+}

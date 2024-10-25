@@ -1,0 +1,53 @@
+.post-template-single,
+.page-template-single {
+  #transition-blog {
+    padding: 100px 0;
+
+    .imgTr {
+      width: 70vw;
+      height: 500px;
+    }
+    .container {
+      .col-d {
+        background: $secondary-color;
+        padding: 6% 4%;
+        margin-top: -400px;
+
+        h2 {
+          font-family: "Montserrat", sans-serif;
+          color: $light;
+          font-weight: 400;
+          margin-bottom: 30px;
+        }
+
+        p {
+          color: $light;
+        }
+      }
+    }
+  }
+
+  #banner-fullwidth {
+    background: none;
+
+    .container {
+      .subtitle {
+        color: $dark-gray;
+      }
+
+      h2 {
+        color: $dark-gray;
+
+        strong {
+          color: $primary-color;
+        }
+      }
+
+      .cta {
+        background: none;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+}

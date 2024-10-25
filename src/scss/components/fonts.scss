@@ -1,0 +1,95 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+}
+
+p,
+li,
+a {
+  text-wrap: pretty;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
+  font-weight: 300;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: 100;
+}
+
+h2 {
+  color: $primary-color;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+h4 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 300;
+  font-style: normal;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.subtitle {
+  color: $primary-color;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 400;
+  text-wrap: pretty;
+  font-size: 0.9rem;
+  line-height: 2rem;
+}
+
+.semi-bold {
+  font-weight: 600;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.cap {
+  text-transform: capitalize;
+}
+
+.red {
+  color: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
+}

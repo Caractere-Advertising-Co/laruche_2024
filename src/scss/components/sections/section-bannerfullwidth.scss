@@ -1,0 +1,23 @@
+#banner-fullwidth {
+  background-color: $secondary-color;
+  padding: 100px 0;
+
+  .container {
+    h4 {
+      color: $light;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: $light;
+
+      strong {
+        color: $primary-color;
+      }
+    }
+
+    .cta {
+      margin: -60px 0 0 auto;
+    }
+  }
+}

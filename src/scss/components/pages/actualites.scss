@@ -1,0 +1,178 @@
+.page-template-actualites {
+  #simple-page {
+    padding-top: 100px;
+
+    .container {
+      .colg {
+        width: 60%;
+
+        h1 {
+          color: $secondary-color;
+          font-size: 3.5rem;
+          line-height: 4rem;
+          font-weight: 300;
+
+          strong {
+            font-weight: 700;
+          }
+        }
+      }
+
+      .cold {
+        padding-left: 20%;
+        padding-top: 80px;
+
+        p {
+          &:last-child {
+            margin-bottom: 80px;
+          }
+        }
+      }
+
+      .grid_articles {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+
+        .card_article {
+          min-height: 500px;
+          position: relative;
+          border-bottom: 1px solid $light-gray;
+
+          .miniature {
+            max-height: 300px;
+            width: auto;
+            overflow: hidden;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+
+          h4 {
+            font-size: 1rem;
+            text-transform: capitalize;
+            color: $middle-gray;
+            font-weight: 300;
+            letter-spacing: 1px;
+            min-height: 40px;
+          }
+
+          h3 {
+            color: $dark-gray;
+            font-size: 1.2rem;
+            line-height: 1.3rem;
+            text-transform: none;
+            letter-spacing: 0;
+            margin: 10px 0;
+            min-height: 60px;
+          }
+
+          a {
+            color: $primary-color;
+          }
+        }
+      }
+
+      #load-more-posts {
+        margin: 50px auto 100px;
+      }
+    }
+  }
+
+  #section-cta-contact {
+    background-color: $light;
+    margin: 150px;
+    padding: 0;
+  }
+
+  #confiance {
+    background-color: $light !important;
+    background: $light !important;
+    padding-top: 0;
+    padding-bottom: 200px;
+    border-top: 1px solid $light-gray;
+    padding-top: 100px;
+
+    .container {
+      .table_qualite {
+        .card_qualite {
+          h4 {
+            font-weight: 700;
+            font-size: 1.5rem;
+            line-height: 1.8rem;
+            color: $dark-dark-gray;
+          }
+
+          p {
+            margin: 30px auto 10px auto;
+            display: block;
+            color: $dark-dark-gray;
+
+            &::after {
+              content: "→";
+              color: $primary-color;
+              display: block;
+              margin-top: 10px;
+            }
+          }
+        }
+        .card_qualite + .card_qualite {
+          border-left: 1px solid $light-gray;
+          padding-left: 50px;
+        }
+      }
+    }
+  }
+
+  #contact {
+    background-color: $light !important;
+    padding-top: 350px;
+  }
+
+  .section_vosp {
+    padding-top: 150px;
+  }
+
+  #nos-campagnes {
+    padding: 100px 0;
+    border-bottom: 1px solid $light-gray;
+
+    h2 {
+      text-align: center;
+      color: $dark-dark-gray;
+
+      strong {
+        color: $primary-color;
+      }
+    }
+  }
+
+  #banner-fullwidth {
+    background: none;
+
+    .container {
+      .subtitle {
+        color: $dark-gray;
+      }
+
+      h2 {
+        color: $dark-gray;
+
+        strong {
+          color: $primary-color;
+        }
+      }
+
+      .cta {
+        background: none;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+}

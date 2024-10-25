@@ -1,0 +1,117 @@
+#acco-infos {
+  padding: 100px 0;
+
+  .container {
+    .col-g {
+      padding-top: 150px;
+
+      h2 {
+        margin-bottom: 50px;
+      }
+      .title-toggle {
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: "Jost", sans-serif;
+        border-bottom: 1px solid $light-gray;
+        margin-bottom: 20px;
+
+        transition: 0.4s;
+
+        &::before {
+          content: "\002B";
+          margin-right: 20px;
+        }
+      }
+
+      .active {
+        &:before {
+          content: "\2212";
+        }
+      }
+
+      .panel {
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out;
+
+        h3 {
+          font-family: "Jost", sans-serif;
+          font-size: 1rem;
+          font-weight: 500;
+          line-height: 1rem;
+        }
+      }
+    }
+
+    .col-d {
+      position: relative;
+
+      .curved-text {
+        position: absolute;
+        display: inline-block;
+        font-weight: 400;
+        margin: 0 auto;
+        font-size: 0.7rem;
+        top: -60px;
+        left: 0;
+        font-family: "Montserrat", sans-serif;
+        z-index: 20;
+        color: $primary-color;
+      }
+
+      .swiper-acco {
+        position: relative;
+        .swiper-wrapper {
+          .swiper-slide {
+            height: 600px;
+          }
+        }
+      }
+
+      .swiper-acco-button-prev,
+      .swiper-acco-button-next {
+        width: 50px;
+        height: 50px;
+        background: $primary-color;
+        position: absolute;
+        bottom: 100px;
+        right: -11px;
+        color: $light;
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+          font-family: swiper-icons;
+          margin: auto;
+          color: #fff;
+          font-size: 1em;
+          text-transform: none !important;
+          letter-spacing: 0;
+          font-variant: initial;
+          line-height: 1;
+        }
+      }
+
+      .swiper-acco-button-next {
+        right: -60px;
+        left: auto;
+        border-left: 1px solid $secondary-color;
+        border-radius: 0 25px 25px 0;
+        &::after {
+          content: "next";
+        }
+      }
+
+      .swiper-acco-button-prev {
+        border-radius: 25px 0 0 25px;
+        &::after {
+          content: "prev";
+        }
+      }
+    }
+  }
+}

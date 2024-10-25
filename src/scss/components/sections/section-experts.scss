@@ -1,0 +1,24 @@
+#expert {
+  background-color: $dark-dark-gray;
+  padding: 100px 0 200px;
+  .container {
+    h2 {
+      color: $light;
+    }
+    .descr {
+      margin-left: auto;
+      margin-right: 0;
+      margin-top: 100px;
+      width: 70%;
+
+      p {
+        color: $light;
+      }
+
+      .cta {
+        display: inline-block;
+        margin-top: 30px;
+      }
+    }
+  }
+}
