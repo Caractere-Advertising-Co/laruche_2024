@@ -3,9 +3,12 @@ $(document).ready(function () {
   var menu = document.querySelector(".megamenu");
   var header = document.querySelector(".navigation");
 
+  var btn = document.querySelector("#listing-biens .cta");
+
   hamburger.addEventListener("click", function () {
     menu.classList.toggle("active-menu");
     header.classList.toggle("active-menu");
     header.classList.toggle("fixed");
+    btn.classList.toggle("hidden");
   });
 });
