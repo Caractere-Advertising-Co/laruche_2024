@@ -44,9 +44,14 @@ header{
       .logo {
         max-height: 250px;
         margin-top: 20px;
+        transition: all ease-in-out 300ms;
 
         img{
           object-fit: contain;
+        }
+
+        &:hover{
+          transform: translateY(-5px);
         }
       }
     }
@@ -57,11 +62,13 @@ header{
       .top-menu{
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         gap: 20px;
         margin-top: 50px;
 
         a{
           color: $dark-gray;
+          font-weight: 600;
         }
 
         p{
@@ -70,7 +77,7 @@ header{
         }
 
         .rs{
-          width: 20px;
+          width: 30px;
 
           img{
             object-fit: contain;
@@ -99,21 +106,21 @@ header{
           li {
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 0.9rem;
+            font-size: 1rem;
             padding-top: 10px;
             position: relative;
     
             a {
               color: $dark-gray;
-              font-weight: 400;
-              font-size: 0.9rem;
+              font-weight: 500;
+              font-size: 1.1rem;
               transition: all ease-out 300ms;
               position: relative;
 
               &::before{
                 content:'';
                 height: 2px;
-                width: 50%;
+                width: 100%;
                 position: absolute;
                 background-color: $primary-color;
                 bottom: 0;
@@ -133,15 +140,12 @@ header{
             }
           }
          
-    
           .menu-item-has-children {
             .sub-menu {
               display: none;
             }
     
             &:hover {
-              min-height: 400px;
-    
               .sub-menu {
                 display: block;
                 position: absolute;
@@ -220,15 +224,28 @@ header{
   .megamenu{
     display: none;
   }
+}
 
-  .title-frontPage{
-    padding-left: 350px;
-    width: calc(80vw - 350px);
-    margin: -30px auto 150px;
+.swiper-hero{
+  padding-left: 350px;
+  width: calc(80vw - 350px);
+  margin: -30px auto 100px;
+  .swiper-wrapper{
+    
+      h2{
+        font-size: 3rem;
+        color: $dark-dark-gray;
+        line-height: 3.5rem;
+      }
+  }
 
-    h1{
-      font-size: 3rem;
-      line-height: 3.5rem;
+  .swiper-pagination{
+    text-align: right;
+
+    .swiper-pagination-bullet-active{
+      color: $primary-color;
+      background-color: $primary-color;
     }
   }
 }
+

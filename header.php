@@ -38,8 +38,21 @@
         <?php if(is_front_page(  )):
             $slide = get_field('texte_slide_intro');
 
-            if($slide): echo 
-                '<div class="container title-frontPage">'.$slide.'</div>'; endif;
+            if(have_rows('slides_home')):?>
+                <div class="swiper swiper-hero">
+                    <div class="swiper-wrapper">
+                        <?php while(have_rows('slides_home')): the_row();
+                            $slide =  get_sub_field('texte_slide_intro');
+
+                            if($slide):
+                                echo '<div class="swiper-slide">'.$slide.'</div>';
+                            endif;
+
+                        endwhile;?>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            <?php endif;
         endif;?>
     </header>
 
