@@ -1,13 +1,28 @@
 <?php
 
-$bg_header = get_field('bg_header','options');
-$logo = get_field('logo-entreprise','options');
+$bg_header  = get_field('bg_header','options');
+$logo       = get_field('logo-entreprise','options');
+
+$tel        = get_field('telephone','options');
+$mail       = get_field('email','options');
+$icon_email = get_field('icon_email','options');
+$icon_phone = get_field('icone_phone','options');
 
 if($bg_header):?>
     <div class="bg_top_header">
         <img src="<?php echo $bg_header['url'];?>" alt="<?php echo $bg_header['title'];?>" />
     </div>
 <?php endif;?>
+
+<div class="top-menu-mobile">
+    <div class="infos-item">
+        <?php if($icon_phone): echo '<a href="tel:'.$tel.'"><div class="block-icon"><img src="'.$icon_phone['url'].'" alt="'.$icon_phone['name'].'" /></div></a>'; endif;?>
+    </div>
+    
+    <div class="infos-item">
+        <?php if($icon_email): echo '<a href="mailto:'.$mail.'"><div class="block-icon"><img src="'.$icon_email['url'].'" alt="'.$icon_email['name'].'" /></div></a>'; endif;?>
+    </div>
+</div>
 
 <div class="header navigation">
     <div class="col-g">
@@ -21,27 +36,29 @@ if($bg_header):?>
     </div>
 
     <div class="col-d">
-        <?php 
-            $tel = get_field('telephone','options');
-            $mail = get_field('email','options');
-        ?>
 
         <div class="top-menu">
-            <?php if($tel): echo $tel; endif;?>
-            <?php if($mail): echo '<a href="mailto:'.$mail.'">'.$mail.'</a>'; endif;?>
+            <div class="infos-item">
+                <?php if($icon_phone): echo '<div class="block-icon"><img src="'.$icon_phone['url'].'" alt="'.$icon_phone['name'].'" /></div>'; endif;?>
+                <?php if($tel): echo '<a href="tel:'.$tel.'"/>'.$tel.'</a>'; endif;?>
+            </div>
+            <div class="infos-item">
+                <?php if($icon_email): echo '<div class="block-icon"><img src="'.$icon_email['url'].'" alt="'.$icon_email['name'].'" /></div>'; endif;?>
+                <?php if($mail): echo '<a href="mailto:'.$mail.'">'.$mail.'</a>'; endif;?>
+            </div>
 
             <?php 
             if(have_rows('allrs','options')):
                 while(have_rows('allrs','options')): the_row();
                     $link = get_sub_field('rs_link');
                     $img = get_sub_field('img_link');
-
                     ?>
-                    <a class="rs" href="<?php echo $link;?>">
+                    
+                    <a class="rs" href="<?php echo $link['url'];?>">
                         <img src="<?php echo $img['url'];?>" alt="<?php echo $img['title'] ?>"/>
                     </a>
                 <?php endwhile;
-            endif;?>
+            endif;?>    
         </div>
     
         <div class="primary-navigation">

@@ -2,7 +2,7 @@
 
 const swiperHero = new Swiper(".swiper-hero", {
   loop: true,
-  autoplay: true,
+  autoplay: false,
   cssMode: true,
   clickable: true,
 

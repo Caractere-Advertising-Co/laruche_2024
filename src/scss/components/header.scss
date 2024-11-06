@@ -28,6 +28,60 @@ header{
       font-size: 0.7rem;
     }
   }
+
+  .top-menu-mobile{
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+
+    .block-icon{
+      width: 30px;
+      height: 35px;
+      position: relative;
+      overflow: hidden;
+
+      img{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: auto;
+        transform:translateY(0);
+        transition: all ease-in 300ms;
+      }
+
+      &:hover{
+        img{
+          transform: translateY(35px);
+        }
+      }
+    }
+
+    a{
+      color: $dark-gray;
+      font-weight: 600;
+    }
+
+    p{
+      border-right: 1px solid $primary-color;
+      padding-right: 20px;
+    }
+
+    .rs{
+      width: 30px;
+
+      img{
+        object-fit: contain;
+      }
+    }
+
+    a,
+    p,
+    .rs{
+      margin-bottom: 0;
+    }
+  }
   
   .header {
     width: 75vw;
@@ -66,10 +120,40 @@ header{
         gap: 20px;
         margin-top: 50px;
 
-        a{
-          color: $dark-gray;
-          font-weight: 600;
+        .infos-item{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+
+          .block-icon{
+            width: 30px;
+            height: 35px;
+            position: relative;
+            overflow: hidden;
+  
+            img{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: auto;
+              transform:translateY(0);
+              transition: all ease-in 300ms;
+            }
+  
+            &:hover{
+              img{
+                transform: translateY(35px);
+              }
+            }
+          }
+  
+          a{
+            color: $dark-gray;
+            font-weight: 600;
+          }
         }
+
+        
 
         p{
           border-right: 1px solid $primary-color;
