@@ -190,15 +190,15 @@ header{
           li {
             text-transform: uppercase;
             letter-spacing: 3px;
-            font-size: 1rem;
             padding-top: 10px;
             position: relative;
+            margin-bottom:0;
     
             a {
               color: $dark-gray;
               font-weight: 500;
-              font-size: 1rem;
-              transition: all ease-out 300ms;
+              font-size: .9rem;
+              transition: font-weight ease-out 200ms;
               position: relative;
 
               &::before{
@@ -232,11 +232,10 @@ header{
             &:hover {
               .sub-menu {
                 display: block;
-                position: absolute;
                 background-color: $light;
                 border-bottom: 2px solid $primary-color;
-                top: 45px;
-                min-width: 300px;
+                position: absolute;
+                min-width: 150px;
     
                 li {
                   color: $primary-color;
