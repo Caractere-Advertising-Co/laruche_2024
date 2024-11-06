@@ -403,9 +403,10 @@
         background-color: $secondary-color;
         display: flex;
         align-items: center;
-        font-size: 1rem;
-        letter-spacing: 3px;
-        padding: 10px 30px;
+        font-size: .9rem;
+        font-weight: 500;
+        letter-spacing: 2px;
+        padding: 10px 15px;
 
         svg{
           height: 20px;
