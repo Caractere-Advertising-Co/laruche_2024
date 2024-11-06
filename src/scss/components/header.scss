@@ -244,7 +244,7 @@ header{
                   border-bottom: 1px solid $light-gray;
                   position: relative;
                   max-height: 50px;
-                  padding: 0;
+                  padding: 5px 30px;
                   margin: 0;
     
                   a {
@@ -255,6 +255,11 @@ header{
                     display: block;
                     padding: 2% 5%;
                     margin: 0;
+
+                    &::before{
+                      content: none;
+                      display: none;
+                    }
                   }
     
                   &:hover {
