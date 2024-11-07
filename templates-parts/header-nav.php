@@ -40,7 +40,7 @@ if($bg_header):?>
         <div class="top-menu">
             <div class="infos-item">
                 <?php if($icon_phone): echo '<div class="block-icon"><img src="'.$icon_phone['url'].'" alt="'.$icon_phone['name'].'" /></div>'; endif;?>
-                <?php if($tel): echo '<a href="tel:'.$tel.'"/>'.$tel.'</a>'; endif;?>
+                <?php if($tel): echo '<a href="tel:'.$tel.'"/>T. 071/30 30 52</a>'; endif;?>
             </div>
             <div class="infos-item">
                 <?php if($icon_email): echo '<div class="block-icon"><img src="'.$icon_email['url'].'" alt="'.$icon_email['name'].'" /></div>'; endif;?>
@@ -86,7 +86,7 @@ if($bg_header):?>
     </div>
 </div>
 
-<div class="megamenu">
+<!--<div class="megamenu">
     <div class="primary-navigation">
         <?php wp_nav_menu(array(
                 'menu' => 'Navigation principale',
@@ -94,4 +94,4 @@ if($bg_header):?>
                 'menu_class' => 'semi-bold nav'
              ));?>
     </div>
-</div>
+</div>-->

@@ -43,9 +43,12 @@ footer {
             a {
               font-size: 0.8rem;
               letter-spacing: 1px;
+              font-weight: 400;
+              transition: all ease-in 150ms;
 
               &:hover {
-                color: $primary-color;
+                color: $secondary-color;
+                font-weight: 600;
               }
             }
           }
