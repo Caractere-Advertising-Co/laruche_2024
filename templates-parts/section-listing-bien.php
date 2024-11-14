@@ -3,9 +3,9 @@
 $btnCta       = get_field('cta_listing','options');
 $titleListing = get_field('title_listing','options');
 
-if(is_page(843)):
+if(is_page(28951)):
     $type = "A vendre";
-elseif(is_page(877)):
+elseif(is_page(28963)):
     $type = "A louer";
 endif;
 
