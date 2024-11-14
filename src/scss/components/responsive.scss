@@ -427,9 +427,78 @@
   }
 
   .page-template-contact {
-    #contact {
-      padding-top: 100px;
-      padding-bottom: 0;
+    #contact-introduction,
+    #formulaire{
+  
+      .content{
+        width: 100%;
+      }
+  
+      .wpcf7{
+        form{
+  
+          .basic-questions{
+            width: 100%;
+          }
+  
+          .estate-question{
+            .input-container{
+              width: 100%;
+    
+              &.half{
+                display: flex;
+                gap: 30px;
+                justify-content: space-between;
+    
+                span{
+                  width: 50%;
+                }
+              }
+            }
+  
+            .wpcf7-acceptance{
+              .wpcf7-list-item{
+                label{ 
+                  input {
+                    width: 100px;
+                  }
+                }
+              }
+            }
+          }
+  
+          input,
+          select,
+          textarea{
+            background-color: transparent;
+            border: 0px;
+            border-bottom: 1px solid $dark-gray;
+            padding: 1rem;
+            color: $dark-gray;
+            width: 100%;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: all ease-in 300ms;
+  
+            &:hover,
+            &:focus{
+              outline:none;
+              border-bottom: 2px solid $primary-color;
+            }
+          }
+  
+          .cta{
+            background-color: $dark-dark-gray;
+            width: fit-content;
+            padding: 10px 50px;
+            color: $light;
+            margin-top: 50px;
+          }
+        }
+      }
     }
   }
 
@@ -811,12 +880,6 @@
     }
   }
 
-  #contact {
-    .container {
-      width: 80vw;
-    }
-  }
-
   #section-cta-contact {
     padding-top: 100px;
   }
@@ -873,34 +936,7 @@
 }
 
 /* Page Contact */
-.page-template-contact {
-  #experience-unique {
-    padding: 0;
-    display: flex;
-    gap: 30px;
 
-    .img-g {
-      margin-top: -100px;
-      position: relative !important;
-      width: 25vw;
-    }
-
-    .container {
-      width: calc(70vw - 30px);
-      .col-d {
-        width: 95%;
-        padding-top: 50px;
-
-        .img-du {
-          height: 300px;
-          margin-bottom: 50px;
-          width: 90vw;
-          margin-left: -30vw;
-        }
-      }
-    }
-  }
-}
 
 // Retina Screen
 

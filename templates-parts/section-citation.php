@@ -8,6 +8,7 @@
             if($img): echo '<img src="'.$img["url"].'" alt="'.$img["title"].'" class="quote"/>';endif;
             if($titre_cons): echo $titre_cons; endif;
             if($soutitre_cons): echo '<h3>'.$soutitre_cons.'</h3>'; endif;
+            if($img): echo '<img src="'.$img["url"].'" alt="'.$img["title"].'" class="quote img2"/>';endif;
         ?>
     </div>
 </section>

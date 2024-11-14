@@ -69,20 +69,39 @@ header {
     margin: 100px auto;
 
     h2 {
-      color: $dark-gray;
-      margin-top: -60px;
+      color: $primary-color;
       font-weight: 100;
 
       strong {
-        color: $primary-color;
+        color: $dark-gray;
+      }
+
+      em{
+        color: $dark-gray;
       }
     }
 
-    img {
+    .separator{
+      display: block;
+      width: 15px;
+      height: 18px;
+      clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+      margin: 20px auto;
+      color:$primary-color;
+    }
+
+    .quote {
       z-index: -1;
       position: relative;
-      width: 200px;
+      width: 120px;
       margin: auto;
+      margin-left: 0;
+
+      &.img2{
+        width: 200px;
+        margin: auto;
+        margin-right: 0;
+      }
     }
   }
 }

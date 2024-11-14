@@ -29,52 +29,55 @@
 
 .contact-form,
 .wpcf7-form {
-  li {
-    margin-left: 0 !important;
-  }
-  .moitier {
-    width: 48%;
-  }
+  margin: auto;
+  padding-top: 0;
+  margin-bottom: 150px;
 
-  .left {
-    float: left;
-    margin-right: 4%;
-  }
+  .input-container{
+    &.half{
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
 
-  .right {
-    float: right;
-  }
+      span{
+        width: 50%;
+      }
+    }
 
-  .liCheck input[type="checkbox"],
-  .liRadio input[type="radio"],
-  .liRadio input[type="checkbox"] {
-    min-width: auto !important;
-    width: auto !important;
-    max-width: auto !important;
-    border: none !important;
-    border-bottom: 1px solid #b0b0b0;
-    min-height: inherit !important;
-    background: none !important;
-  }
+    input,
+    select,
+    textarea{
+      background-color: transparent;
+      border: 0px;
+      border-bottom: 1px solid $dark-gray;
+      padding: 1rem;
+      color: $dark-gray;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: all ease-in 300ms;
 
-  .liInfo {
-    a {
-      color: $secondary-color;
-      padding-bottom: 5px;
-      border-bottom: 1px solid $primary-color;
-      top: 0px;
-      position: relative;
-      transition: all ease-out 200ms;
-
-      &:hover {
-        border-bottom: 5px solid $primary-color;
-        top: -5px;
+      &:hover,
+      &:focus{
+        outline:none;
+        border-bottom: 2px solid $primary-color;
       }
     }
   }
 
-  .clear {
-    clear: both;
+  .wpcf7-submit{
+    margin: auto;
+    background-color: $dark-gray;
+    border: none;
+    cursor: pointer;
+    transition: all ease-in 200ms;
+
+    &:hover{
+      background-color: $dark-dark-gray;
+    }
   }
 }
 

@@ -1,216 +1,131 @@
 .page-template-contact {
-  #hero {
-    width: 100vw;
-    height: 400px;
-    margin-top: 210px;
+  header{
+    background: linear-gradient(180deg, #ffcb32 0%, #ffbf36 100%);
+    background-image: url('./../../assets/images/header_contact.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .bg_top_header{
+      display:none;
     }
   }
-  #contact {
-    background-color: transparent !important;
-    padding-top: 150px;
 
-    .container {
-      padding-bottom: 60px;
-      .colg {
-        h1 {
-          text-align: left;
-          color: $light;
-          font-size: 3rem;
-          line-height: 3.5rem;
-          font-weight: 300;
-        }
+  h2{
+    color: $dark-gray;
+  }
+
+  #contact-introduction,
+  #formulaire{
+    position: relative;
+    max-width: 1375px;
+    width: 90%;
+    padding: 10vh 0 0;
+    margin: auto;
+
+    .title{
+      margin-bottom: 10vh;
+
+      &.titlelvl2{
+        font-size: 3rem;
+        line-height: auto;
+        font-weight: 500;
       }
+    }
 
-      .cold {
-        padding-left: 20%;
+    .content{
+      width: 70%;
+      margin: 0;
+      margin-left: auto;
+    }
 
-        form {
-          padding-top: 100px;
-          margin: auto;
+    .wpcf7{
+      form{
+        margin: auto;
+        padding-top: 0;
+        margin-bottom: 150px;
 
-          .form_grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 1fr;
-            grid-column-gap: 50px;
-            grid-row-gap: 0px;
+        .basic-questions{
+          width: 70%;
+          margin-left: auto;
+        }
+
+        .estate-question{
+          h2{
+            margin: 10vh auto 5vh;
           }
 
-          ul {
-            list-style: none;
+          .input-container{
+            margin-left: auto;
+            width: 70%;
+  
+            &.half{
+              display: flex;
+              gap: 30px;
+              justify-content: space-between;
+  
+              span{
+                width: 50%;
+              }
+            }
+          }
 
-            li {
-              margin-bottom: 20px;
+          .wpcf7-acceptance{
+            .wpcf7-list-item{
+              margin: 0;
 
-              input,
-              textarea,
-              select {
-                min-width: 100%;
-                width: 100%;
-                max-width: 100%;
-                border: none;
-                border-bottom: 1px solid $light;
-                min-height: 50px;
-                background: none;
-                color: $middle-gray;
+                label{
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 30px;
+                  align-items: flex-start;
+                  text-align: justify;
+                  text-align-last: left;
+                  font-size: 1rem;
 
-                &:focus {
-                  outline: 0;
-                  border-bottom: 1px solid $primary-color;
-
-                  &::placeholder {
-                    color: $dark-dark-gray;
+                  input{
+                    width: 30px;
                   }
                 }
-
-                &::placeholder {
-                  color: $light-gray;
-                }
-              }
-
-              input[type="radio"] {
-                min-height: 10px;
-              }
-
-              input[type="submit"] {
-                min-width: auto;
-                width: 250px;
-                background-color: $primary-color !important;
-                color: $light;
-                margin: auto;
-                border: none;
-                filter: brightness(1);
-
-                &:hover {
-                  filter: brightness(0.8);
-                }
-              }
-
-              option {
-                color: $light-gray;
-              }
-            }
-
-            .liSubmit p {
-              text-align: center;
-              margin-top: 80px;
-            }
-
-            .cta-border {
-              margin-left: 30px;
-              font-size: 0.7rem;
-              padding: 5px 25px;
-            }
-
-            p {
-              color: $light;
             }
           }
         }
-      }
-      h3 {
-        font-size: 0.9rem;
-        font-weight: 200;
-        letter-spacing: 5px;
-        text-transform: uppercase;
-        color: $primary-color;
-      }
-    }
-  }
 
-  #widget-contact {
-    padding: 100px 0;
-    .container {
-      justify-content: space-between;
-      gap: auto;
+        input,
+        select,
+        textarea{
+          background-color: transparent;
+          border: 0px;
+          border-bottom: 1px solid $dark-gray;
+          padding: 1rem;
+          color: $dark-gray;
+          width: 100%;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          font-family: "Montserrat", sans-serif;
+          font-size: 1rem;
+          outline: none;
+          transition: all ease-in 300ms;
 
-      .content-icons {
-        display: flex;
-        .block-img {
-          height: 50px;
-          width: 50px;
-        }
-
-        .txt-icons {
-          .subtitle {
-            color: $dark-dark-gray;
-            margin-bottom: 0;
-            letter-spacing: 0;
-          }
-
-          a {
-            color: $primary-color;
-            font-size: 1.5rem;
-            font-weight: 400;
+          &:hover,
+          &:focus{
+            outline:none;
+            border-bottom: 2px solid $primary-color;
           }
         }
-      }
-    }
-  }
 
-  gmp-map {
-    height: 500px;
-  }
-
-  #experience-unique {
-    position: relative;
-    background: $secondary-color;
-    margin-top: 200px;
-    padding: 100px 0;
-
-    .img-g {
-      position: absolute;
-      left: 0;
-      top: -100px;
-      width: calc(50vw - 50px);
-      height: 1000px;
-    }
-
-    .container {
-      .col-d {
-        padding-top: 200px;
-
-        h2 {
-          margin-bottom: 30px;
-        }
-        p {
+        .cta{
+          background-color: $dark-dark-gray;
+          width: fit-content;
+          padding: 10px 50px;
           color: $light;
-        }
-
-        .img-du {
           margin-top: 50px;
-          height: 700px;
         }
       }
     }
   }
 
-  #banner-fullwidth {
-    background: none;
-
-    .container {
-      .subtitle {
-        color: $dark-gray;
-      }
-
-      h2 {
-        color: $dark-gray;
-
-        strong {
-          color: $primary-color;
-        }
-      }
-
-      .cta {
-        background: none;
-        color: $primary-color;
-        border: 1px solid $primary-color;
-      }
-    }
+  #formulaire{
+    padding-top: 5vh;
   }
 }

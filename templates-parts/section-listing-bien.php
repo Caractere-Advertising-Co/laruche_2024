@@ -3,21 +3,29 @@
 $btnCta       = get_field('cta_listing','options');
 $titleListing = get_field('title_listing','options');
 
+if(is_front_page(  )):
+    $offset = 6;
+else : 
+    $offset = 9;
+endif;
+
 ?>
 
 <section id="listing-biens">
-    <div class="container">
-        <?php if($btnCta): echo '<div class="btn cta"><a href="'.$btnCta['url'].'">'.$btnCta['title'].'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
-        <div class="title-section"><?php if($titleListing): echo $titleListing; endif;?></div>
-    </div>
+    <?php if(is_front_page(  )):?>
+        <div class="container">
+            <?php if($btnCta): echo '<div class="btn cta"><a href="'.$btnCta['url'].'">'.$btnCta['title'].'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
+            <div class="title-section"><?php if($titleListing): echo $titleListing; endif;?></div>
+        </div>
+    <?php endif;?>
 
-    <div class="container grid">
+    <div class="container grid grid-biens">
         <?php 
 
         $args = array(
             'post_type' => 'biens',
             'post_status' => 'publish',
-            'posts_per_page' => 6
+            'posts_per_page' => $offset
         );
 
         $biens = new WP_Query($args);
@@ -75,13 +83,17 @@ $titleListing = get_field('title_listing','options');
         ?>
     </div>
 
-    <div class="container columns cta-biens">
-        <?php
-            $urlSale = get_field('lien_page_vendre');
-            $urlLocation = get_field('lien_page_louer');
-        ?>
+        <div class="container columns cta-biens">
+            <?php if(is_front_page(  )):
+                $urlSale = get_field('lien_page_vendre');
+                $urlLocation = get_field('lien_page_louer');
+            ?>
 
-        <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
-        <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
-    </div>
+            <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
+            <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
+            <?php else :?>
+                <a href="#!" class="cta" id="load-more-biens">Chargez plus</a>
+            <?php endif;?>
+        </div>
+   
 </section>

@@ -53,6 +53,11 @@ function enqueue_custom_scripts() {
 
     // Localisation du script AJAX
     wp_localize_script('custom-scripts', 'ajax_object', array('ajax_url' => admin_url('admin-ajax.php')));
+	wp_localize_script('scripts', 'ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'total_biens' => wp_count_posts('biens')->publish, // Passer total_biens à JS
+    ));
+
 }
 
 /*********************************
@@ -112,3 +117,38 @@ function add_custom_post_biens() {
 	register_post_type( 'biens', $args );
 }
 add_action( 'init', 'add_custom_post_biens', 0 );
+
+
+/*********************************
+     AJAX - add more function 
+**********************************/
+
+add_action('wp_ajax_load_more_biens', 'load_more_biens');
+add_action('wp_ajax_nopriv_load_more_biens', 'load_more_biens');
+
+function load_more_biens() {
+    $args = array(
+        'post_type' => 'biens',
+        'posts_per_page' => 9,
+        'post_status' => 'publish',
+        'offset' => $_POST['offset']
+    );
+
+    $query = new WP_Query($args);
+
+    // Compter le nombre total de biens publiés
+    $total_biens = wp_count_posts('biens')->publish;
+
+    // Si des articles sont trouvés, les charger
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+            get_template_part('templates-parts/card-biens');
+        }
+    }
+
+    // Renvoyer le nombre total de biens
+    echo '<script>total_biens = ' . $total_biens . ';</script>';
+
+    wp_die();
+}
