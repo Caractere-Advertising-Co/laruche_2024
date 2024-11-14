@@ -131,7 +131,9 @@ function load_more_biens() {
         'post_type' => 'biens',
         'posts_per_page' => 9,
         'post_status' => 'publish',
-        'offset' => $_POST['offset']
+        'offset' => $_POST['offset'],
+		'meta_key' => 'type_de_bien',
+        'meta_value' => $_POST['type']
     );
 
     $query = new WP_Query($args);

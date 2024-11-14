@@ -3,10 +3,27 @@
 $btnCta       = get_field('cta_listing','options');
 $titleListing = get_field('title_listing','options');
 
+if(is_page(843)):
+    $type = "A vendre";
+elseif(is_page(877)):
+    $type = "A louer";
+endif;
+
 if(is_front_page(  )):
-    $offset = 6;
+    $args = array(
+        'post_type' => 'biens',
+        'post_status' => 'publish',
+        'posts_per_page' => 6
+
+    );
 else : 
-    $offset = 9;
+    $args = array(
+        'post_type' => 'biens',
+        'post_status' => 'publish',
+        'posts_per_page' => 9,
+        'meta_key'      => 'type_de_bien',
+        'meta_value'    => $type
+    );
 endif;
 
 ?>
@@ -20,13 +37,7 @@ endif;
     <?php endif;?>
 
     <div class="container grid grid-biens">
-        <?php 
-
-        $args = array(
-            'post_type' => 'biens',
-            'post_status' => 'publish',
-            'posts_per_page' => $offset
-        );
+        <?php
 
         $biens = new WP_Query($args);
 
@@ -92,7 +103,7 @@ endif;
             <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
             <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
             <?php else :?>
-                <a href="#!" class="cta" id="load-more-biens">Chargez plus</a>
+                <a href="#!" class="cta" id="load-more-biens" data-type="<?php echo $type;?>">Chargez plus</a>
             <?php endif;?>
         </div>
    

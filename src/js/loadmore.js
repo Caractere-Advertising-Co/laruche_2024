@@ -5,12 +5,15 @@ $(document).ready(function() {
   $("#load-more-biens").click(function (e) {
     e.preventDefault();
 
+    var type = $(this).data('type');
+
     $.ajax({
       url: ajax_object.ajax_url, // Utilisation de la variable définie par wp_localize_script()
       type: "POST",
       data: {
         action: "load_more_biens",
         offset: offset,
+        type: type,
       },
       success: function (response) {
         $(".grid-biens").append(response);
