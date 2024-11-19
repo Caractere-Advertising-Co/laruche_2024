@@ -88,11 +88,11 @@ $inondation    = $situation['inondation'];
         <div class="swiper-button-next swiper-single-estate-next"></div>
     </div>
     <div class="container columns details-biens">
-        <?php if($surfTot): echo '<p>Superficie terrain<br><strong>'.$surfTot.'</strong></p>'; endif;?>
-        <?php if($surfHab): echo '<p>Surface habitable<br><strong>'.$surfHab.' m2</strong></p>'; endif;?>
-        <?php if($compBien): echo '<p>Salle(s) de bain<br><strong>'.$compBien['salle_de_bain'].'</strong></p>'; endif;?>
-        <?php if($compBien): echo '<p>Nbre de chambre(s)<br><strong>'.$compBien['chambre'].'</strong></p>'; endif;?>
-        <?php if($compBien): echo '<p>Garage / Carport<br><strong>'.$compBien['garage'].'</strong></p>'; endif;?>
+        <?php if(!empty($surfTot)): echo '<p>Superficie terrain<br><strong>'.$surfTot.'</strong></p>'; endif;?>
+        <?php if(!empty($surfHab)): echo '<p>Surface habitable<br><strong>'.$surfHab.' m2</strong></p>'; endif;?>
+        <?php if(!empty($compBien)): echo '<p>Salle(s) de bain<br><strong>'.$compBien['salle_de_bain'].'</strong></p>'; endif;?>
+        <?php if(!empty($compBien)): echo '<p>Nbre de chambre(s)<br><strong>'.$compBien['chambre'].'</strong></p>'; endif;?>
+        <?php if(!empty($compBien)): echo '<p>Garage / Carport<br><strong>'.$compBien['garage'].'</strong></p>'; endif;?>
     </div>
 </section>
 
