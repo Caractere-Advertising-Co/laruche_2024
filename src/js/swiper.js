@@ -62,36 +62,12 @@ const swiperExtra = new Swiper(".swiper-extra", {
 
 /* Page Gites */
 
-const swiperRooms = new Swiper(".swiper-chambres", {
-  slidesPerView: 3,
-  spaceBetween: 50,
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-chambre-button-next",
-    prevEl: ".swiper-chambre-button-prev",
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 50,
-    },
-  },
-});
-
-const swiperAcco = new Swiper(".swiper-acco", {
+const swiperSingleEstate = new Swiper(".swiper-single-bien", {
   slidesPerView: 1,
-  loop: true,
+  spaceBetween: 50,
 
   navigation: {
-    nextEl: ".swiper-acco-button-next",
-    prevEl: ".swiper-acco-button-prev",
-  },
+    nextEl: ".swiper-single-estate-next",
+    prevEl: ".swiper-single-estate-prev",
+  }
 });
