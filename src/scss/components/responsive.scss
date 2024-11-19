@@ -502,6 +502,48 @@
     }
   }
 
+  .biens-template-single-biens{
+    #introduction-single-bien{
+      h1{
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+
+        .price{
+          font-weight: 800;
+          color : $dark-dark-gray;
+        }
+      }
+    }
+
+    #description-biens{
+      margin-top: -100px;
+
+      .details-biens{
+        gap: 30px;
+      }
+    }
+
+    #caracteristiques-biens{
+      .columns{
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
+    #galerie-bien{
+      .container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+
+        a{
+          .block-img{
+            height: 200px;      
+          }
+        }
+      }
+    }
+  }
+
   #liste-actualites,
   #simple-page {
     .container {
@@ -544,10 +586,6 @@
     }
   }
 
-  .gites-template #nos-chambres .container .swiper-chambre-button-next {
-    display: none;
-  }
-
   .page-template-services #liste-actualites {
     padding-bottom: 0px;
     border-bottom: 1px solid $light-gray;
@@ -566,36 +604,6 @@
 
   .tiny-separator {
     margin: 50px auto;
-  }
-
-  /* Gites */
-
-  .gites-template {
-    #citation {
-      .container {
-        margin: 0 auto;
-      }
-    }
-
-    #acco-infos {
-      .container {
-        .col-g {
-          padding-top: 50px;
-        }
-        .col-d {
-          width: 80%;
-          margin: auto;
-
-          .swiper {
-            .swiper-wrapper {
-              .swiper-slide {
-                height: 350px;
-              }
-            }
-          }
-        }
-      }
-    }
   }
 
   /********/
