@@ -1,14 +1,11 @@
 .biens-template-single-biens{
-    header{
-        background: $primary-color;
-    }
     #introduction-single-bien{
-        background-color: $primary-color;
+        background-color: $light-gray;
         padding-bottom: 150px;
 
         h1{
             text-align: center;
-            color: $light;
+            color: $dark-dark-gray;
             font-size: 3.5rem;
             line-height: 3.5rem;
 
