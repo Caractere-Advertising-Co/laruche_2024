@@ -1,98 +1,5 @@
-.single {
-  #simple-page {
-    padding-top: 100px;
-
-    .container {
-      .colg {
-        position: relative;
-        z-index: 10;
-
-        .intro {
-          h2 {
-            text-transform: uppercase;
-            color: $primary-color;
-            font-size: 1rem;
-            letter-spacing: 10px;
-            font-weight: 400;
-          }
-
-          h1 {
-            font-size: 3rem;
-            color: $secondary-color;
-            font-weight: 300;
-            line-height: 3.5rem;
-          }
-        }
-      }
-      .cold {
-        padding-left: 20%;
-        margin: 100px 0 150px;
-
-        h2 {
-          font-size: 1rem;
-          color: $primary-color;
-          letter-spacing: 8px;
-          text-transform: uppercase;
-          font-weight: 600;
-
-          &::before {
-            content: "→";
-          }
-        }
-
-        a {
-          color: $secondary-color;
-          font-weight: 600;
-        }
-
-        .intro,
-        .par_cta {
-          ul {
-            border-left: 5px solid $primary-color;
-            padding-left: 20px;
-          }
-
-          li {
-            margin-left: 20px;
-            margin-bottom: 0;
-
-            ul {
-              border-left: none;
-              padding-left: 5px;
-            }
-          }
-          a {
-            color: $secondary-color;
-          }
-        }
-
-        .cta {
-          color: $light;
-          font-weight: 200;
-          font-size: 0.8rem;
-          margin: 30px 0;
-          display: inline-block;
-        }
-      }
-    }
-
-    .img-separator {
-      position: relative;
-      margin-right: 0;
-      margin-left: auto;
-      margin-bottom: -200px;
-      width: 40vw;
-      max-height: 600px;
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        -o-object-fit: cover;
-      }
-    }
-  }
+.page-template-single {
+  padding-top: 100px;
 
   #simple-text-intro{
     .container{
@@ -115,6 +22,10 @@
 
             strong{
               font-weight: 600;
+            }
+
+            a{
+              color: $primary-color;
             }
           }
         }
