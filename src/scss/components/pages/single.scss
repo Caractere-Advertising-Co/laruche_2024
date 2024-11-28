@@ -16,9 +16,11 @@
       }
 
       table{
+        border-collapse: collapse;
         tr{
           td{
             border: 1px solid $middle-gray;
+            padding: .2rem .5rem;
 
             strong{
               font-weight: 600;
@@ -26,6 +28,7 @@
 
             a{
               color: $primary-color;
+              font-weight: 400;
             }
           }
         }
