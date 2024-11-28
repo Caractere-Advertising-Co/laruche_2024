@@ -17,7 +17,14 @@
 
       table{
         border-collapse: collapse;
+        width: 100%;
         tr{
+          th{
+            p{
+              text-align: left;
+            }
+          }
+
           td{
             border: 1px solid $middle-gray;
             padding: .2rem .5rem;
