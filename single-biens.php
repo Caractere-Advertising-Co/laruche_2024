@@ -48,9 +48,7 @@ $situation  = get_field('situation');
 $environnement = $situation['type_denvironnement'];
 $inondation    = $situation['inondation'];
 
-$icones = get_field('icones_biens','options');
-
-?>
+$icones = get_field('icones_biens','options');?>
 
 <section id="introduction-single-bien">
     <div class="container">
