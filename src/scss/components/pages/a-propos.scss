@@ -29,6 +29,16 @@
 
     .columns{
       justify-content: space-between;
+      gap: 30px;
+
+      .col{
+        width: calc( 100% / 3);
+      }
+
+      .col + .col{
+        border-left: 1px solid $primary-color;
+        padding-left: 30px;
+      }
 
       .block-img{
         height: 200px;
