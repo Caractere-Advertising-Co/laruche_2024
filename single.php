@@ -6,37 +6,41 @@ Template Post Type: post, page
 
 get_header();
 
-$surtitre = get_field('surtitre');
-$titre = get_field('titre');
-
 $bg_header = get_field('bg_header');
 
-if(!$bg_header):
-    $bg_url = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
-else :
-    $bg_header = get_field('bg_header');
-    $bg_url = $bg_header['url'];
-endif;
+$surtitre = get_field('surtitre');
+$titre = get_field('titre_introduction');
+$content = get_field('texte_introduction');
 
 $imgTr = get_field('image-transition');
 $contentTr = get_field('content-transition');
 $ctaTr = get_field('cta-transition');
 
 ?>
+<?php if($bg_header):?>
+    <header id="header-simple-page" >
+        <img src="<?php echo $bg_url;?>" alt="<?php echo $bg_header['title'];?>"/>
 
-<header id="header-simple-page" >
-    <img src="<?php echo $bg_url;?>" alt="<?php echo $bg_header['title'];?>"/>
-
-    <div class="container">
-        <div class="content">
-            <span class="subtitle"><?php if($surtitre): echo $surtitre;endif;?></span>
-            <?php if($titre): echo $titre; endif;?>
+        <div class="container">
+            <div class="content">
+                <span class="subtitle"><?php if($surtitre): echo $surtitre;endif;?></span>
+                <?php if($titre): echo $titre; endif;?>
+            </div>
         </div>
+    </header>
+<?php endif;?>
+
+<section id="simple-text-intro">
+    <div class="container">
+        <?php if($surtitre): echo '<h2>'.$surtitre.'</h2>'; endif;?>
+        <?php if($titre): echo $titre; endif;?>
+        <?php if($content): echo $content; endif;?>
     </div>
-</header>
+</section>
 
 <?php get_template_part( 'templates-parts/section-two-columns-tit' );?>
 
+<?php if($imgTr):?>
 <section id="transition-blog">
 <div class="imgTr"><img src="<?php if($imgTr): echo $imgTr['url'];endif;?>" alt="<?php if($imgTr):echo $imgTr['title'];endif;?>"/></div>
     <div class="container columns">
@@ -47,6 +51,8 @@ $ctaTr = get_field('cta-transition');
         </div>
     </div>
 </section>
+
+<?php endif;?>
 
 <?php get_template_part( 'templates-parts/section-introduction' );?>
 
