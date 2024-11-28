@@ -36,8 +36,9 @@
       }
 
       .col + .col{
-        border-left: 1px solid $primary-color;
-        padding-left: 30px;
+        .block-img{
+          border-left: 1px solid $primary-color;
+        }
       }
 
       .block-img{
@@ -56,11 +57,14 @@
         line-height: 1.2rem;
         color: $light;
         font-weight: 600;
+        text-transform: uppercase;
       }
 
       p{
         text-align: center;
         color: $light;
+        width: 80%;
+        margin:auto;
       }
     }
 
