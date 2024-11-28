@@ -24,9 +24,7 @@ else :
         'meta_key'      => 'type_de_bien',
         'meta_value'    => $type
     );
-endif;
-
-?>
+endif;?>
 
 <section id="listing-biens">
     <?php if(is_front_page(  )):?>
@@ -95,17 +93,16 @@ endif;
         ?>
     </div>
 
-        <div class="container columns cta-biens">
-            <?php if(is_front_page(  )):
-                $urlSale = get_field('lien_page_vendre');
-                $urlLocation = get_field('lien_page_louer');
-            ?>
+    <div class="container columns cta-biens">
+        <?php if(is_front_page(  )):
+            $urlSale = get_field('lien_page_vendre');
+            $urlLocation = get_field('lien_page_louer');
+        ?>
 
-            <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
-            <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
-            <?php else :?>
-                <a href="#!" class="cta" id="load-more-biens" data-type="<?php echo $type;?>">Chargez plus</a>
-            <?php endif;?>
-        </div>
-   
+        <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
+        <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
+        <?php else :?>
+            <a href="#!" class="cta" id="load-more-biens" data-type="<?php echo $type;?>">Chargez plus</a>
+        <?php endif;?>
+    </div>
 </section>
