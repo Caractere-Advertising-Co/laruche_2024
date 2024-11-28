@@ -950,6 +950,16 @@
   .page-template-informations #outro .cold {
     padding-left: 10%;
   }
+
+  .page-template-a-propos{
+    #introduction{
+      .container{
+        .cold{
+          padding-left: 0;
+        }
+      }
+    }
+  }
 }
 
 /* Page Séminaire */
@@ -959,9 +969,6 @@
     margin: 100px auto;
   }
 }
-
-/* Page Contact */
-
 
 // Retina Screen
 
