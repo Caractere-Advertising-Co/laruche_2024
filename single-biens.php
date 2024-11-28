@@ -48,6 +48,8 @@ $situation  = get_field('situation');
 $environnement = $situation['type_denvironnement'];
 $inondation    = $situation['inondation'];
 
+$icones = get_field('icones_biens','options');
+
 ?>
 
 <section id="introduction-single-bien">
@@ -88,11 +90,11 @@ $inondation    = $situation['inondation'];
         <div class="swiper-button-next swiper-single-estate-next"></div>
     </div>
     <div class="container columns details-biens">
-        <?php if(!empty($surfTot)): echo '<p>Superficie terrain<br><strong>'.$surfTot.'</strong></p>'; endif;?>
-        <?php if(!empty($surfHab)): echo '<p>Surface habitable<br><strong>'.$surfHab.' m2</strong></p>'; endif;?>
-        <?php if(!empty($compBien['salle_de_bain'])): echo '<p>Salle(s) de bain<br><strong>'.$compBien['salle_de_bain'].'</strong></p>'; endif;?>
-        <?php if(!empty($compBien['chambre'])): echo '<p>Nbre de chambre(s)<br><strong>'.$compBien['chambre'].'</strong></p>'; endif;?>
-        <?php if(!empty($compBien['garage'])): echo '<p>Garage / Carport<br><strong>'.$compBien['garage'].'</strong></p>'; endif;?>
+        <?php if(!empty($surfTot)): echo '<div><img src="'.$icones['superficie_terrain']['url'].'" alt="'.$icones['superficie_terrain']['name'].'"/><p>Superficie terrain<br><strong>'.$surfTot.'</strong></p></div>'; endif;?>
+        <?php if(!empty($surfHab)): echo '<div><img src="'.$icones['surface_habitable']['url'].'" alt="'.$icones['surface_habitable']['name'].'"/><p>Surface habitable<br><strong>'.$surfHab.' m2</strong></p></div>'; endif;?>
+        <?php if(!empty($compBien['salle_de_bain'])): echo '<div><img src="'.$icones['salle_de_bain']['url'].'" alt="'.$icones['salle_de_bain']['name'].'"/><p>Salle(s) de bain<br><strong>'.$compBien['salle_de_bain'].'</strong></p></div>'; endif;?>
+        <?php if(!empty($compBien['chambre'])): echo '<div><img src="'.$icones['nombre_de_chambre']['url'].'" alt="'.$icones['nombre_de_chambre']['name'].'"/><p>Nbre de chambre(s)<br><strong>'.$compBien['chambre'].'</strong></p></div>'; endif;?>
+        <?php if(!empty($compBien['garage'])): echo '<div><img src="'.$icones['garage_carport']['url'].'" alt="'.$icones['garage_carport']['name'].'"/><p>Garage / Carport<br><strong>'.$compBien['garage'].'</strong></p></div>'; endif;?>
     </div>
 </section>
 
