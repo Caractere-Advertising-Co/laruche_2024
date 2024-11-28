@@ -32,7 +32,7 @@ $ctaTr = get_field('cta-transition');
 
 <section id="simple-text-intro">
     <div class="container">
-        <?php if($surtitre): echo '<h2>'.$surtitre.'</h2>'; endif;?>
+        <?php if($surtitre): echo '<h1>'.$surtitre.'</h1>'; endif;?>
         <?php if($titre): echo $titre; endif;?>
         <?php if($content): echo $content; endif;?>
     </div>
