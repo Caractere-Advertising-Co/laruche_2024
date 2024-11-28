@@ -38,8 +38,6 @@ $ctaTr = get_field('cta-transition');
     </div>
 </section>
 
-<?php get_template_part( 'templates-parts/section-two-columns-tit' );?>
-
 <?php if($imgTr):?>
 <section id="transition-blog">
 <div class="imgTr"><img src="<?php if($imgTr): echo $imgTr['url'];endif;?>" alt="<?php if($imgTr):echo $imgTr['title'];endif;?>"/></div>
