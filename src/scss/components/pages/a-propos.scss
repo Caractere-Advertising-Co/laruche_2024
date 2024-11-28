@@ -32,6 +32,7 @@
 
       .block-img{
         height: 200px;
+        filter: brightness(1.1);
 
         img{
           object-fit: contain;
