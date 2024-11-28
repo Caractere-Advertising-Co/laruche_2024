@@ -70,11 +70,22 @@
             border-bottom: 1px solid $middle-gray;
             padding-bottom: 50px;
 
-            p{
-                text-align: center;
+            .col{
+                .block-img{
+                    height: 50px;
+                    margin-bottom: 15px;
 
-                strong{
-                    color: $primary-color;
+                    img{
+                        object-fit: contain;
+                    }
+                }
+
+                p{
+                    text-align: center;
+
+                    strong{
+                        color: $primary-color;
+                    }
                 }
             }
         }
