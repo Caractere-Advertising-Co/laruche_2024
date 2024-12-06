@@ -1,9 +1,9 @@
 <?php 
-    $surtitre = get_field('surtitre-section-tit');
-    $content = get_field('content-tit');
-    $img = get_field('img-tit');
-    $secText = get_field('sectexte-tit');
-    $cta = get_field('cta-tit');
+    $surtitre   = get_field('surtitre-section-tit');
+    $content    = get_field('content-tit');
+    $img        = get_field('img-tit');
+    $secText    = get_field('sectexte-tit');
+    $cta        = get_field('cta-tit');
 ?>
 
 <section id="section-2-tit">

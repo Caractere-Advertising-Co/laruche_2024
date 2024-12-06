@@ -1,8 +1,8 @@
 <section id="citation">
     <div class="container top_content">
         <?php 
-            $titre_cons = get_field('titre_section_con','options');
-            $img = get_field('image_citation','options');
+            $titre_cons    = get_field('titre_section_con','options');
+            $img           = get_field('image_citation','options');
             $soutitre_cons = get_field('soutitre_section_cons','options');
 
             if($img): echo '<img src="'.$img["url"].'" alt="'.$img["title"].'" class="quote"/>';endif;

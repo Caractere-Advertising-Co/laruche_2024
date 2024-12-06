@@ -2,9 +2,9 @@
     <div class="container from-bottom">
         <?php 
             $subtitle = get_field('sub_contact','options');
-            $title = get_field('titre-contact','options');
-            $texte = get_field('texte-contact','options');
-            $form = get_field('shortcode_form','options');
+            $title    = get_field('titre-contact','options');
+            $texte    = get_field('texte-contact','options');
+            $form     = get_field('shortcode_form','options');
 
         ?>
         <?php if($subtitle):?><p class="subtitle"><?php echo $subtitle;?></p><?php endif;?>
