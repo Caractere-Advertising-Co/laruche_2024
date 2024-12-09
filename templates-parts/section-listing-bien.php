@@ -39,7 +39,7 @@ endif;?>
             <div class="title-section"><?php if($titleListing): echo $titleListing; endif;?></div>
         </div>
 
-    <?php else :?>
+    <?php else : ?>
         <div class="container columns cta-biens">
             <?php
             $biens = new WP_Query($args);
