@@ -137,7 +137,4 @@ $icones = get_field('icones_biens','options');?>
 
 <?php
 
-get_template_part( 'templates-parts/section-citation');
-get_template_part( 'templates-parts/contact');
-
 get_footer();
