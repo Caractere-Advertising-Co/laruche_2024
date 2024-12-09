@@ -89,6 +89,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 30px;
   
     .col-g {
       width: 15%;
@@ -96,7 +97,8 @@ header{
       z-index: 10;
   
       .logo {
-        max-height: 250px;
+        max-height: 165px;
+        height: 165px;
         margin-top: 20px;
         transition: all ease-in-out 300ms;
 
@@ -111,7 +113,7 @@ header{
     }
   
     .col-d {
-      width: 80%;
+      width: 85%;
 
       .top-menu{
         display: flex;
@@ -183,13 +185,13 @@ header{
         #menu-navigation-principale-neerlandais {
           list-style: none;
           display: flex;
-          justify-content: flex-end;
+          justify-content: flex-start;
           align-items: flex-start;
-          gap: 30px;
+          gap: 25px;
     
           li {
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             padding-top: 10px;
             position: relative;
             margin-bottom:0;
@@ -198,8 +200,8 @@ header{
     
             a {
               color: $dark-gray;
-              font-weight: 500;
-              font-size: .9rem;
+              font-weight: 800;
+              font-size: 1.05rem;
               transition: font-weight ease-out 200ms;
               position: relative;
 
@@ -217,7 +219,7 @@ header{
               }
     
               &:hover {
-                font-weight: 600;
+                font-weight: 800;
 
                 &::before{
                   transform: scale(1);
@@ -317,15 +319,15 @@ header{
 }
 
 .swiper-hero{
-  padding-left: 350px;
-  width: calc(80vw - 350px);
-  margin: -30px auto 100px;
+  width: 86vw;
+  margin: 50px auto 70px 0;
+
   .swiper-wrapper{
-    
       h2{
         font-size: 3rem;
         color: $dark-dark-gray;
         line-height: 3.5rem;
+        padding-left: 350px;
       }
   }
 

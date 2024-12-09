@@ -34,9 +34,7 @@
     }
 
     .content{
-      width: 70%;
-      margin: 0;
-      margin-left: auto;
+      width: 100%;
     }
 
     .wpcf7{
@@ -46,8 +44,7 @@
         margin-bottom: 150px;
 
         .basic-questions{
-          width: 70%;
-          margin-left: auto;
+          width: 100%;
         }
 
         .estate-question{
@@ -56,8 +53,7 @@
           }
 
           .input-container{
-            margin-left: auto;
-            width: 70%;
+            width: 100%;
   
             &.half{
               display: flex;

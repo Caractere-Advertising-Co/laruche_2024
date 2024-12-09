@@ -3,7 +3,9 @@
 $btnCta       = get_field('cta_listing','options');
 $titleListing = get_field('title_listing','options');
 
-if(is_page(28951)):
+$type = '';
+
+if(is_page(28951) || is_page(843)):
     $type = "A vendre";
 elseif(is_page(28963)):
     $type = "A louer";
@@ -20,9 +22,13 @@ else :
     $args = array(
         'post_type' => 'biens',
         'post_status' => 'publish',
-        'posts_per_page' => 9,
+        'paged' => $paged,
         'meta_key'      => 'type_de_bien',
-        'meta_value'    => $type
+        'meta_value'    => $type,
+        'posts_per_page' => 9,
+        'orderby'           => 'meta_value',
+        'order'             => 'DESC'
+
     );
 endif;?>
 
@@ -32,18 +38,41 @@ endif;?>
             <?php if($btnCta): echo '<div class="btn cta"><a href="'.$btnCta['url'].'">'.$btnCta['title'].'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
             <div class="title-section"><?php if($titleListing): echo $titleListing; endif;?></div>
         </div>
+
+    <?php else :?>
+        <div class="container columns cta-biens">
+            <?php
+            $biens = new WP_Query($args);
+            if($biens->have_posts()):
+                $total_pages = $biens->max_num_pages;
+
+                if ($total_pages > 1){
+
+                    $current_page = max(1, get_query_var('paged'));
+
+                    echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '/page/%#%',
+                        'current' => $current_page,
+                        'total' => $total_pages
+                    ));
+                }
+            endif;?>
+        </div>
     <?php endif;?>
 
     <div class="container grid grid-biens">
         <?php
 
         $biens = new WP_Query($args);
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
         if($biens->have_posts()):
             while($biens->have_posts()): $biens->the_post();
                 $title     = get_the_title();
                 $thb       = get_field('miniature');
                 $tyPEB     = get_field('type_peb');
+                $statut    = get_field('statut_bien');
                 $peb       = get_field('PEB');
                 $pebDble   = get_field('PEB_double');
                 $typeBien  = get_field('type_de_bien');
@@ -55,9 +84,10 @@ endif;?>
                 $surfTot   = get_field('surf_totale');
                 $fairOff   = get_field('faireOffre');
                 $new       = get_field('new');
+                $validLink = array('Vendu','Loué');
             ?>
                 <div class="card">
-                    <a href="<?php echo get_permalink();?>">
+                    <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
                         <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb['url'];?>');"<?php endif;?>>
                             <?php if($new):?><span class="statut">New</span><?php endif;?>
 
@@ -71,7 +101,7 @@ endif;?>
                                 </div>
                             <?php endif;?>
                         </div>
-                        <?php if($title): echo '<h3><strong>' . $categorie . '</strong> - ' . $typeBien .' - <strong>'. $lieu . '</strong></h3>'; endif;?>
+                        <?php if($title): echo '<h3><strong>' . $categorie . '</strong> - ' . $statut .' - <strong>'. $lieu . '</strong></h3>'; endif;?>
                         <div class="columns details">
                             <?php if($chambre): echo '<div class="room"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/bed.png" alt="icone_bed" class="icon"/></div><p>'.$chambre.' Chs</p></div>'; endif;?>
                             <?php if($surfHab): echo '<div class="surfHab"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/house.png" alt="icone_bed" class="icon"/></div><p>'.$surfHab.' m2</p></div>'; endif;?>
@@ -84,7 +114,7 @@ endif;?>
                                 echo $typeBien = 'A louer' ? '/mois' : '';
                             ?>
                         </div>
-                    </a>
+                    <?php echo in_array($statut,$validLink) ?  '' : '</a>' ; ?>
                 </div>
             <?php endwhile;
         endif;
@@ -101,8 +131,24 @@ endif;?>
 
         <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
         <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
-        <?php else :?>
-            <a href="#!" class="cta" id="load-more-biens" data-type="<?php echo $type;?>">Chargez plus</a>
-        <?php endif;?>
+
+        <?php else : 
+            $biens = new WP_Query($args);
+            if($biens->have_posts()):
+                $total_pages = $biens->max_num_pages;
+
+                if ($total_pages > 1){
+
+                    $current_page = max(1, get_query_var('paged'));
+
+                    echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '/page/%#%',
+                        'current' => $current_page,
+                        'total' => $total_pages
+                    ));
+                }
+            endif;
+        endif;?>
     </div>
-</section>
+</section>  

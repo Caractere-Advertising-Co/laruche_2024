@@ -1,6 +1,58 @@
 .page-template-listing-biens{
+    #title-section{
+        padding: 50px 0 0;
+
+        h1{
+            text-align: center;
+            font-weight: 600;
+            font-size: 2.5rem;
+
+            strong{
+                font-weight: 800;
+            }
+        }
+    }
+
     #listing-biens{
-        margin-top: 10vh;
+        margin-top: 0;
+        padding-top: 20px;
+
+        .cta-biens{
+            gap: 10px;
+            justify-content: flex-end;
+
+            .page-numbers{
+                width: auto;
+                min-width: 30px;
+                padding: 5px;
+                height: 30px;
+                background-color: $middle-gray;
+                font-family: 'Montserrat',sans-serif;
+                color: $dark-dark-gray;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 400;
+                color: $light;
+
+                &.current{
+                    background-color: $primary-color;
+                    color: $dark-dark-gray;
+                    font-weight: 800;
+                }
+
+                &.next,
+                &.prev{
+                    padding: 5px 15px;
+                }
+            }
+
+            .page-numbers + .page-numbers{
+                border-left: none;
+            }
+        }
     }
 
     #citation{
