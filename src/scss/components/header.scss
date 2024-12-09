@@ -319,15 +319,41 @@ header{
 }
 
 .swiper-hero{
-  width: 86vw;
+  width: 90vw;
   margin: 50px auto 70px 0;
 
   .swiper-wrapper{
       h2{
-        font-size: 3rem;
+        font-size: 2.3rem;
         color: $dark-dark-gray;
-        line-height: 3.5rem;
-        padding-left: 350px;
+        line-height: 2.8rem;
+        margin-left: 25vw
+      }
+
+      table{
+        margin-left: 25vw;
+        margin-right: 10vw;
+        width: 65vw;
+
+        tr{
+          td{
+            max-width: 250px;
+
+            h2,
+            p{
+              width: 250px;
+              margin-left: 0;
+            }
+            
+            h2 + p{
+              min-height: 70px;
+            }
+
+            img{
+              max-width: 80px;
+            }
+          }
+        }
       }
   }
 
