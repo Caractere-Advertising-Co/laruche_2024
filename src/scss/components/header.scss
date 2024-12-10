@@ -6,7 +6,7 @@ header{
   width: 100vw;
   position: relative;
   padding: 20px 0;
-  z-index: 16;
+  overflow: visible;
 
   .bg_top_header{
     position: absolute;
@@ -90,7 +90,6 @@ header{
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
-    overflow: visible;
   
     .col-g {
       width: 15%;
