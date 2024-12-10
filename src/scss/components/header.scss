@@ -250,11 +250,14 @@ header{
                   max-height: 50px;
                   padding: 5px 30px;
                   margin: 0;
+                  min-width: 250px;
     
                   a {
                     color: $secondary-color;
                     text-transform: none;
                     letter-spacing: 0;
+                    font-size: 1rem;
+                    font-weight: 500;
                     width: 90%;
                     display: block;
                     padding: 2% 5%;
