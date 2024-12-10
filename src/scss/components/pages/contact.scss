@@ -1,11 +1,5 @@
 .page-template-contact {
   header{
-    // background: linear-gradient(180deg, #ffcb32 0%, #ffbf36 100%);
-    // background-image: url('./../../assets/images/header_contact.png');
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    // background-position: center center;
-
     .bg_top_header{
       display:none;
     }
@@ -24,7 +18,6 @@
     margin: auto;
 
     .title{
-      margin-bottom: 10vh;
 
       &.titlelvl2{
         font-size: 3rem;
@@ -35,6 +28,95 @@
 
     .content{
       width: 100%;
+
+      table{
+        width: 50%;
+        margin: auto;
+
+        h3{
+          font-size: 1.2rem;
+        }
+
+        a{
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  #contact-introduction{
+    .container{
+      gap: 80px;
+
+      .colg{
+        h2{
+          font-size: 2.3rem;
+          line-height: 2.5rem;
+          margin-bottom: 40px;
+        }
+      }
+
+      .cold{
+        min-width: 60%;
+        margin-top: 50px
+      }
+
+      .contactInfos{
+        padding-top: 50px;
+        margin: 50px auto;
+        border-top: 1px solid $primary-color;
+
+        h3{
+          font-size: 1rem;
+          color: $primary-color;
+        }
+
+        a,
+        p{
+          color: $dark-dark-gray;
+          font-weight: 600;
+        }
+      }
+
+      .cta{
+        border-radius: 5px;
+        margin-bottom: 0;
+
+
+        &::before{
+          content: none;
+        }
+
+        &.cta-dark{
+          background-color: $dark-dark-gray;
+        }
+
+        &.inactif{
+          border: 1px solid $dark-dark-gray;
+          background: none;
+          color: $dark-dark-gray;
+        }
+      }
+    }
+  }
+
+  #formulaire-recherche,
+  #formulaire-vendre{
+    display: none;
+
+    &.active{
+      display: block;
+    }
+  }
+
+  #formulaire{
+    padding-top: 5vh;
+    width: 100%;
+
+    h3{
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
     }
 
     .wpcf7{
@@ -42,12 +124,11 @@
         margin: auto;
         padding-top: 0;
         margin-bottom: 150px;
+        width: 100%;
 
         .basic-questions{
           width: 100%;
-        }
 
-        .estate-question{
           h2{
             margin: 10vh auto 5vh;
           }
@@ -119,9 +200,5 @@
         }
       }
     }
-  }
-
-  #formulaire{
-    padding-top: 5vh;
   }
 }

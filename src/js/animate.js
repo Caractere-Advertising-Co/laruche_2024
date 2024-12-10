@@ -125,3 +125,24 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+var formVente = $('#formulaire-vendre');
+var formSearch = $('#formulaire-recherche');
+var ctaVente = $('#ctaVente');
+var ctaSearch = $('#ctaSearch');
+
+ctaVente.on('click',function(){
+  $(this).toggleClass('inactif');
+  ctaSearch.addClass('inactif');          
+
+  formVente.toggleClass('active');
+  formSearch.removeClass('active');
+});
+
+ctaSearch.on('click',function(){
+  $(this).toggleClass('inactif');
+  ctaVente.addClass('inactif');          
+  formSearch.toggleClass('active');
+  formVente.removeClass('active');
+})
