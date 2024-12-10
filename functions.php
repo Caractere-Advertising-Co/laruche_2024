@@ -57,7 +57,6 @@ function enqueue_custom_scripts() {
         'ajax_url' => admin_url('admin-ajax.php'),
         'total_biens' => wp_count_posts('biens')->publish, // Passer total_biens à JS
     ));
-
 }
 
 /*********************************
@@ -115,6 +114,37 @@ function add_custom_post_biens() {
 		'capability_type'		=> 'post',
 	);
 	register_post_type( 'biens', $args );
+
+	// Déclaration de la Taxonomie
+    $labels = array(
+        'name'                       => _x( 'Provinces', 'Taxonomy General Name', 'text_domain' ),
+		'singular_name'              => _x( 'Province', 'Taxonomy Singular Name', 'text_domain' ),
+		'menu_name'                  => __( 'Province', 'text_domain' ),
+		'all_items'                  => __( 'Toutes les provinces', 'text_domain' ),
+		'parent_item'                => __( 'Parent', 'text_domain' ),
+		'parent_item_colon'          => __( 'Parent :', 'text_domain' ),
+		'new_item_name'              => __( 'Ajouter', 'text_domain' ),
+		'add_new_item'               => __( 'Ajouter', 'text_domain' ),
+		'edit_item'                  => __( 'Editer', 'text_domain' ),
+		'update_item'                => __( 'Modifier', 'text_domain' ),
+		'separate_items_with_commas' => __( 'Separate items with commas', 'text_domain' ),
+		'search_items'               => __( 'Rechercher', 'text_domain' ),
+		'add_or_remove_items'        => __( 'Ajouter/supprimer', 'text_domain' ),
+		'choose_from_most_used'      => __( 'Choose from the most used items', 'text_domain' ),
+		'not_found'                  => __( 'Non trouvé', 'text_domain' ),
+    );
+    
+    $args = array( 
+        'labels'                     => $labels,
+		'hierarchical'               => true,
+		'public'                     => true,
+		'show_ui'                    => true,
+		'show_admin_column'          => true,
+		'show_in_nav_menus'          => true,
+		'show_tagcloud'              => true,
+    );
+
+    register_taxonomy( 'province', 'biens', $args );
 }
 add_action( 'init', 'add_custom_post_biens', 0 );
 

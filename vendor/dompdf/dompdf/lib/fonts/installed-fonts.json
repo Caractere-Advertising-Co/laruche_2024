@@ -1,0 +1,37 @@
+{
+    "exo": {
+        "300_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_300_italic_5b59d575355813b330a4140596c71aef",
+        "italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_italic_6dfac45245451848eda1ada93973202b",
+        "500_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_500_italic_5410fa15022d36a29b3f1839d5151416",
+        "600_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_600_italic_db0c2aefe7de2fa7259f44ea871a8c36",
+        "bold_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_bold_italic_a1ff5fa8a4d519230420df5cba72fc02",
+        "900_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_900_italic_e6a05dc509020040384f69e9e48090ed",
+        "300": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_300_25ce778a6af6f968923325b7f63a15de",
+        "normal": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_normal_3e18b74d61d46a4af3b51a03399369b9",
+        "500": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_500_850178731fa90a1ba4aa4ecddea9f548",
+        "600": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_600_57dde25c80d6baca081c7eee8eb4958b",
+        "bold": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/exo_bold_1bb221e54d7e462582faad41eaf4e305",
+        "900": "exo_900_fc8ab64ee7dc68e3a9752ada44dc476d"
+    },
+    "cinzel": {
+        "normal": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/cinzel_normal_4d7c8ca658ccfaba851a02c4acbfe70c",
+        "500": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/cinzel_500_c59e84385235ba6b48ea08356576f3a4",
+        "600": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/cinzel_600_7fb5865db1bffe415e26e50452b33183",
+        "bold": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/cinzel_bold_693336e029ba4e90cc71f59dfc36125b",
+        "800": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/cinzel_800_cf5718df4f2f14dfe18256bb3f0a4919",
+        "900": "cinzel_900_0992fd87bfb30605ccdf831fb03673f9"
+    },
+    "titillium web": {
+        "200_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_200_italic_317266caa0d09c9abfb606a72a0770fb",
+        "300_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_300_italic_369e32757f731cff9e0a88244e5d345b",
+        "italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_italic_bd929b61c9c736800ea9a59e44dd9cca",
+        "600_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_600_italic_ca747e6e2f33c6dfbe717c76ed6c1aff",
+        "bold_italic": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_bold_italic_cf1ebc94415651a421621922bd87dd74",
+        "200": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_200_f40816208d6294c12b2fbfbd1b6edaa5",
+        "300": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_300_f0ae18ac87bb87a400a786e0fde3dfb4",
+        "normal": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_normal_2cdc3fece50613c2ee720daaab9c6fd7",
+        "600": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_600_a6babae12ec1d1836f78fb9a0c92c72e",
+        "bold": "\/var\/www\/vhosts\/chateaudesthermes.be\/httpdocs\/wp-content\/themes\/ChateauDesThermes\/vendor\/dompdf\/dompdf\/lib\/fonts\/titillium_web_bold_e4e730d61b9e9c9192e3ecb055313084",
+        "900": "titillium_web_900_2a22f98c1a76c71b02d9d4ead1bda281"
+    }
+}
