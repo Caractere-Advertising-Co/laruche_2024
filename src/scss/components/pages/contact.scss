@@ -44,6 +44,8 @@
       gap: 80px;
 
       .colg{
+        width: 40%;
+
         h2{
           font-size: 2.3rem;
           line-height: 2.5rem;
@@ -52,7 +54,7 @@
       }
 
       .cold{
-        min-width: 60%;
+        width: 60%;
         margin-top: 50px
       }
 
@@ -63,7 +65,8 @@
 
         h3{
           font-size: 1rem;
-          line-height: 1rem;
+          line-height: 1.2rem;
+          margin-bottom: 20px;
           color: $primary-color;
         }
 
