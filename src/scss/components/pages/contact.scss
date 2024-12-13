@@ -76,7 +76,9 @@
       .cta{
         border-radius: 5px;
         margin-bottom: 0;
-
+        font-size: .9rem;
+        width: 50%;
+        text-transform: none;
 
         &::before{
           content: none;
