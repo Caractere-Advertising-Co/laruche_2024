@@ -13,6 +13,11 @@
     position: relative;
     width: fit-content;
 
+    &::before{
+      content:'';
+      
+    }
+
     strong{
       position: relative;
       z-index: 1;
