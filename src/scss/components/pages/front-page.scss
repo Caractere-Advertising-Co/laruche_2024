@@ -317,6 +317,11 @@
         padding: 10px 15px;
         border-radius: 5px;
 
+        &::before{
+          margin-top: 0;
+          margin-left: -15px;
+        }
+
         svg{
           height: 20px;
           width: 40px;
