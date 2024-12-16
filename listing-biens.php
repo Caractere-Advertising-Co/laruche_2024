@@ -18,7 +18,7 @@ get_header();?>
 
     <div class="container">
         <?php
-            if(is_page(843)):
+            if(is_page(28951)):
                 echo '<h1>Découvrez tous <br><strong>nos biens à vendre</strong></h1>';
             else :
                 echo '<h1>Découvrez tous <br><strong>nos biens à louer</strong></h1>';
@@ -30,7 +30,6 @@ get_header();?>
 <?php
 
 get_template_part( 'templates-parts/section-listing-bien' );
-
 get_footer();
 
 ?>
