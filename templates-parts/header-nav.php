@@ -8,6 +8,8 @@ $mail       = get_field('email','options');
 $icon_email = get_field('icon_email','options');
 $icon_phone = get_field('icone_phone','options');
 
+$btnCta       = get_field('cta_listing','options');
+
 if($bg_header):?>
     <div class="bg_top_header">
         <img src="<?php echo $bg_header['url'];?>" alt="<?php echo $bg_header['title'];?>" />
@@ -66,6 +68,10 @@ if($bg_header):?>
                 'theme_location' => 'main',
                 'menu_class' => 'semi-bold nav'
             ));?>
+
+            <?php if(!is_front_page(  )):?>
+                <?php if($btnCta): echo '<div class="btn cta"><a href="'.$btnCta['url'].'">'.substr($btnCta['title'],0,11).'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
+            <?php endif;?>
         </div>
 
         <div class="hamburger-menu">

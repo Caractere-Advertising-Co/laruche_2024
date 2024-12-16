@@ -178,6 +178,8 @@ header{
 
       .primary-navigation {
         margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
     
         #menu-navigation-principale,
         #menu-navigation-principale-neerlandais {
@@ -194,12 +196,12 @@ header{
             position: relative;
             margin-bottom:0;
             text-align: center;
-            min-width: 110px;
+            min-width: 100px;
     
             a {
               color: $dark-gray;
               font-weight: 800;
-              font-size: 1rem;
+              font-size: .9rem;
               transition: font-weight ease-out 200ms;
               position: relative;
 
@@ -254,7 +256,7 @@ header{
                     color: $secondary-color;
                     text-transform: none;
                     letter-spacing: 0;
-                    font-size: 1rem;
+                    font-size: .9rem;
                     font-weight: 500;
                     width: 90%;
                     display: block;
@@ -291,7 +293,7 @@ header{
                       a {
                         color: $secondary-color;
                         text-transform: none;
-                        font-size: 0.8rem;
+                        font-size: 0.9rem;
                         font-weight: 300;
     
                         &:hover {
@@ -303,6 +305,23 @@ header{
                 }
               }
             }
+          }
+        }
+
+        .cta.btn{
+          height: 20px;
+          display: flex;
+          justify-content: space-between;
+          background-color: $red-color;
+
+          a{
+            letter-spacing: 1px;
+            font-size: .8rem;
+            font-weight: 600;
+          }
+
+          svg{
+            width: 25px;
           }
         }
       }
