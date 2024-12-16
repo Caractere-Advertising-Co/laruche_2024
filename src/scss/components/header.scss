@@ -84,7 +84,7 @@ header{
   }
   
   .header {
-    width: 75vw;
+    width: 85vw;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -155,8 +155,7 @@ header{
           }
         }
 
-        
-
+    
         p{
           border-right: 1px solid $primary-color;
           padding-right: 20px;
@@ -200,7 +199,7 @@ header{
             a {
               color: $dark-gray;
               font-weight: 800;
-              font-size: 1.05rem;
+              font-size: 1rem;
               transition: font-weight ease-out 200ms;
               position: relative;
 
