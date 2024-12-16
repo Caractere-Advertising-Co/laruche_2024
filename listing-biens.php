@@ -19,9 +19,9 @@ get_header();?>
     <div class="container">
         <?php
             if(is_page(843)):
-                echo '<h1>Tous nos biens à <strong>vendre</strong></h1>';
+                echo '<h1>Découvrez tous <br><strong>nos biens à vendre</strong></h1>';
             else :
-                echo '<h1>Tous nos biens à <strong>louer</strong></h1>';
+                echo '<h1>Découvrez tous <br><strong>nos biens à louer</strong></h1>';
             endif;
         ?>
     </div>
