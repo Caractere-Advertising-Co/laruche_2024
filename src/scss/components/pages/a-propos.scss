@@ -11,8 +11,30 @@
         z-index: 10;
 
         h2{
+          position:relative;
+          padding-left: 20px;
+          
           strong{
-            color: $dark-dark-gray;
+            font-weight: 800;
+            color: $secondary-color;
+          }
+    
+          &::before{
+            content:'';
+            display: block;
+            height: 80px;
+            aspect-ratio: .8660254038;
+            background-image: url('https://laruche.caractere-web.be/wp-content/uploads/2024/12/title.png');
+            background-size: 80px;
+            background-repeat: no-repeat;
+            text-align: center;
+            position:absolute;
+            left: -20px;
+            top: -10px;
+            color: $light;
+            font-size: 2rem;
+            opacity: 1;
+            transition: all ease-in 300ms;
           }
         }
       }
