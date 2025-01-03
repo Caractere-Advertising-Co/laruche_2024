@@ -74,39 +74,6 @@ $(document).ready(function () {
       animate();
     });
   });
-
-  /* Scroll animation */
-
-  if (window.location.pathname == "/") {
-    gsap.to(".anim-img-1", {
-      y: 300,
-      duration: 1.5,
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: ".galeries-home",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".anim-img-2", {
-      y: -500,
-      duration: 2.5,
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: ".galeries-home",
-        scrub: true,
-      },
-    });
-
-    gsap.to(".anim-img-3", {
-      y: -300,
-      duration: 2.5,
-      ease: "power1.out",
-      scrollTrigger: {
-        trigger: ".galeries-home",
-      },
-    });
-  }
 });
 
 /* Accordion animation */

@@ -4,18 +4,18 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="La Ruche immobilière"/>
+    <meta name="description" content="Vlévia"/>
 
     <link rel="stylesheet" href="https://use.typekit.net/ovg4lmv.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/53b095485a.js" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="<?php echo get_template_directory_uri();?>/dist/main.bundle.js" defer></script>
+    <script src="<?php echo get_template_directory_uri();?>/dist/main.bundle.js"></script>
     <script src="<?php echo get_template_directory_uri();?>/dist/style.bundle.js"></script>
-    </script>
 
     <?php wp_head(); ?>
 </head>
