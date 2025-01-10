@@ -25,7 +25,7 @@
                 margin-bottom: 0;
                 font-size: .7rem;
                 line-height: 1.2rem;
-                width: 240px;
+                letter-spacing: 3px;
             }
         
             form{
@@ -37,8 +37,17 @@
                     border: none;
                     font-size: .7rem;
                     line-height: 1.2rem;
-                    width: 300px;
+                    width: 250px;
                     background: $dark-dark-gray;
+                    cursor: pointer;
+
+                    &::before{
+                        content: inherit;
+                    }
+
+                    &:hover{
+                        background-color: $middle-gray;
+                    }
                 }
             }
         }
