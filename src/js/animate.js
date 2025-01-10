@@ -1,8 +1,4 @@
 import inView from "in-view";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger.js";
-
-gsap.registerPlugin(ScrollTrigger);
 
 $(document).ready(function () {
   //IN-VIEW
@@ -47,33 +43,69 @@ $(document).ready(function () {
     makeMagic(el, "fade-in-top");
   });
 
-  /* ANIMATION NUMBER */
-  const counters = document.querySelectorAll(".animate-number");
-  const speed = 100;
 
-  inView(".grid_stats").on("enter", (e) => {
-    counters.forEach((counter) => {
-      const animate = () => {
-        const value = +counter.dataset.number;
-        const data = +counter.innerText;
-
-        const time = value / speed;
-        if (data < value) {
-          counter.innerText = Math.ceil(data + time);
-
-          if (value < 100) {
-            setTimeout(animate, 40);
-          } else {
-            setTimeout(animate, 2);
-          }
-        } else {
-          counter.innerTexte = value;
-        }
-      };
-
-      animate();
-    });
+  var formVente = $('#formulaire-vendre');
+  var formSearch = $('#formulaire-recherche');
+  var ctaVente = $('#ctaVente');
+  var ctaSearch = $('#ctaSearch');  
+  
+  ctaVente.on('click',function(){
+    $(this).toggleClass('inactif');
+    ctaSearch.addClass('inactif');          
+  
+    formVente.toggleClass('active');
+    formSearch.removeClass('active');
   });
+  
+  ctaSearch.on('click',function(){
+    $(this).toggleClass('inactif');
+    ctaVente.addClass('inactif');          
+    formSearch.toggleClass('active');
+    formVente.removeClass('active');
+  });
+
+    // Fonction pour obtenir la valeur d'une query string
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+  }
+
+  // Vérifiez si on est sur la page Contact
+  if (window.location.pathname.includes('/contact')) {
+    const idBien = getQueryParam('sujet');
+
+    const ctaSearch = $('#ctaSearch'); 
+    const formSearch = $('#formulaire-recherche .wpcf7-form'); 
+
+    if (ctaSearch.length && formSearch.length) {
+      ctaSearch.trigger('click'); // Active le formulaire "Recherche"
+
+      if (idBien) {
+        setTimeout(function () {
+          if (formSearch.length) {
+            const selectBien = formSearch.find('select[name="select-420"]'); // Remplacez par le name réel du select
+        
+            if (selectBien.length) {
+              selectBien.val('Acheter').change(); // Changez la valeur du select et déclenchez l'événement "change"
+            }
+
+            const groupSearchBien = formSearch.find('[data-id="group-searchBien"]'); // Groupe conditionnel
+
+            if (groupSearchBien.length) {
+              groupSearchBien.css('display', 'block'); // Applique le style
+            }
+
+            // Remplissez le champ "Type de bien"
+            const typeDeBienField = formSearch.find('input[name="type-bien"]'); // Remplacez par le name réel du champ
+
+            if (typeDeBienField.length) {
+              typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
+            }
+          } 
+        }, 100);
+      }
+    }
+  }
 });
 
 /* Accordion animation */
@@ -92,24 +124,3 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-
-
-var formVente = $('#formulaire-vendre');
-var formSearch = $('#formulaire-recherche');
-var ctaVente = $('#ctaVente');
-var ctaSearch = $('#ctaSearch');
-
-ctaVente.on('click',function(){
-  $(this).toggleClass('inactif');
-  ctaSearch.addClass('inactif');          
-
-  formVente.toggleClass('active');
-  formSearch.removeClass('active');
-});
-
-ctaSearch.on('click',function(){
-  $(this).toggleClass('inactif');
-  ctaVente.addClass('inactif');          
-  formSearch.toggleClass('active');
-  formVente.removeClass('active');
-})
