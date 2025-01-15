@@ -72,8 +72,7 @@ $icones = get_field('icones_biens','options');
 <section id="introduction-single-bien">
     <div class="container">
         <h1>
-            <?php echo '<strong>' . $categorie . '</strong> - ' . $typeBien .' - <strong>'. $lieu . '</strong><br>';?>
-            <?php echo '<span class="price">'. $prix . ' €</span>';?>
+            <?php echo '<strong>' . $lieu . '</strong> - <span class="price">'. $prix . ' €</span>';?>
         </h1>
     </div>
 
