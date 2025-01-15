@@ -87,7 +87,7 @@ $icones = get_field('icones_biens','options');
 
     <div class="container">
         <?php if($ctaNotaire):?>
-            <a href="<?php echo $ctaNotaire['url'];?>" target="_blank"><?php echo $ctaNotaire['name'];?></a>
+            <a href="<?php echo $ctaNotaire['url'];?>" target="_blank"><?php echo $ctaNotaire['title'];?></a>
         <?php endif;?>
     </div>
 </section>
