@@ -328,7 +328,7 @@ header{
   
     .hamburger-menu {
       display: none;
-      stroke: #fff;
+      stroke: $light;
     }
   }
 
@@ -339,14 +339,14 @@ header{
 
 .swiper-hero{
   width: 90vw;
-  margin: 50px auto 70px 0;
+  margin: 50px auto 150px 0;
 
   .swiper-wrapper{
       h2{
         font-size: 2.3rem;
         color: $dark-dark-gray;
         line-height: 2.8rem;
-        margin-left: 25vw
+        margin-left: 21vw
       }
 
       table{
@@ -377,8 +377,16 @@ header{
       }
   }
 
+  .navigation-slider{
+    margin-right: 0;
+    margin-left: auto;
+  }
+
   .swiper-pagination{
     text-align: right;
+    right: 0;
+    left: auto;
+    width: 100px;
 
     .swiper-pagination-bullet-active{
       color: $primary-color;

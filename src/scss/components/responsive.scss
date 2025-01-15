@@ -14,6 +14,14 @@
     line-height: 2.5rem;
   }
 
+  .nodesktop{
+    display: block;
+  }
+
+  .nomobile{
+    display: none !important;
+  }
+
   // COMMUN
 
   .subtitle {
@@ -40,6 +48,41 @@
 
       img{
         margin: auto;
+      }
+    }
+
+    .btn.cta.nodesktop{
+      height: 20px;
+      top: 35px;
+      margin-left: auto;
+      border-radius: 0;
+      overflow: hidden;
+      background: $red-color;
+      padding: 10px 25px;
+      letter-spacing: 0;
+      z-index: 16;
+      display: flex;
+      align-items: center;
+      width: calc(100% - 50px);
+      justify-content: space-between;
+
+      svg{
+        height: 30px;
+        width: 50px;
+      }
+  
+      a{
+        font-weight: 600;
+        margin: 0;
+        font-size: .85rem;
+      }
+  
+      &::before{
+        margin-top: 0;
+      }
+  
+      &.hidden{
+        display: none;
       }
     }
 
@@ -91,11 +134,10 @@
           margin:auto;
           width: fit-content;
           display: block;
-          margin-top: 90px;
+          margin-top: 60px;
           
           .logo{
-            width: 120px;
-            height: auto;
+            height: 165px;
           }
         }
 
@@ -113,24 +155,32 @@
         .primary-navigation {
           border-bottom: 3px solid $light-gray;
           padding-bottom: 10px;
+          justify-content: center;
+          width: 100%;
+
+          .menu-navigation-principale-container{
+            width: 100%;
+          }
 
           #menu-navigation-principale{
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 5px;
+            width: 100%;
 
             li{
               text-align: center;
               margin: auto;
               width: 100%;
+              padding-top: 5px;
 
               a{
-                font-size: 1rem;
+                font-size: .9rem;
               }
             }
 
             li + li {
-              border-top: 1px solid $light-gray;
+              border-top: 1px dotted $light-gray;
             }
           }
         }
@@ -143,13 +193,48 @@
       margin: 30px auto 100px;
 
       .swiper-wrapper{
-        h2{
-          font-size: 2rem;
-          line-height: 2.5rem;
-          margin: 50px 0;
-          text-align: center;
+        margin-bottom: 50px;
+        .swiper-slide{
+          h2{
+            font-size: 1.8rem;
+            line-height: 2rem;
+            margin: 150px 0 100px;
+            text-align: center;
+          } 
+
+          table{
+            margin: auto;
+            width: 100%;
+
+            tr{
+              display: flex;
+              flex-direction: column;
+
+              td{
+                max-width: 100%;
+
+                img{
+                  margin: auto;
+                }
+
+                h2{
+                  margin: auto;
+                  text-align: center;
+                  width: 100%;
+                  font-size: 1.5rem;
+                }
+
+                p{
+                  text-align: center;
+                  width: 100%;
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
         }
       }
+      
     }
 
     .megamenu {
@@ -297,7 +382,7 @@
   }
 
   #section-introduction {
-    padding-bottom: 100px;
+    padding: 0;
 
     .container{
       .col-g {
@@ -330,9 +415,18 @@
   
     .btn{
       top: 0px;
+      padding: 7px 15px;
+      margin: auto;
+      margin-top: -50px;
 
       a{
         text-align: left;
+        letter-spacing: 0;
+        font-size: .85rem;
+      }
+
+      svg{
+        width: 30px;
       }
     }
   
@@ -370,7 +464,8 @@
   #card-listing{
     .columns{
       .col{
-        width: calc(100% - 120px);
+        width: calc(100% - 60px);
+        padding: 25px 30px;
       }
     }
   }
@@ -430,6 +525,13 @@
   .page-template-contact {
     #contact-introduction,
     #formulaire{
+
+      .container{
+        .colg,
+        .cold{
+          width: 100%;
+        }
+      }
   
       .content{
         width: 100%;
@@ -956,6 +1058,24 @@
       .container{
         .cold{
           padding-left: 0;
+        }
+      }
+    }
+
+    #section-avantages{
+      padding: 50px 0;
+
+      .columns{
+        .col{
+          width: 100%;
+
+        }
+
+        .col + .col{
+          .block-img{
+            border-left: none;
+            height: 120px;
+          }
         }
       }
     }

@@ -26,6 +26,10 @@ if($bg_header):?>
     </div>
 </div>
 
+<?php if(!is_front_page(  )):?>
+    <?php if($btnCta): echo '<div class="btn cta nodesktop"><a href="'.$btnCta['url'].'">'.substr($btnCta['title'],0,110).'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
+<?php endif;?>
+
 <div class="header navigation">
     <div class="col-g">
         <a href="<?php echo home_url();?>">
@@ -64,13 +68,17 @@ if($bg_header):?>
         </div>
     
         <div class="primary-navigation">
-            <?php wp_nav_menu(array(
-                'theme_location' => 'main',
-                'menu_class' => 'semi-bold nav'
-            ));?>
+            
+            <?php 
+            if(!is_front_page(  )): echo '<div class="nomobile">'; endif;
+                wp_nav_menu(array(
+                    'theme_location' => 'main',
+                    'menu_class' => 'semi-bold nav'
+                ));
+            if(!is_front_page(  )): echo '</div>';endif;?>
 
             <?php if(!is_front_page(  )):?>
-                <?php if($btnCta): echo '<div class="btn cta"><a href="'.$btnCta['url'].'">'.substr($btnCta['title'],0,110).'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
+                <?php if($btnCta): echo '<div class="btn cta nomobile"><a href="'.$btnCta['url'].'">'.substr($btnCta['title'],0,110).'</a><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></div>'; endif;?>
             <?php endif;?>
         </div>
 
@@ -91,13 +99,3 @@ if($bg_header):?>
         </div>
     </div>
 </div>
-
-<!--<div class="megamenu">
-    <div class="primary-navigation">
-        <?php wp_nav_menu(array(
-                'menu' => 'Navigation principale',
-                'theme_location' => 'main',
-                'menu_class' => 'semi-bold nav'
-             ));?>
-    </div>
-</div>-->
