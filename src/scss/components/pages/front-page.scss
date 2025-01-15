@@ -231,11 +231,7 @@
         background-color: $primary-color;
       }
 
-      &:hover{
-        &::before{
-          background-color: $primary-color;
-        }
-      }
+
     }
   }
 }
