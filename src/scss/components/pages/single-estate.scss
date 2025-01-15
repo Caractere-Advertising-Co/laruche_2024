@@ -51,6 +51,18 @@
                 }
             }
         }
+
+        .container{
+            text-align: center;
+
+            .ctanotaire{
+                text-align: center;
+                color: $dark-dark-gray;
+                font-weight: 500;
+                margin: 20px auto 0;
+                display: block;
+            }
+        }
     }
 
     #description-biens{
