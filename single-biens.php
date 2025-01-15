@@ -37,6 +37,8 @@ $imgTr         = get_field('image-transition');
 $contentTr     = get_field('content-transition');
 $ctaTr         = get_field('cta-transition');
 
+$ctaNotaire    = get_field('cta-notaire','options');
+
 $introduction  = get_field('description');
 $adresse       = get_field('adresse_bien');
 $galerie       = get_field('galerie');
@@ -81,6 +83,12 @@ $icones = get_field('icones_biens','options');
             <button type="submit" class="cta" id="btn" name="cf-submit"
                 value=""><?php _e('Fiche du bien', 'ajd') ?></button>
         </form>
+    </div>
+
+    <div class="container">
+        <?php if($ctaNotaire):?>
+            <a href="<?php echo $ctaNotaire['url'];?>" target="_blank"><?php echo $ctaNotaire['name'];?></a>
+        <?php endif;?>
     </div>
 </section>
 
