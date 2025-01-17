@@ -48,9 +48,10 @@
 
                         endwhile;?>
                     </div>
-                    <div class="navigation-slider">
-                        <div class="swiper-button-prev swiper-button-hero-prev"></div>
+
+                    <div class="swiper-button-prev swiper-button-hero-prev"></div>
                         <div class="swiper-button-next swiper-button-hero-next"></div>
+                    <div class="navigation-slider">
                     </div>     
                     <div class="swiper-pagination"></div>
                 </div>

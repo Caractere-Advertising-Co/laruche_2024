@@ -338,7 +338,7 @@ header{
 }
 
 .swiper-hero{
-  width: 90vw;
+  width: 100vw;
   margin: 50px auto 150px 0;
 
   .swiper-wrapper{
@@ -378,15 +378,37 @@ header{
   }
 
   .navigation-slider{
-    margin-right: 0;
-    margin-left: auto;
+    right: 10vw;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev{
+    bottom: calc(50% - 50px);
+    background-color: $light-gray !important;
+    opacity: .8;
+    height: 100px;
+  }
+
+  .swiper-button-next{
+    right: 0;
+    left: auto;
+  }
+
+  .swiper-button-prev{
+    left: 0;
+    right: auto;
   }
 
   .swiper-pagination{
-    text-align: right;
-    right: 0;
-    left: auto;
-    width: 100px;
+    // text-align: right;
+    // right: 0;
+    // left: auto;
+    // width: 100px;
+    text-align: center;
+    width: 100vw;
+    margin: auto;
 
     .swiper-pagination-bullet-active{
       color: $primary-color;
