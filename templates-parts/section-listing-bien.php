@@ -20,17 +20,24 @@ if(is_front_page(  )):
     );
 else : 
     $args = array(
-        'post_type' => 'biens',
-        'post_status' => 'publish',
-        'paged' => $paged,
-        'meta_key'      => 'type_de_bien',
-        'meta_value'    => $type,
+        'post_type'      => 'biens',
+        'post_status'    => 'publish',
+        'paged'          => $paged,
         'posts_per_page' => 9,
-        'orderby'           => 'meta_value',
-        'order'             => 'DESC'
-
+        'meta_query'     => array(
+            array(
+                'key'     => 'type_de_bien',
+                'value'   => $type,
+                'compare' => '='
+            )
+        ),
+        'meta_key'       => 'prix',
+        'orderby'        => 'meta_value_num',
+        'order'          => 'ASC'
     );
-endif;?>
+endif;
+
+?>
 
 <section id="listing-biens">
     <?php if(is_front_page(  )):?>
