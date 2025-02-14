@@ -1090,15 +1090,17 @@
   #listing-biens{
     .cta-biens{
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: flex-start;
       margin-bottom: 50px;
+      flex-wrap: wrap;
 
       .page-numbers{
         margin-bottom: 0;
         padding: 0;
         letter-spacing: 0;
 
-        &.next{
+        &.next,
+        &.prev{
           padding:0 15px;
         }
       }
