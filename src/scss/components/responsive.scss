@@ -1084,7 +1084,19 @@
   }
 }
 
-/* Page Séminaire */
+/* Page Listing */
+
+.page-template-listing-biens{
+  #listing-biens{
+    .cta-biens{
+      flex-direction: row;
+
+      a{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 
 #citation {
   .top_content {

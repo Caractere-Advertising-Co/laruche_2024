@@ -97,6 +97,11 @@ endif;
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
                         <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb['url'];?>');"<?php endif;?>>
                             <?php if($new):?><span class="statut">New</span><?php endif;?>
+                            <?php if($statut):
+                                if($statut == "Vendu"):?>
+                                    <span class="statutBien">Vendu !</span>
+                                <?php endif;
+                            endif;?>
 
                             <?php if($tyPEB):?>
                                 <div class="logo_peb">
