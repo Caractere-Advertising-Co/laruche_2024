@@ -201,7 +201,7 @@ function update_acf_galleries() {
             $image_urls = get_field('ancienne_galerie'); // Remplace par l'ancien champ contenant les URLs
             if (!$image_urls) continue;
 
-            $image_urls = explode(',', $image_urls); // Si stockées en liste CSV
+            $image_urls = explode('|', $image_urls); // Si stockées en liste CSV
             $image_ids = [];
 
             foreach ($image_urls as $image_url) {
