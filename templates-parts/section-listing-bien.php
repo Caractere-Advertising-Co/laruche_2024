@@ -89,7 +89,7 @@ endif;
                 $chambre   = get_field('chambres');
                 $surfHab   = get_field('surf_habitable');
                 $surfTot   = get_field('surf_totale');
-                $fairOff   = get_field('faireOffre');
+                $fairOff   = get_field('faireoffre');
                 $new       = get_field('new');
                 $validLink = array('Vendu','Loué');
             ?>
