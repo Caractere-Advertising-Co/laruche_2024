@@ -93,11 +93,9 @@ endif;
                 $new       = get_field('new');
                 $validLink = array('Vendu','Loué');
             ?>
-
-<?php             var_dump($thb)?>
                 <div class="card">
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
-                        <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb;?>');"<?php endif;?>>
+                        <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb[0];?>');"<?php endif;?>>
                             <?php if($new):?><span class="statut">New</span><?php endif;?>
                             <?php if($statut):
                                 if($statut == "Vendu"):?>
