@@ -77,7 +77,7 @@ endif;
         if($biens->have_posts()):
             while($biens->have_posts()): $biens->the_post();
                 $title     = get_the_title();
-                $thb       = get_the_post_thumbnail( 'medium' );
+                $thb       = wp_get_attachment_image_src( get_post_thumbnail_id( $biens->ID ), 'single-post-thumbnail' );
                 $tyPEB     = get_field('type_peb');
                 $statut    = get_field('statut_bien');
                 $peb       = get_field('PEB');
