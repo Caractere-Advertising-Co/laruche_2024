@@ -77,7 +77,7 @@ endif;
         if($biens->have_posts()):
             while($biens->have_posts()): $biens->the_post();
                 $title     = get_the_title();
-                $thb       = get_the_post_thumbnail_url( );
+                $thb       = get_the_post_thumbnail( );
                 $tyPEB     = get_field('type_peb');
                 $statut    = get_field('statut_bien');
                 $peb       = get_field('PEB');
@@ -93,6 +93,8 @@ endif;
                 $new       = get_field('new');
                 $validLink = array('Vendu','Loué');
             ?>
+
+<?php             var_dump($thb)?>
                 <div class="card">
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
                         <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb;?>');"<?php endif;?>>
