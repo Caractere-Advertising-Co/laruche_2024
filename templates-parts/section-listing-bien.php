@@ -77,7 +77,7 @@ endif;
         if($biens->have_posts()):
             while($biens->have_posts()): $biens->the_post();
                 $title     = get_the_title();
-                $thb       = get_field('miniature');
+                $thb       = get_the_post_thumbnail_url( );
                 $tyPEB     = get_field('type_peb');
                 $statut    = get_field('statut_bien');
                 $peb       = get_field('PEB');
