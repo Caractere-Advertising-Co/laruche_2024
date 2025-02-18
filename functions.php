@@ -104,9 +104,10 @@ function add_custom_post_biens() {
 		'show_in_menu'          => true,
 		'menu_position'         => 4,
 		'menu_icon'             => 'dashicons-feedback',
+		'show_in_rest' => true, // Important pour Gutenberg
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
-		'supports'				=> array('title', 'revisions', 'author', 'thumbnail'),
+		'supports'				=> array('title', 'revisions', 'author', 'editor', 'thumbnail'),
 		'can_export'            => true,
 		'has_archive'           => true,
 		'exclude_from_search'   => false,
@@ -184,3 +185,37 @@ function load_more_biens() {
 
     wp_die();
 }
+
+function update_acf_galleries() {
+    $args = array(
+        'post_type'      => 'biens',
+        'posts_per_page' => -1,
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            $image_urls = get_field('ancienne_galerie'); // Remplace par l'ancien champ contenant les URLs
+            if (!$image_urls) continue;
+
+            $image_urls = explode(',', $image_urls); // Si stockées en liste CSV
+            $image_ids = [];
+
+            foreach ($image_urls as $image_url) {
+                $attachment_id = attachment_url_to_postid(trim($image_url));
+                if ($attachment_id) {
+                    $image_ids[] = $attachment_id;
+                }
+            }
+
+            if (!empty($image_ids)) {
+                update_field('acf_galerie', $image_ids, get_the_ID()); // Remplace par le nom du champ ACF de la galerie
+            }
+        }
+        wp_reset_postdata();
+    }
+}
+update_acf_galleries();
