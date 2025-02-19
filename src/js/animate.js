@@ -64,60 +64,48 @@ $(document).ready(function () {
     formVente.removeClass('active');
   });
 
-    // Fonction pour obtenir la valeur d'une query string
-    function getQueryParam(param) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(param);
-  }
 
-  // Vérifiez si on est sur la page Contact
-  if (window.location.pathname.includes('/contact')) {
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
+
+if (window.location.pathname.includes('/contact')) {
     const idBien = getQueryParam('sujet');
-
-    const ctaSearch = $('#ctaSearch'); 
-    const formSearch = $('#formulaire-recherche .wpcf7-form'); 
+    const ctaSearch = $('#ctaSearch');
+    const formSearch = $('#formulaire-recherche .wpcf7-form');
 
     if (ctaSearch.length && formSearch.length) {
-      ctaSearch.trigger('click'); // Active le formulaire "Recherche"
+        ctaSearch.trigger('click');
+        console.log('trigger');
 
-      console.log('trigger');
-
-      if (idBien) {
-          if (formSearch.length) {
-            const selectBien = formSearch.find('select[name="select-420"]'); // Remplacez par le name réel du select
-        
+        if (idBien) {
+            const selectBien = formSearch.find('select[name="select-420"]');
             if (selectBien.length) {
-              selectBien.val('Acheter').change(); // Changez la valeur du select et déclenchez l'événement "change"
+                selectBien.val('Acheter').trigger('input').trigger('change');
+                console.log('selectbien changed');
             }
 
-            console.log('selectbien changed');
+            setTimeout(function () {
+                const groupSearchBien = formSearch.find('[data-id="group-searchBien"]');
+                if (groupSearchBien.length) {
+                    groupSearchBien.css('display', 'block');
+                    console.log('Groupe conditionnel forcé visible après timeout');
+                }
+            }, 500);
 
-            const groupSearchBien = formSearch.find('[data-id="group-searchBien"]'); // Groupe conditionnel
-
-            if (groupSearchBien.length) {
-              groupSearchBien.css('display', 'block'); // Applique le style
-            }
-
-            console.log('groupsearchActive');
-            
-
-            // Remplissez le champ "Type de bien"
-            const typeDeBienField = formSearch.find('input[name="type-bien"]'); // Remplacez par le name réel du champ
-
+            const typeDeBienField = formSearch.find('input[name="type-bien"]');
             if (typeDeBienField.length) {
-              typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
+                typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien);
+                console.log('Champ "Type de bien" rempli avec :', idBien);
             }
-
-            console.log('typeDebien changed');
-            
-          } 
-      }
+        }
     }
-  }
-});
+}
 
+// Capture les erreurs non gérées
 window.addEventListener('unhandledrejection', function(event) {
-  console.error('Erreur détectée :', event.reason);
+    console.error('Erreur détectée :', event.reason);
 });
 
 /* Accordion animation */
