@@ -65,48 +65,53 @@ $(document).ready(function () {
   });
 
 
-  function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
+  document.addEventListener('wpcf7DOMContentLoaded', function () {
+    console.log('Contact Form 7 chargé, exécution du script...');
+    initFormModification(); // Appelle la fonction après le chargement de CF7
+  });
 
-if (window.location.pathname.includes('/contact')) {
-    const idBien = getQueryParam('sujet');
-    const ctaSearch = $('#ctaSearch');
-    const formSearch = $('#formulaire-recherche .wpcf7-form');
+  function initFormModification() {
+    jQuery(document).ready(function ($) {
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
 
-    if (ctaSearch.length && formSearch.length) {
-        ctaSearch.trigger('click');
-        console.log('trigger');
+        if (window.location.pathname.includes('/contact')) {
+            const idBien = getQueryParam('sujet');
+            const ctaSearch = $('#ctaSearch');
+            const formSearch = $('#formulaire-recherche .wpcf7-form');
 
-        if (idBien) {
-            const selectBien = formSearch.find('select[name="select-420"]');
-            if (selectBien.length) {
-                selectBien.val('Acheter').trigger('input').trigger('change');
-                console.log('selectbien changed');
-            }
+            if (ctaSearch.length && formSearch.length) {
+                ctaSearch.trigger('click');
+                console.log('trigger');
 
-            setTimeout(function () {
-                const groupSearchBien = formSearch.find('[data-id="group-searchBien"]');
-                if (groupSearchBien.length) {
-                    groupSearchBien.css('display', 'block');
-                    console.log('Groupe conditionnel forcé visible après timeout');
+                if (idBien) {
+                    const selectBien = formSearch.find('select[name="select-420"]');
+                    if (selectBien.length) {
+                        selectBien.val('Acheter').trigger('input').trigger('change');
+                        console.log('selectbien changed');
+                    }
+
+                    setTimeout(function () {
+                        const groupSearchBien = formSearch.find('[data-id="group-searchBien"]');
+                        if (groupSearchBien.length) {
+                            groupSearchBien.css({ 'display': 'block', 'visibility': 'visible', 'opacity': '1' });
+                            console.log('Groupe conditionnel forcé visible après timeout');
+                        }
+                    }, 500);
+
+                    const typeDeBienField = formSearch.find('input[name="type-bien"]');
+                    if (typeDeBienField.length) {
+                        typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien);
+                        console.log('Champ "Type de bien" rempli avec :', idBien);
+                    }
                 }
-            }, 500);
-
-            const typeDeBienField = formSearch.find('input[name="type-bien"]');
-            if (typeDeBienField.length) {
-                typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien);
-                console.log('Champ "Type de bien" rempli avec :', idBien);
             }
         }
-    }
+    });
 }
 
-// Capture les erreurs non gérées
-window.addEventListener('unhandledrejection', function(event) {
-    console.error('Erreur détectée :', event.reason);
-});
 
 /* Accordion animation */
 
