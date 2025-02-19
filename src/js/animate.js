@@ -112,7 +112,7 @@ $(document).ready(function () {
             console.log('typeDebien changed');
             
           } 
-        }, 100);
+        }, 200);
       }
     }
   }
