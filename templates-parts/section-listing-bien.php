@@ -122,7 +122,8 @@ endif;
                             <?php 
                                 echo $fairOff ? 'Foàpd ' : ''; 
                                 if($prix): echo $prix ; endif;
-                                echo $typeBien; 
+
+                                echo $typeBien = 'À Louer' ? ' / mois' : '';
 
                                 /*echo $typeBien = 'À Louer' ? '/mois' : '';*/
                             ?>
