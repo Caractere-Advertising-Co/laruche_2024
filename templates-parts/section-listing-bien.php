@@ -124,7 +124,7 @@ endif;
                                 echo $fairOff ? 'Foàpd ' : '';
                                 if($prix): echo $prix ; endif;
 
-                                echo $typeBien = 'À Louer' ? '/mois' : '';
+                                /*echo $typeBien = 'À Louer' ? '/mois' : '';*/
                             ?>
                         </div>
                     <?php echo in_array($statut,$validLink) ?  '' : '</a>' ; ?>
