@@ -379,7 +379,7 @@ header{
             p{
               width: 250px;
               margin-left: 0;
-              text-align: left;
+              text-align: center;
             }
             
             h2 + p{
@@ -388,6 +388,7 @@ header{
 
             img{
               max-width: 80px;
+              margin:auto;
             }
           }
         }
@@ -409,12 +410,12 @@ header{
   }
 
   .swiper-button-next{
-    right: 0;
+    right: 7.5vw;
     left: auto;
   }
 
   .swiper-button-prev{
-    left: 0;
+    left: 7.5vw;
     right: auto;
   }
 
