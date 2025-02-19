@@ -44,7 +44,6 @@ $adresse       = get_field('adresse_bien');
 $galerie       = get_field('galerie');
 
 // CARACT. BIEN
-$title_cara    = get_field('title_cara');
 
 $title         = get_the_title();
 $thb           = get_field('miniature');
@@ -55,6 +54,7 @@ $categorie     = get_field('categorie_bien');
 $pebDble       = get_field('PEB_double');
 $typeBien      = get_field('type_de_bien');
 $prix          = get_field('prix');
+$priceAim      = get_field('prix_achat_im');
 $compBien      = get_field('composition_du_bien');
 $surfHab       = get_field('surf_habitable');
 $surfTot       = get_field('surf_totale');
@@ -64,6 +64,7 @@ $new           = get_field('new');
 $situation     = get_field('situation');
 $environnement = $situation['type_denvironnement'];
 $inondation    = $situation['inondation'];
+$rc            = $situation['rc'];
 
 $icones = get_field('icones_biens','options');
 
@@ -132,25 +133,50 @@ $icones = get_field('icones_biens','options');
     <div class="container"><?php if($introduction): echo $introduction; endif;?></div>
 </section>
 
-<?php if($title_cara):?>
-    <section id="caracteristiques-biens">
-        <div class="container section-title">
-            <?php if($title_cara): echo $title_cara;endif;?>
+<section id="caracteristiques-biens">
+    <div class="container section-title">
+        <h2>Caractéristiques</h2>
 
-            <div class="columns">
-                <?php if(have_rows('informations_accordeon')):?>
-                        <?php while(have_rows('informations_accordeon')): the_row();
-                            $rc = get_sub_field('rc');
-                            $refCada = get_sub_field('ref_cada');
-                        ?>
-                            <div class="toggle-section">
-                                <h3 class="toggle-button accordion"><?php echo $rc;?></h3>
-                                <div class="toggle-content">
-                                    <?php if($refCada): echo $refCada; endif;?>
-                                </div>
-                            </div>
-                    <?php endwhile;?>
-                <?php endif;?>
+        <div class="columns">
+            <div class="toggle-section">
+                <h3 class="toggle-button accordion">Localisation</h3>
+            
+                <div class="toggle-content">
+                    <?php if($lieu): echo $lieu; endif;?>
+                </div>
+            </div>
+
+            <div class="toggle-section">
+                <h3 class="toggle-button accordion">Revenu cadastral</h3>
+            
+                <div class="toggle-content">
+                    <?php if($rc): echo $rc; endif;?>
+                </div>
+            </div>
+
+            <div class="toggle-section">
+                <h3 class="toggle-button accordion">Reférence cadastral</h3>
+            
+                <div class="toggle-content">
+                    <?php if($refCada): echo $refCada; endif;?>
+                </div>
+            </div>
+        </div>
+        <div class="columns">
+            <div class="toggle-section">
+                <h3 class="toggle-button accordion">Faire offre à partir de</h3>
+            
+                <div class="toggle-content">
+                    <?php if($prix): echo $prix; endif;?>
+                </div>
+            </div>
+
+            <div class="toggle-section">
+                <h3 class="toggle-button accordion">Prix d'achat immédiat</h3>
+            
+                <div class="toggle-content">
+                    <?php if($priceAim): echo $priceAim; endif;?>
+                </div>
             </div>
         </div>
     </section>
