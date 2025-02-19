@@ -80,9 +80,8 @@ $(document).ready(function () {
     if (ctaSearch.length && formSearch.length) {
       ctaSearch.trigger('click'); // Active le formulaire "Recherche"
 
-      console.log('trigger');
-
       if (idBien) {
+        setTimeout(function () {
           if (formSearch.length) {
             const selectBien = formSearch.find('select[name="select-420"]'); // Remplacez par le name réel du select
         
@@ -90,16 +89,11 @@ $(document).ready(function () {
               selectBien.val('Acheter').change(); // Changez la valeur du select et déclenchez l'événement "change"
             }
 
-            console.log('selectbien changed');
-
             const groupSearchBien = formSearch.find('[data-id="group-searchBien"]'); // Groupe conditionnel
 
             if (groupSearchBien.length) {
               groupSearchBien.css('display', 'block'); // Applique le style
             }
-
-            console.log('groupsearchActive');
-            
 
             // Remplissez le champ "Type de bien"
             const typeDeBienField = formSearch.find('input[name="type-bien"]'); // Remplacez par le name réel du champ
@@ -107,10 +101,8 @@ $(document).ready(function () {
             if (typeDeBienField.length) {
               typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
             }
-
-            console.log('typeDebien changed');
-            
           } 
+        }, 100);
       }
     }
   }
