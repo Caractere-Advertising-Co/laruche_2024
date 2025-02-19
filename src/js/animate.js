@@ -114,6 +114,11 @@ $(document).ready(function () {
       }
     }
   }
+
+  window.addEventListener('unhandledrejection', function(event) {
+    console.error('Erreur détectée :', event.reason);
+});
+
 });
 
 /* Accordion animation */
