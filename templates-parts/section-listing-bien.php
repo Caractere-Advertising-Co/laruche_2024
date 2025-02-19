@@ -120,8 +120,9 @@ endif;
                         </div>
                         <div class="cta price">
                             <?php 
-                                echo $fairOff ? 'Foàpd ' : '';
+                                echo $fairOff ? 'Foàpd ' : ''; 
                                 if($prix): echo $prix ; endif;
+                                echo $typeBien; 
 
                                 /*echo $typeBien = 'À Louer' ? '/mois' : '';*/
                             ?>
