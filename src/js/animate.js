@@ -112,6 +112,28 @@ $(document).ready(function () {
     });
 }
 
+setTimeout(function () {
+  const groupSearchBien = formSearch.find('[data-id="group-searchBien"]');
+  if (groupSearchBien.length) {
+      groupSearchBien.css({ 'display': 'block', 'visibility': 'visible', 'opacity': '1' });
+      console.log('Groupe conditionnel forcé visible après timeout');
+  }
+}, 1000);
+
+const observer = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => {
+      if (mutation.type === 'childList' || mutation.type === 'attributes') {
+          const groupSearchBien = jQuery('[data-id="group-searchBien"]');
+          if (groupSearchBien.length && groupSearchBien.css('display') === 'none') {
+              groupSearchBien.css({ 'display': 'block', 'visibility': 'visible', 'opacity': '1' });
+              console.log('Groupe conditionnel réaffiché après mutation');
+          }
+      }
+  });
+});
+observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+
+
 
 /* Accordion animation */
 
