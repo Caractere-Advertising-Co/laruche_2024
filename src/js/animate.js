@@ -83,7 +83,6 @@ $(document).ready(function () {
       console.log('trigger');
 
       if (idBien) {
-        setTimeout(function () {
           if (formSearch.length) {
             const selectBien = formSearch.find('select[name="select-420"]'); // Remplacez par le name réel du select
         
@@ -112,7 +111,6 @@ $(document).ready(function () {
             console.log('typeDebien changed');
             
           } 
-        }, 200);
       }
     }
   }
