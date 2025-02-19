@@ -138,46 +138,53 @@ $icones = get_field('icones_biens','options');
         <h2>Caractéristiques</h2>
 
         <div class="columns">
-            <div class="toggle-section">
-                <h3 class="toggle-button accordion">Localisation</h3>
-            
-                <div class="toggle-content">
-                    <?php if($lieu): echo $lieu; endif;?>
+            <?php if($lieu):?>
+                <div class="toggle-section">
+                    <h3 class="toggle-button accordion">Localisation</h3>
+                
+                    <div class="toggle-content">
+                        <?php if($lieu): echo '<p>'.$lieu.'</p>'; endif;?>
+                    </div>
                 </div>
-            </div>
-
-            <div class="toggle-section">
-                <h3 class="toggle-button accordion">Revenu cadastral</h3>
+            <?php endif;?>
+            <?php if($rc):?>
+                <div class="toggle-section">
+                    <h3 class="toggle-button accordion">Revenu cadastral</h3>
             
-                <div class="toggle-content">
-                    <?php if($rc): echo $rc; endif;?>
+                    <div class="toggle-content">
+                        <?php if($rc): echo '<p>'.$rc.'</p>'; endif;?>
+                    </div>
                 </div>
-            </div>
-
-            <div class="toggle-section">
-                <h3 class="toggle-button accordion">Reférence cadastral</h3>
-            
-                <div class="toggle-content">
-                    <?php if($refCada): echo $refCada; endif;?>
+            <?php endif;?>
+            <?php if($refCada):?>
+                <div class="toggle-section">
+                    <h3 class="toggle-button accordion">Reférence cadastral</h3>
+                
+                    <div class="toggle-content">
+                        <?php if($refCada): echo '<p>'.$refCada.'</p>'; endif;?>
+                    </div>
                 </div>
-            </div>
+            <?php endif;?>
         </div>
         <div class="columns">
+            <?php if($prix):?>
             <div class="toggle-section">
                 <h3 class="toggle-button accordion">Faire offre à partir de</h3>
             
                 <div class="toggle-content">
-                    <?php if($prix): echo $prix; endif;?>
+                    <?php if($prix): echo '<p>'.$prix.'</p>'; endif;?>
                 </div>
             </div>
-
-            <div class="toggle-section">
-                <h3 class="toggle-button accordion">Prix d'achat immédiat</h3>
-            
-                <div class="toggle-content">
-                    <?php if($priceAim): echo $priceAim; endif;?>
+            <?php endif;?>
+            <?php if($priceAim):?>
+                <div class="toggle-section">
+                    <h3 class="toggle-button accordion">Prix d'achat immédiat</h3>
+                
+                    <div class="toggle-content">
+                        <?php if($priceAim): echo '<p>'.$priceAim.'</p>'; endif;?>
+                    </div>
                 </div>
-            </div>
+            <?php endif;?>
         </div>
     </div>
 </section>
