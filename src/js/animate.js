@@ -71,7 +71,7 @@ $(document).ready(function () {
   }
 
   // Vérifiez si on est sur la page Contact
-  if (window.location.pathname.includes('/contact')) {
+  if (window.location.pathname.includes('/contact-2')) {
     const idBien = getQueryParam('sujet');
 
     const ctaSearch = $('#ctaSearch'); 
