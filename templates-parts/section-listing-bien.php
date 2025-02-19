@@ -84,7 +84,7 @@ endif;
                 $pebDble   = get_field('PEB_double');
                 $typeBien  = get_field('type_de_bien');
                 $categorie = get_field('categorie_bien');
-                $lieu      = get_field('lieu');
+                $lieu      = get_field('situation_lieu');
                 $prix      = get_field('prix');
                 $chambre   = get_field('chambres');
                 $surfHab   = get_field('surf_habitable');
