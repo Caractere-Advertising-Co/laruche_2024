@@ -132,27 +132,29 @@ $icones = get_field('icones_biens','options');
     <div class="container"><?php if($introduction): echo $introduction; endif;?></div>
 </section>
 
-<section id="caracteristiques-biens">
-    <div class="container section-title">
-        <?php if($title_cara): echo $title_cara;endif;?>
+<?php if($title_cara):?>
+    <section id="caracteristiques-biens">
+        <div class="container section-title">
+            <?php if($title_cara): echo $title_cara;endif;?>
 
-        <div class="columns">
-            <?php if(have_rows('informations_accordeon')):?>
-                    <?php while(have_rows('informations_accordeon')): the_row();
-                        $title = get_sub_field('titre_section');
-                        $content = get_sub_field('contenu_section');
-                    ?>
-                        <div class="toggle-section">
-                            <h3 class="toggle-button accordion"><?php echo $title;?></h3>
-                            <div class="toggle-content">
-                                <?php if($content): echo $content; endif;?>
+            <div class="columns">
+                <?php if(have_rows('informations_accordeon')):?>
+                        <?php while(have_rows('informations_accordeon')): the_row();
+                            $title = get_sub_field('titre_section');
+                            $content = get_sub_field('contenu_section');
+                        ?>
+                            <div class="toggle-section">
+                                <h3 class="toggle-button accordion"><?php echo $title;?></h3>
+                                <div class="toggle-content">
+                                    <?php if($content): echo $content; endif;?>
+                                </div>
                             </div>
-                        </div>
-                <?php endwhile;?>
-            <?php endif;?>
+                    <?php endwhile;?>
+                <?php endif;?>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+<?php endif;?>
 
 <section id="galerie-bien">
     <div class="container">
