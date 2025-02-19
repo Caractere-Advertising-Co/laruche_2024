@@ -367,8 +367,7 @@ header{
       }
 
       table{
-        margin-left: 25vw;
-        margin-right: 10vw;
+        margin: auto;
         width: 65vw;
 
         tr{
@@ -377,7 +376,6 @@ header{
 
             h2,
             p{
-              width: 250px;
               margin-left: 0;
               text-align: center;
             }
