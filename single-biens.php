@@ -79,7 +79,7 @@ $icones = get_field('icones_biens','options');
     </div>
 
     <div class="container columns">
-        <a href="<?php echo get_permalink(627);?>?&sujet=<?php echo $title . ' - '. $lieu . ' - ' . $prix . ' €';?>" class="cta">Planifier une visite</a>
+        <a href="<?php echo get_permalink(45385);?>?&sujet=<?php echo $title . ' - '. $lieu . ' - ' . $prix . ' €';?>" class="cta">Planifier une visite</a>
         <form method="post" class="topdf" id="tt_form" target="_blank">
             <button type="submit" class="cta" id="btn" name="cf-submit"
                 value=""><?php _e('Fiche du bien', 'ajd') ?></button>
