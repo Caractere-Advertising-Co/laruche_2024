@@ -64,7 +64,9 @@ $new           = get_field('new');
 $situation     = get_field('situation');
 $environnement = $situation['type_denvironnement'];
 $inondation    = $situation['inondation'];
-$rc            = $situation['rc'];
+$refCada       = $situation['ref_cada'];
+
+$rc            = get_field('rc');
 
 $icones = get_field('icones_biens','options');
 
