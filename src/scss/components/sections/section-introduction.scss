@@ -26,6 +26,18 @@
   
     .col-d {
       width: 100%;
+
+      p{
+        em{
+          font-style: italic;
+          font-size: 1.3rem;
+        }
+      }
+
+      .cta{
+        margin-right: 0;
+        margin-left: auto;
+      }
   
       .cta-border {
         display: block;
@@ -33,6 +45,8 @@
         margin-top: 50px;
         color: $primary-color;
         margin-left: 0;
+        margin-right: 0;
+        margin-left: auto;
       }
     }
   }
