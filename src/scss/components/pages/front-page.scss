@@ -31,8 +31,8 @@
       background-repeat: no-repeat;
       text-align: center;
       position:absolute;
-      left: -35px;
-      top: -15px;
+      left: -30px;
+      top: -18px;
       color: $light;
       font-size: 2rem;
       opacity: 1;
@@ -243,7 +243,9 @@
         background-color: $primary-color;
       }
 
-
+      &:hover{
+        background-color: $primary-color;
+      }
     }
   }
 }
