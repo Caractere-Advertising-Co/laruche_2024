@@ -64,76 +64,57 @@ $(document).ready(function () {
     formVente.removeClass('active');
   });
 
-
-  document.addEventListener('wpcf7DOMContentLoaded', function () {
-    console.log('Contact Form 7 chargé, exécution du script...');
-    initFormModification(); // Appelle la fonction après le chargement de CF7
-  });
-
-  function initFormModification() {
-    jQuery(document).ready(function ($) {
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-
-        if (window.location.pathname.includes('/contact')) {
-            const idBien = getQueryParam('sujet');
-            const ctaSearch = $('#ctaSearch');
-            const formSearch = $('#formulaire-recherche .wpcf7-form');
-
-            if (ctaSearch.length && formSearch.length) {
-                ctaSearch.trigger('click');
-                console.log('trigger');
-
-                if (idBien) {
-                    const selectBien = formSearch.find('select[name="select-420"]');
-                    if (selectBien.length) {
-                        selectBien.val('Acheter').trigger('input').trigger('change');
-                        console.log('selectbien changed');
-                    }
-
-                    setTimeout(function () {
-                        const groupSearchBien = formSearch.find('[data-id="group-searchBien"]');
-                        if (groupSearchBien.length) {
-                            groupSearchBien.css({ 'display': 'block', 'visibility': 'visible', 'opacity': '1' });
-                            console.log('Groupe conditionnel forcé visible après timeout');
-                        }
-                    }, 500);
-
-                    const typeDeBienField = formSearch.find('input[name="type-bien"]');
-                    if (typeDeBienField.length) {
-                        typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien);
-                        console.log('Champ "Type de bien" rempli avec :', idBien);
-                    }
-                }
-            }
-        }
-    });
-}
-
-setTimeout(function () {
-  const groupSearchBien = formSearch.find('[data-id="group-searchBien"]');
-  if (groupSearchBien.length) {
-      groupSearchBien.css({ 'display': 'block', 'visibility': 'visible', 'opacity': '1' });
-      console.log('Groupe conditionnel forcé visible après timeout');
+    // Fonction pour obtenir la valeur d'une query string
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
   }
-}, 1000);
 
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach((mutation) => {
-      if (mutation.type === 'childList' || mutation.type === 'attributes') {
-          const groupSearchBien = jQuery('[data-id="group-searchBien"]');
-          if (groupSearchBien.length && groupSearchBien.css('display') === 'none') {
-              groupSearchBien.css({ 'display': 'block', 'visibility': 'visible', 'opacity': '1' });
-              console.log('Groupe conditionnel réaffiché après mutation');
-          }
+  // Vérifiez si on est sur la page Contact
+  if (window.location.pathname.includes('/contact')) {
+    const idBien = getQueryParam('sujet');
+
+    const ctaSearch = $('#ctaSearch'); 
+    const formSearch = $('#formulaire-recherche .wpcf7-form'); 
+
+    if (ctaSearch.length && formSearch.length) {
+      ctaSearch.trigger('click'); // Active le formulaire "Recherche"
+
+      console.log('trigger');
+
+      if (idBien) {
+          if (formSearch.length) {
+            const selectBien = formSearch.find('select[name="select-420"]'); // Remplacez par le name réel du select
+        
+            if (selectBien.length) {
+              selectBien.val('Acheter').change(); // Changez la valeur du select et déclenchez l'événement "change"
+            }
+
+            console.log('selectbien changed');
+
+            const groupSearchBien = formSearch.find('[data-id="group-searchBien"]'); // Groupe conditionnel
+
+            if (groupSearchBien.length) {
+              groupSearchBien.css('display', 'block'); // Applique le style
+            }
+
+            console.log('groupsearchActive');
+            
+
+            // Remplissez le champ "Type de bien"
+            const typeDeBienField = formSearch.find('input[name="type-bien"]'); // Remplacez par le name réel du champ
+
+            if (typeDeBienField.length) {
+              typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
+            }
+
+            console.log('typeDebien changed');
+            
+          } 
       }
-  });
+    }
+  }
 });
-observer.observe(document.body, { childList: true, subtree: true, attributes: true });
-
-
 
 /* Accordion animation */
 
@@ -151,4 +132,3 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
-});
