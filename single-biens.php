@@ -179,8 +179,8 @@ $icones = get_field('icones_biens','options');
                 </div>
             </div>
         </div>
-    </section>
-<?php endif;?>
+    </div>
+</section>
 
 <section id="galerie-bien">
     <div class="container">
