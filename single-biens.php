@@ -140,13 +140,13 @@ $icones = get_field('icones_biens','options');
             <div class="columns">
                 <?php if(have_rows('informations_accordeon')):?>
                         <?php while(have_rows('informations_accordeon')): the_row();
-                            $title = get_sub_field('titre_section');
-                            $content = get_sub_field('contenu_section');
+                            $rc = get_sub_field('rc');
+                            $refCada = get_sub_field('ref_cada');
                         ?>
                             <div class="toggle-section">
-                                <h3 class="toggle-button accordion"><?php echo $title;?></h3>
+                                <h3 class="toggle-button accordion"><?php echo $rc;?></h3>
                                 <div class="toggle-content">
-                                    <?php if($content): echo $content; endif;?>
+                                    <?php if($refCada): echo $refCada; endif;?>
                                 </div>
                             </div>
                     <?php endwhile;?>
