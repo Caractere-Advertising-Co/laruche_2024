@@ -170,13 +170,13 @@ $icones = get_field('icones_biens','options');
         </div>
         <div class="columns">
             <?php if($prix):?>
-            <div class="toggle-section">
-                <h3 class="toggle-button accordion">Faire offre à partir de</h3>
-            
-                <div class="toggle-content">
-                    <?php if($prix): echo '<p>'.$prix.'</p>'; endif;?>
+                <div class="toggle-section">
+                    <h3 class="toggle-button accordion">Faire offre à partir de</h3>
+                
+                    <div class="toggle-content">
+                        <?php if($prix): echo '<p>'.$prix.'</p>'; endif;?>
+                    </div>
                 </div>
-            </div>
             <?php endif;?>
             <?php if($priceAim):?>
                 <div class="toggle-section">
