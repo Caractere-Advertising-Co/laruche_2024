@@ -167,8 +167,6 @@ $icones = get_field('icones_biens','options');
                     </div>
                 </div>
             <?php endif;?>
-        </div>
-        <div class="columns">
             <?php if($prix):?>
                 <div class="toggle-section">
                     <h3 class="toggle-button accordion">Faire offre à partir de</h3>
