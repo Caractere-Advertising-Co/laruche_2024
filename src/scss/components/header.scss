@@ -403,10 +403,10 @@ header{
 
   .swiper-button-next,
   .swiper-button-prev{
-    bottom: calc(50% - 50px);
-    background-color: $light-gray !important;
+    bottom: calc(50% - 25px);
+    background-color: $primary-color !important;
     opacity: .8;
-    height: 100px;
+    height: 50px;
   }
 
   .swiper-button-next{
