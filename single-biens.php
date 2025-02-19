@@ -138,19 +138,15 @@ $icones = get_field('icones_biens','options');
             <?php if($title_cara): echo $title_cara;endif;?>
 
             <div class="columns">
-                <?php if(have_rows('informations_accordeon')):?>
-                        <?php while(have_rows('informations_accordeon')): the_row();
-                            $rc = get_sub_field('rc');
-                            $refCada = get_sub_field('ref_cada');
-                        ?>
-                            <div class="toggle-section">
-                                <h3 class="toggle-button accordion"><?php echo $rc;?></h3>
-                                <div class="toggle-content">
-                                    <?php if($refCada): echo $refCada; endif;?>
-                                </div>
-                            </div>
-                    <?php endwhile;?>
-                <?php endif;?>
+                <?php $rc = get_field('rc');
+                      $refCada = get_field('ref_cada');
+                ?>
+                    <div class="toggle-section">
+                        <h3 class="toggle-button accordion"><?php echo $rc;?></h3>
+                        <div class="toggle-content">
+                            <?php if($refCada): echo $refCada; endif;?>
+                        </div>
+                    </div>
             </div>
         </div>
     </section>
