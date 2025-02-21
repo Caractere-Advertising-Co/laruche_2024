@@ -141,7 +141,7 @@ endif;
         ?>
 
         <a href="<?php if($urlSale): echo $urlSale['url'];endif;?>" class="cta"><?php echo $urlSale['title'];?></a>
-        <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta"><?php echo $urlLocation['title'];?></a>
+        <a href="<?php if($urlLocation): echo $urlLocation['url'];endif;?>" class="cta ctaLoco"><?php echo $urlLocation['title'];?></a>
 
         <?php else : 
             $biens = new WP_Query($args);
