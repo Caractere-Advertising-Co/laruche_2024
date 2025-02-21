@@ -75,12 +75,6 @@
             .page-numbers + .page-numbers{
                 border-left: none;
             }
-
-            .ctaLoco{
-                &::before{
-                    background-color: $dark-dark-gray;
-                }
-            }
         }
     }
 

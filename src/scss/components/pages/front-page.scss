@@ -246,6 +246,12 @@
       &:before{
         background-color: $primary-color;
       }
+
+      &.ctaLoco{
+        &::before{
+            background-color: $dark-dark-gray;
+        }
+      }
     }
   }
 }
