@@ -219,4 +219,4 @@ function update_acf_galleries() {
     }
 }
 
-add_action( 'init', update_acf_galleries());
+//add_action( 'init', update_acf_galleries());
