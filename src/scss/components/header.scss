@@ -391,6 +391,12 @@ header{
           }
         }
       }
+
+      .logo-google{
+        img{
+          object-fit: contain;
+        }
+      }
   }
 
   .navigation-slider{
