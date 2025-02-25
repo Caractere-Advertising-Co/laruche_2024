@@ -1089,37 +1089,39 @@
       }
     }
   }
-}
 
-/* Page Listing */
+  /* Page Listing */
 
-.page-template-listing-biens{
-  #listing-biens{
-    .cta-biens{
-      flex-direction: row;
-      justify-content: flex-start;
-      margin-bottom: 50px;
-      flex-wrap: wrap;
+  .page-template-listing-biens{
+    #listing-biens{
+      .cta-biens{
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: 50px;
+        flex-wrap: wrap;
 
-      .page-numbers{
-        margin-bottom: 0;
-        padding: 0;
-        letter-spacing: 0;
+        .page-numbers{
+          margin-bottom: 0;
+          padding: 0;
+          letter-spacing: 0;
 
-        &.next,
-        &.prev{
-          padding:0 15px;
+          &.next,
+          &.prev{
+            padding:0 15px;
+          }
         }
       }
     }
   }
-}
 
-#citation {
-  .top_content {
-    margin: 100px auto;
+  #citation {
+    .top_content {
+      margin: 100px auto;
+    }
   }
 }
+
+
 
 // Retina Screen
 
