@@ -52,6 +52,4 @@ $btnCta       = get_field('cta_listing','options');
     </div>
 </section>
 
-<?php get_template_part( 'templates-parts/contact');
-
-get_footer();
+<?php get_footer();
