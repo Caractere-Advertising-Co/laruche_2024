@@ -25,6 +25,7 @@ h1 {
   line-height: 3rem;
   color: $dark-dark-gray;
   font-weight: 600;
+  position: relative;
   text-align: left;
 
   &::before{
