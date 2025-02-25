@@ -30,7 +30,6 @@ $btnCta       = get_field('cta_listing','options');
     </div>
 </section>
 
-<?php get_template_part( 'templates-parts/section-citation');?>
 
 <section id="section-avantages">
     <div class="container columns">
@@ -52,4 +51,6 @@ $btnCta       = get_field('cta_listing','options');
     </div>
 </section>
 
+
+<?php get_template_part( 'templates-parts/section-citation');?>
 <?php get_footer();
