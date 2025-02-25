@@ -28,11 +28,7 @@ $ctaTr = get_field('cta-transition');
                 <span class="subtitle"><?php if($surtitre): echo $surtitre;endif;?></span>
                 <?php if($titre): echo $titre; endif;?>
 
-                <?php if($imgSep):?>
-                    <div class="block-img">
-                        <img src="<?php echo $imgSep['url'];?>" />
-                    </div>
-                <?php endif;?>
+                
             </div>
         </div>
     </header>
@@ -43,6 +39,11 @@ $ctaTr = get_field('cta-transition');
         <?php if($surtitre): echo '<h1>'.$surtitre.'</h1>'; endif;?>
         <?php if($titre): echo $titre; endif;?>
         <?php if($content): echo $content; endif;?>
+        <?php if($imgSep):?>
+                    <div class="block-img">
+                        <img src="<?php echo $imgSep['url'];?>" />
+                    </div>
+                <?php endif;?>
     </div>
 </section>
 
