@@ -12,6 +12,8 @@ $surtitre = get_field('surtitre');
 $titre = get_field('titre_introduction');
 $content = get_field('texte_introduction');
 
+$imgSep = get_field('image-separator');
+
 $imgTr = get_field('image-transition');
 $contentTr = get_field('content-transition');
 $ctaTr = get_field('cta-transition');
@@ -25,6 +27,12 @@ $ctaTr = get_field('cta-transition');
             <div class="content">
                 <span class="subtitle"><?php if($surtitre): echo $surtitre;endif;?></span>
                 <?php if($titre): echo $titre; endif;?>
+
+                <?php if($imgSep):?>
+                    <div class="block-img">
+                        <img src="<?php echo $imgSep['url'];?>" />
+                    </div>
+                <?php endif;?>
             </div>
         </div>
     </header>
@@ -51,5 +59,4 @@ $ctaTr = get_field('cta-transition');
     </section>
 <?php endif;
 
-get_template_part( 'templates-parts/section-introduction' );
 get_footer();
