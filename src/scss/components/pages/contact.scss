@@ -194,6 +194,11 @@
           }
         }
 
+        textarea{
+          border: 1px solid $dark-gray;
+          border-radius: 5px;
+        }
+
         .cta{
           background-color: $green;
           width: fit-content;
