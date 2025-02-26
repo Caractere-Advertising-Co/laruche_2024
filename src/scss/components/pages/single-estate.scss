@@ -28,9 +28,11 @@
 
             .cta{
                 margin-bottom: 0;
-                font-size: .7rem;
+                font-size: 1rem;
                 line-height: 1.2rem;
                 letter-spacing: 3px;
+                text-transform: none;
+                letter-spacing: 0;
             }
         
             form{
@@ -40,9 +42,8 @@
                 button.cta{
                     margin: 0;
                     border: none;
-                    font-size: .7rem;
+                    font-size: 1rem;
                     line-height: 1.2rem;
-                    width: 250px;
                     background: $dark-dark-gray;
                     cursor: pointer;
 
@@ -55,23 +56,17 @@
                     }
                 }
             }
-        }
-
-        .container{
-            text-align: center;
-
-            .cta{
-                text-transform: none;
-                letter-spacing: 0;
-            }
 
             .ctanotaire{
                 text-align: center;
                 color: $light;
                 font-weight: 500;
-                margin: 20px auto 0;
+                line-height: 1.2rem;
+                margin: 0;
                 display: block;
                 background-color: #23b2c0;
+                padding: 10px 30px;
+                border-radius: 5px;
             }
         }
     }
