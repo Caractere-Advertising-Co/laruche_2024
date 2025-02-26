@@ -10,6 +10,9 @@ $titre = get_field('titre-header');
 $intro = get_field('introduction');
 $cta   = get_field('cta');
 
+$galerie = get_field('galerie');
+$parTwo = get_field('paragraphe_2');
+
 $cta_adv = get_field('cta_qualite');
 $btnCta       = get_field('cta_listing','options');
 
@@ -18,7 +21,6 @@ $btnCta       = get_field('cta_listing','options');
 
 <section id="introduction">
     <div class="container">
-
         <div class="colg">
             <?php if($surtitre): echo '<h1 class="subtitle">'.$surtitre.'</h1>'; endif;?>
             <?php if($titre): echo $titre; endif;?>
@@ -30,6 +32,25 @@ $btnCta       = get_field('cta_listing','options');
     </div>
 </section>
 
+<section id="galerie">
+    <div class="swiper-about swiper">
+        <div class=swiper-wrapper>
+            <?php 
+            if($galerie):
+                foreach($galerie as $g):?>
+                    <div class="swiper-slide">
+                        <img src="<?php echo $g['url'];?>" alt="<?php echo $g['title'];?>" />
+                    </div>
+                <?php endforeach;
+            endif;?>
+    </div>
+</section>
+
+<section id="paragraphe-2">
+    <div class="container">
+        <?php if($parTwo): echo $parTwo; endif;?>
+    </div>
+</section>
 
 <section id="section-avantages">
     <div class="container columns">
