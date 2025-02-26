@@ -60,12 +60,18 @@
         .container{
             text-align: center;
 
+            .cta{
+                text-transform: none;
+                letter-spacing: 0;
+            }
+
             .ctanotaire{
                 text-align: center;
-                color: $dark-dark-gray;
+                color: $light;
                 font-weight: 500;
                 margin: 20px auto 0;
                 display: block;
+                background-color: #23b2c0;
             }
         }
     }
