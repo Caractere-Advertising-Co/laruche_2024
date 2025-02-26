@@ -46,33 +46,36 @@ endif;
         </div>
 
     <?php else : ?>
-        <div id="title-section">
-            <?php
-                if(is_page(28951)):
-                    echo '<h1>Nos biens à vendre</strong></h1>';
-                else :
-                    echo '<h1>Nos biens à louer</strong></h1>';
-                endif;
-             ?>
-        </div>
-        <div class="container columns cta-biens">
-            <?php
-            $biens = new WP_Query($args);
-            if($biens->have_posts()):
-                $total_pages = $biens->max_num_pages;
+        <div class="container columns">
+            <div id="title-section">
+                <?php
+                    if(is_page(28951)):
+                        echo '<h1>Nos biens à vendre</strong></h1>';
+                    else :
+                        echo '<h1>Nos biens à louer</strong></h1>';
+                    endif;
+                ?>
+            </div>
 
-                if ($total_pages > 1){
+            <div class="cta-biens">
+                <?php
+                $biens = new WP_Query($args);
+                if($biens->have_posts()):
+                    $total_pages = $biens->max_num_pages;
 
-                    $current_page = max(1, get_query_var('paged'));
+                    if ($total_pages > 1){
 
-                    echo paginate_links(array(
-                        'base' => get_pagenum_link(1) . '%_%',
-                        'format' => '/page/%#%',
-                        'current' => $current_page,
-                        'total' => $total_pages
-                    ));
-                }
-            endif;?>
+                        $current_page = max(1, get_query_var('paged'));
+
+                        echo paginate_links(array(
+                            'base' => get_pagenum_link(1) . '%_%',
+                            'format' => '/page/%#%',
+                            'current' => $current_page,
+                            'total' => $total_pages
+                        ));
+                    }
+                endif;?>
+            </div>
         </div>
     <?php endif;?>
 
