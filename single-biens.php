@@ -139,49 +139,19 @@ $icones = get_field('icones_biens','options');
 
         <div class="columns">
             <?php if($lieu):?>
-                <div class="toggle-section">
-                    <h3 class="toggle-button accordion">Localisation</h3>
-                
-                    <div class="toggle-content">
-                        <?php if($lieu): echo '<p>'.$lieu.'</p>'; endif;?>
-                    </div>
-                </div>
+                <p class="toggle-button accordion"><strong>Localisation :</strong><?php echo $lieu;?> </p>
             <?php endif;?>
             <?php if($rc):?>
-                <div class="toggle-section">
-                    <h3 class="toggle-button accordion">Revenu cadastral</h3>
-            
-                    <div class="toggle-content">
-                        <?php if($rc): echo '<p>'.$rc.'</p>'; endif;?>
-                    </div>
-                </div>
+                <p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc;?></p>
             <?php endif;?>
             <?php if($refCada):?>
-                <div class="toggle-section">
-                    <h3 class="toggle-button accordion">Reférence cadastral</h3>
-                
-                    <div class="toggle-content">
-                        <?php if($refCada): echo '<p>'.$refCada.'</p>'; endif;?>
-                    </div>
-                </div>
+                <p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p>
             <?php endif;?>
             <?php if($prix):?>
-                <div class="toggle-section">
-                    <h3 class="toggle-button accordion">Faire offre à partir de</h3>
-                
-                    <div class="toggle-content">
-                        <?php if($prix): echo '<p>'.$prix.'</p>'; endif;?>
-                    </div>
-                </div>
+                <p class="toggle-button accordion"><strong>Faire offre à partir de</strong><?php echo $prix;?></p>
             <?php endif;?>
             <?php if($priceAim):?>
-                <div class="toggle-section">
-                    <h3 class="toggle-button accordion">Prix d'achat immédiat</h3>
-                
-                    <div class="toggle-content">
-                        <?php if($priceAim): echo '<p>'.$priceAim.'</p>'; endif;?>
-                    </div>
-                </div>
+                <p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim;?></p>
             <?php endif;?>
         </div>
     </div>
