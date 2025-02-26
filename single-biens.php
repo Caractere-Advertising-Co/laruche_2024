@@ -45,6 +45,8 @@ $galerie       = get_field('galerie');
 
 // CARACT. BIEN
 
+$statut        = get_field('statut_bien');
+
 $title         = get_the_title();
 $thb           = get_field('miniature');
 $tyPEB         = get_field('type_peb');
@@ -84,7 +86,7 @@ $icones = get_field('icones_biens','options');
             <button type="submit" class="cta" id="btn" name="cf-submit"
                 value=""><?php _e('Fiche du bien', 'ajd') ?></button>
         </form>
-        <?php if($ctaNotaire):?>
+        <?php if($ctaNotaire && ($statut != "A louer")):?>
             <a href="<?php echo $ctaNotaire['url'];?>" class="ctanotaire" target="_blank"><?php echo $ctaNotaire['title'];?></a>
         <?php endif;?>
     </div>
