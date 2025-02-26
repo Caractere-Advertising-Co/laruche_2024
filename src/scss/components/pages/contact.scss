@@ -42,9 +42,10 @@
   #contact-introduction{
     .container{
       gap: 60px;
+      flex-direction: column;
 
       .colg{
-        width: 40%;
+        width: 100%;
 
         h1{
           font-size: 2.3rem;
@@ -54,8 +55,7 @@
       }
 
       .cold{
-        width: 60%;
-        margin-top: 50px
+        width: 100%;
       }
 
       .contactInfos{
