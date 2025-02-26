@@ -169,7 +169,7 @@ $icones = get_field('icones_biens','options');
                 <div>
                     <p class="toggle-button accordion"><strong>Label énergétique:</strong>
                         
-                    <?php if($tyPEB = 1):?>
+                    <?php if($tyPEB == 1):?>
                         <div class="logo_peb">
                             <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
                         </div>
