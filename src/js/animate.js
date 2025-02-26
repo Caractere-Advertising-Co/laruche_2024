@@ -74,12 +74,9 @@ $(document).ready(function () {
   if (window.location.pathname.includes('/contact')) {
     const idBien = getQueryParam('sujet');
 
-    const ctaSearch = $('#ctaSearch'); 
     const formSearch = $('#formulaire-vendre .wpcf7-form'); 
 
-    if (ctaSearch.length && formSearch.length) {
-      ctaSearch.trigger('click'); // Active le formulaire "Recherche"
-
+    if ( formSearch.length) {
       if (idBien) {
         setTimeout(function () {
           if (formSearch.length) {
