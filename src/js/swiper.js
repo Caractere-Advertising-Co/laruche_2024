@@ -21,7 +21,7 @@ const swiperAbout = new Swiper(".swiper-about", {
   loop: true,
   autoplay: true,
   slidesPerView: 3,
-
+  spaceBetween: 50,
   cssMode: true,
 
   pagination: {
