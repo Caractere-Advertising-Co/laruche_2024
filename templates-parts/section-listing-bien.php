@@ -57,7 +57,7 @@ endif;
                 ?>
             </div>
 
-            <div class="cta-biens">
+            <div class="columns cta-biens">
                 <?php
                 $biens = new WP_Query($args);
                 if($biens->have_posts()):
