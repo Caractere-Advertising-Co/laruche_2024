@@ -165,18 +165,20 @@
             justify-content: space-between;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
+            gap: 20px 50px;
             border:none;
 
             .toggle-button{
                 font-size: 1rem;
-                line-height: 2rem;
-                text-transform: uppercase;
-                font-weight: 600;
+                line-height: 1.5rem;
                 border-bottom: 1px solid $light-gray;
                 position: relative;
+                display: flex;
+                align-items: flex;
+                gap: 10px;
 
                 span{
+                    display: inline-block;
                     height: 20px;
 
                     img{
