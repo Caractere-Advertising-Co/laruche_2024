@@ -48,13 +48,11 @@ endif;
     <?php else : ?>
         <div class="container columns">
             <div id="title-section">
-                <?php
-                    if(is_page(28951)):
-                        echo '<h1>Nos biens à vendre</strong></h1>';
-                    else :
-                        echo '<h1>Nos biens à louer</strong></h1>';
-                    endif;
-                ?>
+                <?php if(is_page(28951)):
+                    echo '<h1>Nos biens à vendre</strong></h1>';
+                else :
+                    echo '<h1>Nos biens à louer</strong></h1>';
+                endif; ?>
             </div>
 
             <div class="columns cta-biens">
