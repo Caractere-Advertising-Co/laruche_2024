@@ -71,7 +71,7 @@ $(document).ready(function () {
   }
 
   // Vérifiez si on est sur la page Contact
-  if (window.location.pathname.includes('/contact')) {
+  if (window.location.pathname.includes('/planifier-une-visite')) {
     const idBien = getQueryParam('sujet');
 
     const formSearch = $('#formulaire-vendre .wpcf7-form'); 
@@ -83,7 +83,7 @@ $(document).ready(function () {
             const typeDeBienField = formSearch.find('input[name="bien-a-visiter"]'); // Remplacez par le name réel du champ
 
             if (typeDeBienField.length) {
-              typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
+              typeDeBienField.val('Je souhaite planifier une visite pour le bien située à ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
             }
           } 
         }, 100);
