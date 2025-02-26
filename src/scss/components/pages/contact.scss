@@ -205,6 +205,11 @@
             outline:none;
             border-bottom: 2px solid $primary-color;
           }
+
+          &:read-only{
+            background-color: $light-gray;
+            color: $secondary-color;
+          }
         }
 
         textarea{
