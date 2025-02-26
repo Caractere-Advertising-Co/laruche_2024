@@ -445,7 +445,7 @@ $inondation    = $situation['inondation'];
                 <div class="container">
                     <p>S.P.R.L. La Ruche Immobilière - TVA 0421 755 406<br>
 Christopher Roekaerts : gérant et agent agréé IPI n°508390 - <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a><br>
-Place du Centre n°2 Bte 1 - 6120 Nalinnes - Tél.: <a href="tel:0032495563099">0495 56 30 99</a><br>
+Place du Centre n°2 - 6120 Nalinnes - Tél.: <a href="tel:071303052">071 30 30 52</a><br>
 <span>COMPTE BANCAIRE N° BE67 7320 3702 8587 - COMPTE DE TIERS N° BE98 7320 3702 9193</span></p>
                 </div>
             </footer>
