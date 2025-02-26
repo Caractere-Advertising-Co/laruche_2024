@@ -17,6 +17,19 @@ const swiperHero = new Swiper(".swiper-hero", {
   },
 });
 
+const swiperAbout = new Swiper(".swiper-about", {
+  loop: true,
+  autoplay: true,
+
+  cssMode: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+
 const swiperFrontPage = new Swiper(".swiper-resp", {
   cssMode: true,
   loop: true,
@@ -37,35 +50,6 @@ const swiperCard = new Swiper(".swiper-card", {
   autoplay: false,
 });
 
-/* Commun */
-
-const swiperExtra = new Swiper(".swiper-extra", {
-  loop: true,
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    320: {
-      slidesPerView: 1.2,
-      spaceBetween: 20,
-    },
-    // when window width is >= 640px
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-  },
-});
-
-/* Page Gites */
 
 const swiperSingleEstate = new Swiper(".swiper-single-bien", {
   slidesPerView: 1,
