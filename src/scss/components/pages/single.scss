@@ -59,4 +59,20 @@
       }
     }
   }
+
+
+  &.page-id-71{
+    #simple-text-intro{
+      padding: 40px 0 100px;
+      .container{
+        h1{
+          margin: 0
+        }
+
+        a{
+          color: $primary-color;
+        }
+      }
+    }
+  }
 }
