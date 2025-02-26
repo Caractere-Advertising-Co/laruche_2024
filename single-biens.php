@@ -135,11 +135,21 @@ $icones = get_field('icones_biens','options');
 
 <section id="caracteristiques-biens">
     <div class="container section-title">
-        <h2>Caractéristiques</h2>
-
         <div class="columns">
             <?php if($lieu):?>
                 <p class="toggle-button accordion"><strong>Localisation :</strong><?php echo $lieu;?> </p>
+            <?php endif;?>
+            <?php if($surfHab):?>
+                <p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab;?></p>
+            <?php endif;?>
+            <?php if($surfTot):?>
+                <p class="toggle-button accordion"><strong>Superficie :</strong><?php echo $surfTot;?></p>
+            <?php endif;?>
+            <?php if($compBien['chambre']):?>
+                <p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p>
+            <?php endif;?>
+            <?php if($compBien['garage']):?>
+                <p class="toggle-button accordion"><strong>Garage :</strong><?php echo $compBien['garage'];?></p>
             <?php endif;?>
             <?php if($rc):?>
                 <p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc;?></p>
@@ -148,11 +158,15 @@ $icones = get_field('icones_biens','options');
                 <p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p>
             <?php endif;?>
             <?php if($prix):?>
-                <p class="toggle-button accordion"><strong>Faire offre à partir de</strong><?php echo $prix;?></p>
+                <p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix '. €';?></p>
             <?php endif;?>
             <?php if($priceAim):?>
-                <p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim;?></p>
+                <p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p>
             <?php endif;?>
+            <?php if($peb):?>
+                <p class="toggle-button accordion"><strong>Label énergétique:</strong><img src="<?php echo $peb['url'];?>" /></p>
+            <?php endif;?>
+
         </div>
     </div>
 </section>
