@@ -46,6 +46,10 @@ h1 {
     opacity: 1;
     transition: all ease-in 300ms;
   }
+
+  strong{
+    color: $secondary-color;
+  }
 }
 
 h2 {
