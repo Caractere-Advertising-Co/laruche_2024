@@ -75,7 +75,7 @@ $(document).ready(function () {
     const idBien = getQueryParam('sujet');
 
     const ctaSearch = $('#ctaSearch'); 
-    const formSearch = $('#formulaire-recherche .wpcf7-form'); 
+    const formSearch = $('#formulaire-vendre .wpcf7-form'); 
 
     if (ctaSearch.length && formSearch.length) {
       ctaSearch.trigger('click'); // Active le formulaire "Recherche"
@@ -83,20 +83,7 @@ $(document).ready(function () {
       if (idBien) {
         setTimeout(function () {
           if (formSearch.length) {
-            const selectBien = formSearch.find('select[name="select-420"]'); // Remplacez par le name réel du select
-        
-            if (selectBien.length) {
-              selectBien.val('Acheter').change(); // Changez la valeur du select et déclenchez l'événement "change"
-            }
-
-            const groupSearchBien = formSearch.find('[data-id="group-searchBien"]'); // Groupe conditionnel
-
-            if (groupSearchBien.length) {
-              groupSearchBien.css('display', 'block'); // Applique le style
-            }
-
-            // Remplissez le champ "Type de bien"
-            const typeDeBienField = formSearch.find('input[name="type-bien"]'); // Remplacez par le name réel du champ
+            const typeDeBienField = formSearch.find('input[name="bien-a-visiter"]'); // Remplacez par le name réel du champ
 
             if (typeDeBienField.length) {
               typeDeBienField.val('Je souhaite planifier une visite pour le bien : ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
