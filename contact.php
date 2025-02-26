@@ -21,7 +21,7 @@ $form2       = get_field('formulaire-recherche');
     <div class="container columns">
         <div class="colg">
             <div class="title titlelvl2">
-                <?php if($surtitre): echo '<h1 class="subtitle">'.$surtitre.'</h1>'; endif;?>
+                <?php if($surtitre): echo '<h1>'.$surtitre.'</h1>'; endif;?>
                 <?php if($titre): echo $titre; endif;?>
             </div> 
             <div class="content entry-content"><?php if($intro): echo $intro; endif;?></div>
