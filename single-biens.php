@@ -158,7 +158,7 @@ $icones = get_field('icones_biens','options');
                 <p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p>
             <?php endif;?>
             <?php if($prix):?>
-                <p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix '. €';?></p>
+                <p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p>
             <?php endif;?>
             <?php if($priceAim):?>
                 <p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p>
