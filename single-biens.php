@@ -164,7 +164,17 @@ $icones = get_field('icones_biens','options');
                 <p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p>
             <?php endif;?>
             <?php if($peb):?>
-                <p class="toggle-button accordion"><strong>Label énergétique:</strong><img src="<?php echo $peb['url'];?>" /></p>
+                <p class="toggle-button accordion"><strong>Label énergétique:</strong>
+                <?php if($tyPEB):?>
+                                    <div class="logo_peb">
+                                        <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
+                                    </div>
+                                <?php else :?>
+                                    <div class="logo_peb">
+                                        <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
+                                    </div>
+                                <?php endif;?>
+                </p>
             <?php endif;?>
 
         </div>
