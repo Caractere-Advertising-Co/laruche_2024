@@ -11,7 +11,7 @@
             justify-content: space-between;
 
             #title-section{
-                padding: 50px 0 0;
+                padding: 0;
         
                 h1{
                     text-align: left;
@@ -50,6 +50,7 @@
             .cta-biens{
                 gap: 10px;
                 justify-content: flex-end;
+                margin: 0;
     
                 .page-numbers{
                     width: auto;
