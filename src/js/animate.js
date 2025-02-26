@@ -84,6 +84,7 @@ $(document).ready(function () {
 
             if (typeDeBienField.length) {
               typeDeBienField.val('Je souhaite planifier une visite pour le bien située à ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
+              typeDeBienField.prop('readonly', true);
             }
           } 
         }, 100);
