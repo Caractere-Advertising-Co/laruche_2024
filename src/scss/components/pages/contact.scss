@@ -141,7 +141,7 @@
         margin-bottom: 150px;
         width: 100%;
 
-        .basic-questions{
+        .estate-question{
           width: 100%;
 
           h2{
@@ -217,10 +217,12 @@
           padding: 10px 50px;
           border: none;
           color: $light;
+          margin: auto;
           margin-top: 50px;
           font-weight: 600;
           position: relative;
           z-index: 0;
+          cursor: pointer;
 
           &:before{
             content: '';
