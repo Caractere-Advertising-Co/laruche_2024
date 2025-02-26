@@ -21,12 +21,13 @@ a {
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 3rem;
-  color: $dark-dark-gray;
-  font-weight: 600;
-  position: relative;
   text-align: left;
+  font-weight: 300;
+  font-size: 2.3rem;
+  line-height: 2.5rem;
+  color: $primary-color;
+  position: relative;
+  margin: 0 0 50px;
 
   &::before{
     content:'';
@@ -49,23 +50,23 @@ h1 {
 
 h2 {
   color: $primary-color;
-  font-size: 2.3rem;
-  line-height: 2.5rem;
+  font-size: 2rem;
+  line-height: 2.3rem;
   font-weight: 300;
 }
 
 h3 {
-  font-size: 2.5rem;
-  line-height: 3rem;
+  font-size: 1.8rem;
+  line-height: 2rem;
 }
 
 h4 {
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
 }
 
 strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .light {
