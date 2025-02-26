@@ -43,7 +43,7 @@
     .container{
       gap: 60px;
       flex-direction: column;
-
+      
       .colg{
         width: 100%;
 
@@ -56,6 +56,18 @@
 
       .cold{
         width: 100%;
+      }
+
+      &.-row{
+        flex-direction: row;
+
+        .colg{
+          width: 40%;
+        }
+
+        .cold{
+          width: 60%;
+        }
       }
 
       .contactInfos{

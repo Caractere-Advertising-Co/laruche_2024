@@ -18,7 +18,7 @@ $form2       = get_field('formulaire-recherche');
 ?>
 
 <section id="contact-introduction">
-    <div class="container columns">
+    <div class="container columns <?php if(is_page(45385)): echo '-row'; endif;?>">
         <div class="colg">
             <div class="title titlelvl2">
                 <?php if($surtitre): echo '<h1>'.$surtitre.'</h1>'; endif;?>
