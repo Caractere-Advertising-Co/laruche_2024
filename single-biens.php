@@ -137,44 +137,49 @@ $icones = get_field('icones_biens','options');
     <div class="container section-title">
         <div class="columns">
             <?php if($lieu):?>
-                <p class="toggle-button accordion"><strong>Localisation :</strong><?php echo $lieu;?> </p>
+                <div>
+                    <p class="toggle-button accordion"><strong>Localisation :</strong><?php echo $lieu;?> </p>
+                </div>
             <?php endif;?>
             <?php if($surfHab):?>
-                <p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab;?></p>
+                <div><p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab;?></p></div>
             <?php endif;?>
             <?php if($surfTot):?>
-                <p class="toggle-button accordion"><strong>Superficie :</strong><?php echo $surfTot;?></p>
+                <div><p class="toggle-button accordion"><strong>Superficie :</strong><?php echo $surfTot;?></p></div>
             <?php endif;?>
             <?php if($compBien['chambre']):?>
-                <p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p>
+                <div><p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p></div>
             <?php endif;?>
             <?php if($compBien['garage']):?>
-                <p class="toggle-button accordion"><strong>Garage :</strong><?php echo $compBien['garage'];?></p>
+                <div><p class="toggle-button accordion"><strong>Garage :</strong><?php echo $compBien['garage'];?></p></div>
             <?php endif;?>
             <?php if($rc):?>
-                <p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc;?></p>
+                <div><p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc;?></p></div>
             <?php endif;?>
             <?php if($refCada):?>
-                <p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p>
+                <div><p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p></div>
             <?php endif;?>
             <?php if($prix):?>
-                <p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p>
+                <div><p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p></div>
             <?php endif;?>
             <?php if($priceAim):?>
-                <p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p>
+                <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
             <?php endif;?>
             <?php if($peb):?>
-                <p class="toggle-button accordion"><strong>Label énergétique:</strong>
-                <?php if($tyPEB):?>
-                                    <div class="logo_peb">
-                                        <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
-                                    </div>
-                                <?php else :?>
-                                    <div class="logo_peb">
-                                        <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
-                                    </div>
-                                <?php endif;?>
-                </p>
+                <div>
+                    <p class="toggle-button accordion"><strong>Label énergétique:</strong>
+                        
+                    <?php if($tyPEB = 1):?>
+                        <div class="logo_peb">
+                            <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
+                        </div>
+                    <?php else :?>
+                        <div class="logo_peb">
+                            <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
+                        </div>
+                    <?php endif;?>
+                    </p>
+                </div>
             <?php endif;?>
 
         </div>
