@@ -33,16 +33,19 @@ $btnCta       = get_field('cta_listing','options');
 </section>
 
 <section id="galerie">
-    <div class="swiper-about swiper">
-        <div class=swiper-wrapper>
-            <?php 
-            if($galerie):
-                foreach($galerie as $g):?>
-                    <div class="swiper-slide">
-                        <img src="<?php echo $g['url'];?>" alt="<?php echo $g['title'];?>" />
-                    </div>
-                <?php endforeach;
-            endif;?>
+    <div class="container">
+        <div class="swiper-about swiper">
+            <div class=swiper-wrapper>
+                <?php 
+                if($galerie):
+                    foreach($galerie as $g):?>
+                        <div class="swiper-slide">
+                            <img src="<?php echo $g['url'];?>" alt="<?php echo $g['title'];?>" />
+                        </div>
+                    <?php endforeach;
+                endif;?>
+            </div>
+        </div>
     </div>
 </section>
 

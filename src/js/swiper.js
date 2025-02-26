@@ -20,6 +20,7 @@ const swiperHero = new Swiper(".swiper-hero", {
 const swiperAbout = new Swiper(".swiper-about", {
   loop: true,
   autoplay: true,
+  slidesPerView: 3,
 
   cssMode: true,
 
