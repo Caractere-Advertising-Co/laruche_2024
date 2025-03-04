@@ -143,10 +143,10 @@ endif;
     <div class="container section-title">
         <div class="columns">
             <?php if($surfHab):?>
-                <div><p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab;?></p></div>
+                <div><p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab . ' m²';?></p></div>
             <?php endif;?>
             <?php if($surfTot):?>
-                <div><p class="toggle-button accordion"><strong>Superficie :</strong><?php echo $surfTot;?></p></div>
+                <div><p class="toggle-button accordion"><strong>Propriété :</strong><?php echo $surfTot;?></p></div>
             <?php endif;?>
             <?php if($compBien['chambre']):?>
                 <div><p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p></div>
@@ -155,7 +155,7 @@ endif;
                 <div><p class="toggle-button accordion"><strong>Garage :</strong><?php echo $compBien['garage'];?></p></div>
             <?php endif;?>
             <?php if($rc):?>
-                <div><p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc;?></p></div>
+                <div><p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p></div>
             <?php endif;?>
             <?php if($refCada):?>
                 <div><p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p></div>
