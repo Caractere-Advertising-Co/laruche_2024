@@ -161,12 +161,7 @@ endif;
             <?php if($refCada):?>
                 <div><p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p></div>
             <?php endif;?>
-            <?php if($prix):?>
-                <div><p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p></div>
-            <?php endif;?>
-            <?php if($priceAim):?>
-                <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
-            <?php endif;?>
+            
             <?php if($peb):?>
                 <div>
                     <p class="toggle-button accordion"><strong>Label énergétique:</strong>
@@ -188,7 +183,12 @@ endif;
                     <p class="toggle-button accordion"><strong>Électricité : </strong><?php echo $elec;?></p>
                 </div>
             <?php endif;?>
-
+            <?php if($prix):?>
+                <div><p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p></div>
+            <?php endif;?>
+            <?php if($priceAim):?>
+                <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
+            <?php endif;?>
         </div>
     </div>
 </section>
