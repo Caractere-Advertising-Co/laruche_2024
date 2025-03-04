@@ -178,6 +178,7 @@ endif;
                     </p>
                 </div>
             <?php endif;?>
+
             <?php if($elec):?>
                 <div>
                     <p class="toggle-button accordion"><strong>Électricité : </strong><?php echo $elec;?></p>
@@ -450,10 +451,9 @@ $inondation    = $situation['inondation'];
 
             <footer>
                 <div class="container">
-                    <p>S.P.R.L. La Ruche Immobilière - TVA 0421 755 406<br>
-Christopher Roekaerts : gérant et agent agréé IPI n°508390 - <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a><br>
-Place du Centre n°2 - 6120 Nalinnes - Tél.: <a href="tel:071303052">071 30 30 52</a><br>
-<span>COMPTE BANCAIRE N° BE67 7320 3702 8587 - COMPTE DE TIERS N° BE98 7320 3702 9193</span></p>
+                    <p>S.R.L. La Ruche Immobilière<br>
+                    Tél.: <a href="tel:071303052">071 30 30 52</a> - <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a><br>
+                    Place du Centre n°2 - 6120 Nalinnes | Agréation IPI n°508390</p>
                 </div>
             </footer>
       </body>
