@@ -142,11 +142,6 @@ endif;
 <section id="caracteristiques-biens">
     <div class="container section-title">
         <div class="columns">
-            <?php if($lieu):?>
-                <div>
-                    <p class="toggle-button accordion"><strong>Localisation :</strong><?php echo $lieu;?> </p>
-                </div>
-            <?php endif;?>
             <?php if($surfHab):?>
                 <div><p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab;?></p></div>
             <?php endif;?>
