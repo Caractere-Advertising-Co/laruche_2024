@@ -384,12 +384,12 @@ $inondation    = $situation['inondation'];
                     color: #fff;
                     font-size: .7rem;
                     position: absolute;
-                    font-weight: 7  00;
+                    font-weight: 700;
                     bottom: 0;
                     left: 0;
                     width: 21cm;
-                    height: 2cm;
-                    padding-bottom: .8cm;
+                    height: 1.5cm;
+                    padding-bottom: .5cm;
                 }
 
                 footer p span{
