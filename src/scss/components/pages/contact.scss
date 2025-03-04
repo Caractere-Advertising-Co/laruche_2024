@@ -267,6 +267,21 @@
       .columns{
         flex-direction: column;
         gap: 0;
+
+        .colg{
+          h2{
+            strong{
+              color: $primary-color;
+            }
+          }
+
+          ul{
+            margin-left: 30px;
+            li{
+              margin-bottom: 0;
+            }
+          }
+        }
       }
 
       .container{
