@@ -10,11 +10,18 @@
         position: relative;
         z-index: 10;
 
+        h1{
+          em{
+            strong{
+              color: $primary-color;
+              font-style: normal;
+            }
+          }
+        }
+
         h2{
           position:relative;
-          padding-left: 20px;
-          line-height: 4rem;
-          
+          padding-left: 20px;          
           strong{
             font-weight: 800;
             color: $secondary-color;
@@ -41,6 +48,10 @@
       }
       .cold {
         margin: 50px 0 0;
+
+        h2{
+          line-height: 4rem;
+        }
       }
     }
   }
