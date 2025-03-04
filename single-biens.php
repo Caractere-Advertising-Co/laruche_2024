@@ -72,11 +72,17 @@ $rc            = get_field('rc');
 
 $icones = get_field('icones_biens','options');
 
+if($fairOff):   
+    $foapd =  'FO àpd ';
+else : 
+    $foapd = ''; 
+endif;
+
 ?>
 
 <section id="introduction-single-bien">
     <div class="container">
-        <h1><?php echo '<strong>' . $lieu . '</strong> - <span class="price">'. $prix . ' €</span>';?></h1>
+        <h1><?php echo '<strong>' . $lieu . '</strong> - <span class="price">' $foapd . ' '. $prix . ' €</span>';?></h1>
         <p><?php if($adresse): echo $adresse; endif;?></p>
     </div>
 
