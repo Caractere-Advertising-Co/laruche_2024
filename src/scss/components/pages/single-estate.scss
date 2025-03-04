@@ -2,17 +2,18 @@
     #introduction-single-bien{
         background-color: $light-gray;
         padding-bottom: 150px;
-        padding-top: 100px;
+        padding-top: 30px;
 
         h1{
             text-align: center;
             color: $dark-dark-gray;
             font-size: 3.5rem;
             line-height: 3.5rem;
+            margin-bottom: 10px;
 
             .price{
-                font-weight: 800;
-                color : $dark-dark-gray;
+                font-weight: 600;
+                color : $secondary-color;
             }
         }
 
