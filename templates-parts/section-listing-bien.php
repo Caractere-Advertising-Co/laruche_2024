@@ -95,7 +95,7 @@ endif;
                 $categorie = get_field('categorie_bien');
                 $lieu      = get_field('situation_lieu');
                 $prix      = get_field('prix');
-                $compBien      = get_field('composition_du_bien');
+                $compBien  = get_field('composition_du_bien');
                 $chambre   = get_field('chambres');
                 $surfHab   = get_field('surf_habitable');
                 $surfTot   = get_field('surf_totale');
@@ -125,7 +125,7 @@ endif;
                         </div>
                         <?php if($title): echo '<h3><strong>' . $categorie . '</strong> - <strong>'. $lieu . '</strong></h3>'; endif;?>
                         <div class="columns details">
-                            <?php if($compBien['chambre']): echo '<div class="room"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/bed.png" alt="icone_bed" class="icon"/></div><p>'.$compBien['chambre'].' Chs</p></div>'; endif;?>
+                            <?php if($compBien['chambre']): echo '<div class="room"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/bed.png" alt="icone_bed" class="icon"/></div><p>'.$compBien['chambre'].'</p></div>'; endif;?>
                             <?php if($surfHab): echo '<div class="surfHab"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/house.png" alt="icone_bed" class="icon"/></div><p>'.$surfHab.' m²</p></div>'; endif;?>
                             <?php if($surfTot): echo '<div class="surfTot"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/surf_totale.png" alt="icone_bed" class="icon"/></div><p>'.$surfTot.'</p></div>'; endif;?>
                         </div>
