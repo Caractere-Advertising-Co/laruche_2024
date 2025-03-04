@@ -49,9 +49,9 @@ endif;
         <div class="container columns">
             <div id="title-section">
                 <?php if(is_page(28951)):
-                    echo '<h1>Nos biens à vendre</strong></h1>';
+                    echo '<h1>Nos <strong>biens à vendre</strong></h1>';
                 else :
-                    echo '<h1>Nos biens à louer</strong></h1>';
+                    echo '<h1>Nos <strong>biens à louer</strong></h1>';
                 endif; ?>
             </div>
 
