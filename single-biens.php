@@ -62,6 +62,7 @@ $surfHab       = get_field('surf_habitable');
 $surfTot       = get_field('surf_totale');
 $fairOff       = get_field('faireOffre');
 $new           = get_field('new');
+$elec          = get_field('electricite');
 
 $situation     = get_field('situation');
 $environnement = $situation['type_denvironnement'];
@@ -180,6 +181,11 @@ endif;
                     </span>
                     <?php endif;?>
                     </p>
+                </div>
+            <?php endif;?>
+            <?php if($elec):?>
+                <div>
+                    <p class="toggle-button accordion"><strong>Électricité : </strong><?php echo $elec;?></p>
                 </div>
             <?php endif;?>
 
