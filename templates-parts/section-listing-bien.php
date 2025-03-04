@@ -144,7 +144,7 @@ endif;
         ?>
     </div>
 
-    <div class="container columns cta-biens">
+    <div class="container columns cta-biens number-listing">
         <?php if(is_front_page(  )):
             $urlSale = get_field('lien_page_vendre');
             $urlLocation = get_field('lien_page_louer');
