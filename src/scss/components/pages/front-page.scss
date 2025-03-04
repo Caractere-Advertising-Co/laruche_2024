@@ -249,7 +249,7 @@
 
       &.ctaLoco{
         &::before{
-            background-color: $dark-dark-gray;
+            background-color: $secondary-color;
         }
       }
     }
@@ -389,6 +389,7 @@
 
         &::before{
           margin-top: 0;
+          background-color: $secondary-color;
         }
 
         svg{
