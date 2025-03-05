@@ -216,9 +216,9 @@ function stream_pdf_file($contents){
 
     $dompdf = new Dompdf();
 
-    $dompdf->set_options('isRemoteEnabled', true);
-    $dompdf->set_options('isPhpEnabled', true);
-    $dompdf->set_options('isHtml5ParserEnabled', true);
+    $dompdf->set_option('isRemoteEnabled', true);
+    $dompdf->set_option('isPhpEnabled', true);
+    $dompdf->set_option('isHtml5ParserEnabled', true);
     $dompdf->loadHtml($contents);
 
     // (Optional) Setup the paper size and orientation
@@ -250,15 +250,6 @@ function get_html(){
     $adresse       = get_field('adresse_bien');
 
     // CARACT. BIEN
-
-    $bg_header     = get_field('bg_header');
-
-    if(!$bg_header):
-        $bg_url    = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
-    else :
-        $bg_header = get_field('bg_header');
-        $bg_url    = $bg_header['url'];
-    endif;
 
     $title         = get_the_title();
     $thb           = get_field('miniature');
@@ -411,7 +402,8 @@ function get_html(){
       </head>
       <body>
             <header>
-                <div class="logo"><img src="<?php echo $logo['url'];?>" class="logo"/></div>
+                <?php echo var_dump($thb);?>
+                <div class="logo"><img src="<?php echo $thb['url'];?>" class="logo"/></div>
 
                 <div class="contact">
                 <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0071303052">T. 071/30 30 52</a>
