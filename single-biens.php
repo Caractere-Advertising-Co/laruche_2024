@@ -216,9 +216,9 @@ function stream_pdf_file($contents){
 
     $dompdf = new Dompdf();
 
-    $dompdf->set_option('isRemoteEnabled', true);
-    $dompdf->set_option('isPhpEnabled', true);
-    $dompdf->set_option('isHtml5ParserEnabled', true);
+    $dompdf->set_options('isRemoteEnabled', true);
+    $dompdf->set_options('isPhpEnabled', true);
+    $dompdf->set_options('isHtml5ParserEnabled', true);
     $dompdf->loadHtml($contents);
 
     // (Optional) Setup the paper size and orientation
