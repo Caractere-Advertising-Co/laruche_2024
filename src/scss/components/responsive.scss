@@ -93,7 +93,7 @@
       left: 0;
       display: flex;
       width: 100%;
-      background-color: $dark-dark-gray;
+      background-color: $secondary-color;
       padding: 10px 0;
       margin-top: 0;
       gap: 0;
@@ -413,7 +413,7 @@
     padding: 50px 0;
   
     h2{
-      color: $dark-dark-gray;
+      color: $secondary-color;
       font-weight: 600;
       font-size: 2rem;
       margin: 50px 0 30px 0;
@@ -602,7 +602,7 @@
           }
   
           .cta{
-            background-color: $dark-dark-gray;
+            background-color: $secondary-color;
             width: fit-content;
             padding: 10px 50px;
             color: $light;
@@ -624,7 +624,7 @@
 
         .price{
           font-weight: 800;
-          color : $dark-dark-gray;
+          color : $secondary-color;
         }
       }
     }

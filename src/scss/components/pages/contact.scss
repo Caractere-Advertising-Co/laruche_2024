@@ -104,7 +104,7 @@
 
         a,
         p{
-          color: $dark-dark-gray;
+          color:  $secondary-color;;
           font-weight: 600;
         }
       }
@@ -123,13 +123,13 @@
         }
 
         &.cta-dark{
-          background-color: $dark-dark-gray;
+          background-color:  $secondary-color;;
         }
 
         &.inactif{
-          border: 1px solid $dark-dark-gray;
+          border: 1px solid  $secondary-color;;
           background: none;
-          color: $dark-dark-gray;
+          color:  $secondary-color;;
         }
       }
     }

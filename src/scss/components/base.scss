@@ -29,7 +29,7 @@ header {
 
   &::before {
     content: "";
-    background-color: $dark-dark-gray;
+    background-color: $secondary-color;
     opacity: 0.7;
     display: block;
     width: 100%;
@@ -533,7 +533,7 @@ form {
     }
 
     &.-black {
-      background: $dark-dark-gray;
+      background: $secondary-color;
     }
 
     &.-white {
@@ -556,7 +556,7 @@ form {
   .title {
     h3 {
       text-align: left;
-      color: $dark-dark-gray;
+      color: $secondary-color;
       font-size: 1.8rem !important;
       letter-spacing: 1px;
       line-height: 1.8rem !important;

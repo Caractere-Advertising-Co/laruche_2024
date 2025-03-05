@@ -105,13 +105,13 @@
             font-weight: 700;
             font-size: 1.5rem;
             line-height: 1.8rem;
-            color: $dark-dark-gray;
+            color: $secondary-color;;
           }
 
           p {
             margin: 30px auto 10px auto;
             display: block;
-            color: $dark-dark-gray;
+            color: $secondary-color;;
 
             &::after {
               content: "→";
@@ -144,7 +144,7 @@
 
     h2 {
       text-align: center;
-      color: $dark-dark-gray;
+      color: $secondary-color;;
 
       strong {
         color: $primary-color;

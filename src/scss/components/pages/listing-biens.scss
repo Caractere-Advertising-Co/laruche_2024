@@ -59,7 +59,7 @@
                     height: 30px;
                     background-color: $middle-gray;
                     font-family: 'Montserrat',sans-serif;
-                    color: $dark-dark-gray;
+                    color: $secondary-color;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -71,7 +71,7 @@
     
                     &.current{
                         background-color: $primary-color;
-                        color: $dark-dark-gray;
+                        color: $secondary-color;
                         font-weight: 800;
                     }
     
@@ -99,7 +99,7 @@
             height: 30px;
             background-color: $middle-gray;
             font-family: 'Montserrat',sans-serif;
-            color: $dark-dark-gray;
+            color: $secondary-color;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -111,7 +111,7 @@
 
             &.current{
                 background-color: $primary-color;
-                color: $dark-dark-gray;
+                color: $secondary-color;
                 font-weight: 800;
             }
 
