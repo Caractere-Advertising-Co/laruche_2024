@@ -416,7 +416,7 @@ function get_html(){
                 </div>
             </section>
 
-                <div class="block-img"><img src="<?php echo $thb;?>" height="400"/></div>
+                <div class="block-img photo_bien"><img src="<?php echo $thb;?>"/></div>
     
             <section id="blockGray">
                 <div class="description">
