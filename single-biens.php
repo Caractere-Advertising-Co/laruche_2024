@@ -241,46 +241,43 @@ function get_html(){
 
     ob_start();
 
-    
+    $surtitre      = get_field('surtitre');
+    $titre         = get_field('titre');
 
-$surtitre      = get_field('surtitre');
-$titre         = get_field('titre');
+    $logo          = get_field('logo-entreprise','options');
 
-$logo          = get_field('logo-entreprise','options');
+    $introduction  = get_field('description');
+    $adresse       = get_field('adresse_bien');
 
-$introduction  = get_field('description');
-$adresse       = get_field('adresse_bien');
+    // CARACT. BIEN
 
-// CARACT. BIEN
+    $bg_header     = get_field('bg_header');
 
-$bg_header     = get_field('bg_header');
+    if(!$bg_header):
+        $bg_url    = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
+    else :
+        $bg_header = get_field('bg_header');
+        $bg_url    = $bg_header['url'];
+    endif;
 
-if(!$bg_header):
-    $bg_url    = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
-else :
-    $bg_header = get_field('bg_header');
-    $bg_url    = $bg_header['url'];
-endif;
+    $title         = get_the_title();
+    $thb           = get_field('miniature');
+    $tyPEB         = get_field('type_peb');
+    $peb           = get_field('PEB');
+    $lieu          = get_field('lieu');
+    $categorie     = get_field('categorie_bien');
+    $pebDble       = get_field('PEB_double');
+    $typeBien      = get_field('type_de_bien');
+    $prix          = get_field('prix');
+    $compBien      = get_field('composition_du_bien');
+    $surfHab       = get_field('surf_habitable');
+    $surfTot       = get_field('surf_totale');
+    $fairOff       = get_field('faireOffre');
+    $achatImm      = get_field('achat-immediat');
 
-$title         = get_the_title();
-$thb           = get_field('miniature');
-$tyPEB         = get_field('type_peb');
-$peb           = get_field('PEB');
-$lieu          = get_field('lieu');
-$categorie     = get_field('categorie_bien');
-$pebDble       = get_field('PEB_double');
-$typeBien      = get_field('type_de_bien');
-$prix          = get_field('prix');
-$compBien      = get_field('composition_du_bien');
-$surfHab       = get_field('surf_habitable');
-$surfTot       = get_field('surf_totale');
-$fairOff       = get_field('faireOffre');
-$achatImm      = get_field('achat-immediat');
-
-$situation     = get_field('situation');
-$environnement = $situation['type_denvironnement'];
-$inondation    = $situation['inondation'];
-
+    $situation     = get_field('situation');
+    $environnement = $situation['type_denvironnement'];
+    $inondation    = $situation['inondation'];
 
     // =========   HTML CODE BEGINS HERE AFTER PHP END TAG ====================
 ?>
@@ -368,7 +365,6 @@ $inondation    = $situation['inondation'];
                     line-height: .9rem;
                 }
                 
-
                 section .description h3{
                     font-size: .9rem;
                     margin: 15px 0 5px 0;
@@ -415,12 +411,10 @@ $inondation    = $situation['inondation'];
       </head>
       <body>
             <header>
-                <div class="logo">
-                    <img src="<?php echo $logo['url'];?>" class="logo"/>
-                </div>
+                <div class="logo"><img src="<?php echo $logo['url'];?>" class="logo"/></div>
 
                 <div class="contact">
-                <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0032495563099">0495 56 30 99</a>
+                <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0071303052">T. 071/30 30 52</a>
                 </div>
             </header>
 
