@@ -252,7 +252,7 @@ function get_html(){
     // CARACT. BIEN
 
     $title         = get_the_title();
-    $thb           = get_field('miniature');
+    $thb           = get_the_post_thumbnail_url( );
     $tyPEB         = get_field('type_peb');
     $peb           = get_field('PEB');
     $lieu          = get_field('lieu');
@@ -403,7 +403,7 @@ function get_html(){
       <body>
             <header>
                 <?php echo var_dump($thb);?>
-                <div class="logo"><img src="<?php echo $thb['url'];?>" class="logo"/></div>
+                <div class="logo"><img src="<?php echo $thb;?>" class="logo"/></div>
 
                 <div class="contact">
                 <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0071303052">T. 071/30 30 52</a>
