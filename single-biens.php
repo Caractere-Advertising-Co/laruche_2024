@@ -402,8 +402,7 @@ function get_html(){
       </head>
       <body>
             <header>
-                <?php echo var_dump($thb);?>
-                <div class="logo"><img src="<?php echo $thb;?>" class="logo"/></div>
+                <div class="logo"><img src="<?php echo $logo['url'];?>" class="logo"/></div>
 
                 <div class="contact">
                 <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0071303052">T. 071/30 30 52</a>
@@ -417,7 +416,7 @@ function get_html(){
                 </div>
             </section>
 
-                <div class="block-img"><img src="<?php echo $bg_url;?>" height="400"/></div>
+                <div class="block-img"><img src="<?php echo $thb;?>" height="400"/></div>
     
             <section id="blockGray">
                 <div class="description">
