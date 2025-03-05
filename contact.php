@@ -48,6 +48,4 @@ $form2       = get_field('formulaire-recherche');
     </div>
 </section>
 
-
-
 <?php get_footer();

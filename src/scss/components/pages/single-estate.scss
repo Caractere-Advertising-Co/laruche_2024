@@ -72,6 +72,10 @@
                 background-color: #23b2c0;
                 padding: 10px 30px;
                 border-radius: 5px;
+
+                &::before{
+                    background-color: #18757e;
+                }
             }
         }
     }
