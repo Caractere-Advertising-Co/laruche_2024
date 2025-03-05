@@ -4,6 +4,27 @@
     color: $secondary-color;
   }
 
+  .cold{
+    padding-top: 60px;
+
+    h2{
+      text-align: center;
+      width: fit-content;
+    }
+
+    .fleche-form{
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 0px 50px 20px;
+  
+      .block-img{
+        height: 70px;
+        margin-top: 30px;
+      }
+    }
+  }
+
   #contact-introduction,
   #formulaire{
     position: relative;
@@ -13,7 +34,6 @@
     margin: auto;
 
     .title{
-
       &.titlelvl2{
         font-size: 3rem;
         line-height: auto;
@@ -62,11 +82,11 @@
         flex-direction: row;
 
         .colg{
-          width: 40%;
+          width: 38%;
         }
 
         .cold{
-          width: 60%;
+          width: 62%;
         }
       }
 
@@ -177,7 +197,8 @@
                   font-size: 1rem;
 
                   input{
-                    width: 30px;
+                    width: 25px;
+                    height: 25px;
                   }
                 }
             }
