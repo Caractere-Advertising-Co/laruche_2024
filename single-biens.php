@@ -253,6 +253,15 @@ $adresse       = get_field('adresse_bien');
 
 // CARACT. BIEN
 
+$bg_header     = get_field('bg_header');
+
+if(!$bg_header):
+    $bg_url    = get_template_directory_uri(  ).'/assets/img/bg-default.jpg';
+else :
+    $bg_header = get_field('bg_header');
+    $bg_url    = $bg_header['url'];
+endif;
+
 $title         = get_the_title();
 $thb           = get_field('miniature');
 $tyPEB         = get_field('type_peb');
@@ -422,7 +431,7 @@ $inondation    = $situation['inondation'];
                 </div>
             </section>
 
-                <div class="block-img"><img src="<?php echo $thb['url'];?>" height="400"/></div>
+                <div class="block-img"><img src="<?php echo $bg_url;?>" height="400"/></div>
     
             <section id="blockGray">
                 <div class="description">
