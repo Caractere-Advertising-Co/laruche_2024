@@ -384,7 +384,7 @@ function get_html(){
                     bottom: 0;
                     left: 0;
                     width: 21cm;
-                    height: 1.5cm;
+                    height: 1.2cm;
                     padding-bottom: .5cm;
                 }
 
