@@ -94,7 +94,7 @@ endif;
                 value=""><?php _e('Fiche du bien', 'ajd') ?></button>
         </form>
         <?php if($ctaNotaire && ($statut != "A louer")):?>
-            <a href="<?php echo $ctaNotaire['url'];?>" class="ctanotaire" target="_blank"><?php echo $ctaNotaire['title'];?></a>
+            <a href="<?php echo $ctaNotaire['url'];?>" class="ctanotaire cta" target="_blank"><?php echo $ctaNotaire['title'];?></a>
         <?php endif;?>
     </div>
 </section>
