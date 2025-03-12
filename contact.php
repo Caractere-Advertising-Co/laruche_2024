@@ -45,7 +45,7 @@ $form2       = get_field('formulaire-recherche');
                 
                 $valid;
                 if(is_page(47261) || is_page(45386)):
-                    $valid = 'actif';
+                    $valid = 'active';
                 endif;
                 
                 if($form): echo '<div id="formulaire-vendre" class="'. $valid .'">'.do_shortcode( $form ).'</div>'; endif;?>
