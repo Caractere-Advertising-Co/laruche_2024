@@ -43,7 +43,7 @@ $(document).ready(function () {
     makeMagic(el, "fade-in-top");
   });
 
-
+if (!window.location.pathname.includes('/planifier-une-visite')) {
   var formVente = $('#formulaire-vendre');
   var formSearch = $('#formulaire-recherche');
   var ctaVente = $('#ctaVente');
@@ -69,6 +69,7 @@ $(document).ready(function () {
       const urlParams = new URLSearchParams(window.location.search);
       return urlParams.get(param);
   }
+}
 
   // Vérifiez si on est sur la page Contact
   if (window.location.pathname.includes('/planifier-une-visite')) {
