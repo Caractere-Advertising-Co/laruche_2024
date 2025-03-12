@@ -41,7 +41,14 @@ $form2       = get_field('formulaire-recherche');
                 <?php if($cta2):?><a href="#!" id="ctaSearch" class="cta cta-dark inactif"><?php echo $cta2['title'];?></a><?php endif;?>
             </div>
             <section id="formulaire">
-                <?php if($form): echo '<div id="formulaire-vendre">'.do_shortcode( $form ).'</div>'; endif;?>
+                <?php 
+                
+                $valid;
+                if(is_page(47261) || is_page(45386)):
+                    $valid = 'actif';
+                endif;
+                
+                if($form): echo '<div id="formulaire-vendre" class="'. $valid .'">'.do_shortcode( $form ).'</div>'; endif;?>
                 <?php if($form2): echo '<div id="formulaire-recherche">'.do_shortcode( $form2 ).'</div>'; endif;?>
             </section>
         </div>
