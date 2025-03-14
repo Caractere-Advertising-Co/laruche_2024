@@ -126,7 +126,6 @@ endif;
                     <div class="block-img miniature-bien" <?php if ($thb) : ?>style="background-image:url('<?php echo $thb; ?>');"<?php endif; ?>>
                         <?php if ($new) : ?><span class="statut">New</span><?php endif; ?>
                         <?php if ($statut === "Vendu") : ?><span class="statutBien">Vendu !</span><?php endif; ?>
-                    </div>
                     <?php if($tyPEB):?>
                                 <div class="logo_peb">
                                     <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
@@ -136,6 +135,7 @@ endif;
                                     <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
                                 </div>
                             <?php endif;?>
+                    </div>
                     <h3><strong><?php echo $categorie; ?></strong> - <strong><?php echo $lieu; ?></strong></h3>
                     <div class="columns details">
                             <?php if($compBien['chambre']): echo '<div class="room"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/bed.png" alt="icone_bed" class="icon"/></div><p>'.$compBien['chambre'].'</p></div>'; endif;?>
@@ -191,3 +191,4 @@ endif;
         endif;?>
     </div>
 </section>  
+
