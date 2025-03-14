@@ -106,6 +106,7 @@ endif;
             $thb = get_field('miniature', $bien_id);
             $statut = get_field('statut_bien', $bien_id);
             $tyPEB         = get_field('type_peb', $bien_id);
+            $pebDble       = get_field('PEB_double', $bien_id);
             $categorie = get_field('categorie_bien', $bien_id);
             $lieu = get_field('situation_lieu', $bien_id);
             $prix = get_field('prix', $bien_id);
