@@ -123,6 +123,7 @@ endif;
             $fairOff   = get_field('faireOffre', $bien_id);
             $validLink = array('Vendu','Loué');
     
+            
             ?>
             <div class="card">
                 <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink($bien_id).'">'; ?>
