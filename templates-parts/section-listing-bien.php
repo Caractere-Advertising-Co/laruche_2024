@@ -90,12 +90,14 @@ endif;
     
             if (in_array($statut, ['Vendu', 'Loué']) && $date_update < $six_months_ago) {
                 $old_sold_biens[] = get_the_ID(); // Biens vendus/loués depuis +6 mois
-                var_dump($old_sold_biens);
+                
             } else {
                 $active_biens[] = get_the_ID(); // Biens à vendre/louer et vendus/loués récents
             }
         endwhile;
     endif;
+
+    var_dump($old_sold_biens);
     
     wp_reset_postdata();
 
