@@ -130,6 +130,7 @@ endif;
                     <?php echo in_array($statut,$validLink) ?  '' : '</a>' ; ?>
                 </div>
             <?php endwhile;
+        echo '</div>';
         endif;
 
     wp_reset_postdata();?>
