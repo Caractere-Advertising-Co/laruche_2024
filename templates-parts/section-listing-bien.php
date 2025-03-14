@@ -25,7 +25,7 @@ else :
         'post_type'      => 'biens',
         'post_status'    => 'publish',
         'paged'          => $paged,
-        'posts_per_page' => 16, // Affichage en grille de 16
+        'posts_per_page' => 15, // Affichage en grille de 16
         'meta_query'     => array(
             array(
                 'key'     => 'type_de_bien',
