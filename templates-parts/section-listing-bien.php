@@ -84,6 +84,8 @@ endif;
         $old_sold_biens = [];
         $six_months_ago = strtotime('-6 months');
 
+        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
         if ($biens->have_posts()) :
             while ($biens->have_posts()) : $biens->the_post();
                 $statut = get_field('statut_bien');
@@ -123,7 +125,7 @@ endif;
             $fairOff   = get_field('faireOffre', $bien_id);
             $validLink = array('Vendu','Loué');
     
-            
+
             ?>
             <div class="card">
                 <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink($bien_id).'">'; ?>
