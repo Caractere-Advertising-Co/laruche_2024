@@ -7,7 +7,7 @@ $type = '';
 
 if(is_page(28951) || is_page(843)):
     $type = "A vendre";
-elif(is_page(28963)):
+else if(is_page(28963)):
     $type = "A louer";
 endif;
 
