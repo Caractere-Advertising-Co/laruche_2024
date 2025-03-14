@@ -158,7 +158,7 @@ endif;
         endforeach;
 
         wp_reset_postdata();
-    endif; ?>
+    } ?>
     
     <div class="container grid grid-biens">
         <?php display_biens($active_biens); ?>
