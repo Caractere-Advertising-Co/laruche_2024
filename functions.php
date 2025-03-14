@@ -228,3 +228,21 @@ function convert_image_url_to_id($image_url) {
     }
     return '';
 }
+
+function save_sale_date($post_id) {
+    if (get_post_type($post_id) !== 'biens') return;
+
+    $statut = get_field('statut_bien', $post_id);
+
+    if (in_array($statut, ['Vendu', 'Loué'])) {
+        // Vérifie si la date est déjà enregistrée
+        $existing_date = get_post_meta($post_id, 'date_vendu_loue', true);
+        if (!$existing_date) {
+            update_post_meta($post_id, 'date_vendu_loue', current_time('Y-m-d'));
+        }
+    } else {
+        // Si le bien est de nouveau à vendre/louer, on enlève la date
+        delete_post_meta($post_id, 'date_vendu_loue');
+    }
+}
+add_action('save_post', 'save_sale_date');

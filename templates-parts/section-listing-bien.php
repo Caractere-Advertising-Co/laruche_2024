@@ -19,11 +19,12 @@ if(is_front_page(  )):
 
     );
 else : 
+    
     $args = array(
         'post_type'      => 'biens',
         'post_status'    => 'publish',
         'paged'          => $paged,
-        'posts_per_page' => 15,
+        'posts_per_page' => -1, // On récupère tout pour trier ensuite
         'meta_query'     => array(
             array(
                 'key'     => 'type_de_bien',
@@ -77,29 +78,26 @@ endif;
         </div>
     <?php endif;?>
 
-    <?php 
-    $biens = new WP_Query($args);
-    $active_biens = [];
-    $old_sold_biens = [];
-    $six_months_ago = strtotime('-6 months');
-    
-    if ($biens->have_posts()) :
-        while ($biens->have_posts()) : $biens->the_post();
-            $statut = get_field('statut_bien');
-            $date_update = get_the_modified_time('U'); // Récupère la date de dernière modification en timestamp
 
-            var_dump($date_update);
-    
-            if (in_array($statut, ['Vendu', 'Loué']) && $date_update < $six_months_ago) {
-                $old_sold_biens[] = get_the_ID(); // Biens vendus/loués depuis +6 mois
-                
-            } else {
-                $active_biens[] = get_the_ID(); // Biens à vendre/louer et vendus/loués récents
-            }
-        endwhile;
-    endif;
+        $biens = new WP_Query($args);
+        $active_biens = [];
+        $old_sold_biens = [];
+        $six_months_ago = strtotime('-6 months');
 
-    var_dump($old_sold_biens);
+        if ($biens->have_posts()) :
+            while ($biens->have_posts()) : $biens->the_post();
+                $statut = get_field('statut_bien');
+                $date_vendu = get_post_meta(get_the_ID(), 'date_vendu_loue', true);
+                $date_vendu_timestamp = $date_vendu ? strtotime($date_vendu) : null;
+
+                if (in_array($statut, ['Vendu', 'Loué']) && $date_vendu_timestamp && $date_vendu_timestamp < $six_months_ago) {
+                    $old_sold_biens[] = get_the_ID(); // Biens vendus/loués depuis +6 mois
+                } else {
+                    $active_biens[] = get_the_ID(); // Biens actifs ou vendus/loués récents
+                }
+            endwhile;
+        endif;
+
     
     wp_reset_postdata();
 
