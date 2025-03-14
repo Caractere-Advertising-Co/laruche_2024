@@ -87,6 +87,8 @@ endif;
         while ($biens->have_posts()) : $biens->the_post();
             $statut = get_field('statut_bien');
             $date_update = get_the_modified_time('U'); // Récupère la date de dernière modification en timestamp
+
+            var_dump($date_update);
     
             if (in_array($statut, ['Vendu', 'Loué']) && $date_update < $six_months_ago) {
                 $old_sold_biens[] = get_the_ID(); // Biens vendus/loués depuis +6 mois
