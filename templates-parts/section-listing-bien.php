@@ -76,7 +76,7 @@ endif;
                 endif;?>
             </div>
         </div>
-    <?php endif;?>
+    <?php endif;
 
 
         $biens = new WP_Query($args);
@@ -102,7 +102,7 @@ endif;
     wp_reset_postdata();
 
     function display_biens($biens_list) {
-        foreach ($biens_list as $bien_id) {
+        foreach ($biens_list as $bien_id):
             setup_postdata(get_post($bien_id));
             
             $title = get_the_title();
@@ -155,10 +155,10 @@ endif;
                 <?php echo in_array($statut, ['Vendu', 'Loué']) ? '' : '</a>'; ?>
             </div>
             <?php
-        }
+        endforeach;
+
         wp_reset_postdata();
-    }
-    ?>
+    endif; ?>
     
     <div class="container grid grid-biens">
         <?php display_biens($active_biens); ?>
