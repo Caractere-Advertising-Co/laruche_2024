@@ -77,73 +77,65 @@ endif;
         </div>
     <?php endif;?>
 
-    <div class="container grid grid-biens">
-        <?php
+    <?php 
+    $biens = new WP_Query($args);
+    $active_biens = [];
+    $old_sold_biens = [];
+    $six_months_ago = strtotime('-6 months');
+    
+    if ($biens->have_posts()) :
+        while ($biens->have_posts()) : $biens->the_post();
+            $statut = get_field('statut_bien');
+            $date_update = get_the_modified_time('U'); // Récupère la date de dernière modification en timestamp
+    
+            if (in_array($statut, ['Vendu', 'Loué']) && $date_update < $six_months_ago) {
+                $old_sold_biens[] = get_the_ID(); // Biens vendus/loués depuis +6 mois
+            } else {
+                $active_biens[] = get_the_ID(); // Biens à vendre/louer et vendus/loués récents
+            }
+        endwhile;
+    endif;
+    
+    wp_reset_postdata();   
 
-        $biens = new WP_Query($args);
-        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-        if($biens->have_posts()):
-            while($biens->have_posts()): $biens->the_post();
-                $title     = get_the_title();
-                $thb       = wp_get_attachment_image_src( get_post_thumbnail_id( $biens->ID ), 'single-post-thumbnail' );
-                $tyPEB     = get_field('type_peb');
-                $statut    = get_field('statut_bien');
-                $peb       = get_field('PEB');
-                $pebDble   = get_field('PEB_double');
-                $typeBien  = get_field('type_de_bien');
-                $categorie = get_field('categorie_bien');
-                $lieu      = get_field('situation_lieu');
-                $prix      = get_field('prix');
-                $compBien  = get_field('composition_du_bien');
-                $chambre   = get_field('chambres');
-                $surfHab   = get_field('surf_habitable');
-                $surfTot   = get_field('surf_totale');
-                $fairOff   = get_field('faireOffre');
-                $new       = get_field('new');
-                $validLink = array('Vendu','Loué');
-            ?>
-                <div class="card">
-                    <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
-                        <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb[0];?>');"<?php endif;?>>
-                            <?php if($new):?><span class="statut">New</span><?php endif;?>
-                            <?php if($statut):
-                                if($statut == "Vendu"):?>
-                                    <span class="statutBien">Vendu !</span>
-                                <?php endif;
-                            endif;?>
-
-                            <?php if($tyPEB):?>
-                                <div class="logo_peb">
-                                    <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
-                                </div>
-                            <?php else :?>
-                                <div class="logo_peb">
-                                    <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
-                                </div>
-                            <?php endif;?>
-                        </div>
-                        <?php if($title): echo '<h3><strong>' . $categorie . '</strong> - <strong>'. $lieu . '</strong></h3>'; endif;?>
-                        <div class="columns details">
-                            <?php if($compBien['chambre']): echo '<div class="room"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/bed.png" alt="icone_bed" class="icon"/></div><p>'.$compBien['chambre'].'</p></div>'; endif;?>
-                            <?php if($surfHab): echo '<div class="surfHab"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/house.png" alt="icone_bed" class="icon"/></div><p>'.$surfHab.' m²</p></div>'; endif;?>
-                            <?php if($surfTot): echo '<div class="surfTot"><div class="block-img"><img src="'.get_template_directory_uri().'/assets/images/surf_totale.png" alt="icone_bed" class="icon"/></div><p>'.$surfTot.'</p></div>'; endif;?>
-                        </div>
-                        <div class="cta price">
-                            <?php 
-                                echo $fairOff ? 'FO àpd ' : ''; 
-                                if($prix): echo $prix ; endif;
-                                echo ($typeBien == 'À louer') ? '€ / mois' : ' €';    
-                            ?>
-                        </div>
-                    <?php echo in_array($statut,$validLink) ?  '' : '</a>' ; ?>
-                </div>
-            <?php endwhile;
-        endif;
+function display_biens($biens_list) {
+    foreach ($biens_list as $bien_id) {
+        setup_postdata(get_post($bien_id));
         
-        wp_reset_postdata();
+        $title = get_the_title();
+        $thb = wp_get_attachment_image_src(get_post_thumbnail_id($bien_id), 'single-post-thumbnail');
+        $statut = get_field('statut_bien', $bien_id);
+        $categorie = get_field('categorie_bien', $bien_id);
+        $lieu = get_field('situation_lieu', $bien_id);
+        $prix = get_field('prix', $bien_id);
+        $typeBien = get_field('type_de_bien', $bien_id);
+        $new = get_field('new', $bien_id);
+        $compBien = get_field('composition_du_bien', $bien_id);
+
         ?>
-    </div>
+        <div class="card">
+            <?php echo in_array($statut, ['Vendu', 'Loué']) ? '' : '<a href="'.get_permalink().'">'; ?>
+                <div class="block-img miniature-bien" <?php if ($thb) : ?>style="background-image:url('<?php echo $thb[0]; ?>');"<?php endif; ?>>
+                    <?php if ($new) : ?><span class="statut">New</span><?php endif; ?>
+                    <?php if ($statut === "Vendu") : ?><span class="statutBien">Vendu !</span><?php endif; ?>
+                </div>
+                <h3><strong><?php echo $categorie; ?></strong> - <strong><?php echo $lieu; ?></strong></h3>
+                <div class="cta price">
+                    <?php echo ($prix ? $prix . (($typeBien == 'À louer') ? '€ / mois' : ' €') : ''); ?>
+                </div>
+            <?php echo in_array($statut, ['Vendu', 'Loué']) ? '' : '</a>'; ?>
+        </div>
+        <?php
+    }
+    wp_reset_postdata();
+}
+?>
+
+<div class="container grid grid-biens">
+    <?php display_biens($active_biens); ?>
+    <?php display_biens($old_sold_biens); ?>
+</div>
+
 
     <div class="container columns cta-biens number-listing">
         <?php if(is_front_page(  )):

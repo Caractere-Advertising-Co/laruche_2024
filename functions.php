@@ -212,7 +212,7 @@ function update_acf_galleries() {
             }
 
             if (!empty($image_ids)) {
-                update_field('acf_galerie', $image_ids, get_the_ID()); // Remplace par le nom du champ ACF de la galerie
+                update_field('galerie', $image_ids, get_the_ID()); // Remplace par le nom du champ ACF de la galerie
             }
         }
         wp_reset_postdata();
@@ -220,3 +220,11 @@ function update_acf_galleries() {
 }
 
 //add_action( 'init', update_acf_galleries());
+
+function convert_image_url_to_id($image_url) {
+    if (!empty($image_url)) {
+        $attachment_id = attachment_url_to_postid($image_url);
+        return $attachment_id ? $attachment_id : ''; // Retourne l'ID ou une chaîne vide si non trouvé
+    }
+    return '';
+}

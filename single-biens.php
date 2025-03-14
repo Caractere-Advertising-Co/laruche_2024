@@ -93,7 +93,7 @@ endif;
             <button type="submit" class="cta" id="btn" name="cf-submit"
                 value=""><?php _e('Fiche du bien', 'ajd') ?></button>
         </form>
-        <?php if($ctaNotaire && ($statut != "A louer")):?>
+        <?php if($ctaNotaire && ($typeBien != "A louer")):?>
             <a href="<?php echo $ctaNotaire['url'];?>" class="ctanotaire cta" target="_blank"><?php echo $ctaNotaire['title'];?></a>
         <?php endif;?>
     </div>
