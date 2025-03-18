@@ -82,8 +82,8 @@ endif;
     if ($biens->have_posts()) : ?>
         <div class="container grid grid-biens">
             <?php while ($biens->have_posts()) : $biens->the_post();
-               $title     = get_the_title();
-                $thb       = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'single-post-thumbnail' );
+               $title      = get_the_title();
+                $thb       = get_field('miniature');
                 $tyPEB     = get_field('type_peb');
                 $statut    = get_field('statut_bien');
                 $peb       = get_field('PEB');
