@@ -155,15 +155,6 @@ endif;
 
 <section id="caracteristiques-biens">
     <div class="container section-title">
-
-        situation_lieu
-       
-        categorie_bien
-        situation
-        type_peb
-        PEB
-        PEB_double
-
         <div class="columns">
             <div class="colg">
                 <?php if($adresse):?>
