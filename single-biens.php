@@ -180,6 +180,10 @@ endif;
                 <?php if($charge):?>
                     <div><p class="toggle-button accordion"><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p></div>
                 <?php endif;?>
+
+                <?php if($priceAim):?>
+                    <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
+                <?php endif;?>
             </div>
                 
             <div class="cold">
@@ -230,9 +234,7 @@ endif;
                     <div><p class="toggle-button accordion"><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p></div>
                 <?php endif;?>
 
-                <?php if($priceAim):?>
-                    <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
-                <?php endif;?>
+                
             </div>
         </div>
     </div>
