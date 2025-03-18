@@ -457,7 +457,7 @@ function get_html(){
 
                 section .columns .cold{
                     width: 7cm;
-                    margin-left: 2cm;
+                    margin-left: 1.5cm;
                     margin-top: .5cm;
                     display: inline-block;
                 }
