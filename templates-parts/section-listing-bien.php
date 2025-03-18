@@ -106,7 +106,7 @@ endif;
                             <?php if($new):?><span class="statut">New</span><?php endif;?>
                             <?php if($statut):
                                 switch($statut){
-                                    case 'Vendu': 
+                                    case 'Vendu':   
                                         echo '<span class="statutBien">Vendu !</span>';
                                         break;
                                     
@@ -115,7 +115,7 @@ endif;
                                         break;
 
                                     case 'Loué':
-                                        echo '<span class="statutBien">Loué !</span>'
+                                        echo '<span class="statutBien">Loué !</span>';
                                         break;
                                 }
                             endif;?>
