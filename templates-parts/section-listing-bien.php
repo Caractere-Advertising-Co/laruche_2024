@@ -104,7 +104,21 @@ endif;
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
                         <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb;?>');"<?php endif;?>>
                             <?php if($new):?><span class="statut">New</span><?php endif;?>
-                            <?php if($statut === "Vendu"):?><span class="statutBien">Vendu !</span><?php endif;?>
+                            <?php if($statut):
+                                switch($statut){
+                                    case 'Vendu': 
+                                        echo '<span class="statutBien">Vendu !</span>';
+                                        break;
+                                    
+                                    case 'Sous option':
+                                        echo '<span class="statutBien">Sous option</span>';
+                                        break;
+
+                                    case 'Loué':
+                                        echo '<span class="statutBien">Loué !</span>'
+                                        break;
+                                }
+                            endif;?>
 
                             <div class="logo_peb">
                                 <?php if($tyPEB && $pebDble): ?>
