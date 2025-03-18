@@ -451,11 +451,14 @@ function get_html(){
                 section .columns .colg{
                     width: 7cm;
                     display: inline-block;
+
+                    margin-top: .5cm;
                 }
 
                 section .columns .cold{
                     width: 7cm;
-                    left: 1cm;
+                    margin-left: 1cm;
+                    margin-top: .5cm;
                     display: inline-block;
                 }
 
