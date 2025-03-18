@@ -111,7 +111,7 @@ endif;
                                         break;
                                     
                                     case 'Sous option':
-                                        echo '<span class="statutBien">Sous option</span>';
+                                        echo '<span class="statutBien ssOption">Sous option</span>';
                                         break;
 
                                     case 'Loué':

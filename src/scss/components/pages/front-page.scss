@@ -127,6 +127,11 @@
           padding: 35px 10px;
           position: absolute;
           z-index: 11;
+
+          &.ssOption{
+            text-align: center;
+            padding: 29px 15px;
+          }
         }
 
         .logo_peb{
