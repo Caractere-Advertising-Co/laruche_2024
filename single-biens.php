@@ -417,7 +417,7 @@ function get_html(){
 
                 .block-img img{
                     width: 100%;
-                    height: 100%;
+                    height: auto;
                     object-fit: cover;
                 }
 
@@ -460,6 +460,10 @@ function get_html(){
                     margin-left: 1.5cm;
                     margin-top: .5cm;
                     display: inline-block;
+                }
+
+                section .columns .cold img{
+                    height: 20px;
                 }
 
                 .separator{
@@ -573,10 +577,10 @@ function get_html(){
 
                     <span class="separator"></span>
 
-                    <div class="container price"> 
+                    <p class="price"> 
                         Faire offre à partir de : <?php echo $prix ;?> € <br>
                         <?php if($priceAim): echo 'Prix d\'achat immédiat : ' . $priceAim . ' €'; endif;?>
-                    </div>
+                    </p>
                 </div>
             </section>
 
