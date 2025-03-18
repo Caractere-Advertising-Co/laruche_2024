@@ -51,6 +51,17 @@ $title         = get_the_title();
 $thb           = get_field('miniature');
 $tyPEB         = get_field('type_peb');
 $peb           = get_field('PEB');
+
+$infoPeb       = get_field('informations_peb');
+$codeUniPEB    = $infoPeb['code_unique_peb'];
+$valEnerg      = $infoPeb['valeur_energetique'];
+$energieTotal  = $infoPeb['energie_total'];
+
+$infoPeb_2     = get_field('informations_peb_copier');
+$codeUniPEB_2  = $infoPeb_2['code_unique_peb'];
+$valEnerg_2    = $infoPeb_2['valeur_energetique'];
+$energieTotal_2= $infoPeb_2['energie_total'];
+
 $lieu          = get_field('situation_lieu');
 $categorie     = get_field('categorie_bien');
 $pebDble       = get_field('PEB_double');
@@ -68,6 +79,8 @@ $situation     = get_field('situation');
 $environnement = $situation['type_denvironnement'];
 $inondation    = $situation['inondation'];
 $refCada       = $situation['ref_cada'];
+
+$charge        = get_field('charge');
 
 $rc            = get_field('rc');
 
@@ -142,54 +155,94 @@ endif;
 
 <section id="caracteristiques-biens">
     <div class="container section-title">
-        <div class="columns">
-            <?php if($surfHab):?>
-                <div><p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab . ' m²';?></p></div>
-            <?php endif;?>
-            <?php if($surfTot):?>
-                <div><p class="toggle-button accordion"><strong>Propriété :</strong><?php echo $surfTot;?></p></div>
-            <?php endif;?>
-            <?php if($compBien['chambre']):?>
-                <div><p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p></div>
-            <?php endif;?>
-            <?php if($compBien['garage']):?>
-                <div><p class="toggle-button accordion"><strong>Garage :</strong><?php echo $compBien['garage'];?></p></div>
-            <?php endif;?>
-            <?php if($rc):?>
-                <div><p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p></div>
-            <?php endif;?>
-            <?php if($refCada):?>
-                <div><p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p></div>
-            <?php endif;?>
-            
-            <?php if($peb):?>
-                <div>
-                    <p class="toggle-button accordion"><strong>Label énergétique:</strong>
-                        
-                    <?php if($tyPEB == 1):?>
-                        <span class="logo_peb">
-                            <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
-                    </span>
-                    <?php else :?>
-                        <span class="logo_peb">
-                            <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
-                    </span>
-                    <?php endif;?>
-                    </p>
-                </div>
-            <?php endif;?>
 
-            <?php if($elec):?>
-                <div>
-                    <p class="toggle-button accordion"><strong>Électricité : </strong><?php echo $elec;?></p>
-                </div>
-            <?php endif;?>
-            <?php if($prix):?>
-                <div><p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p></div>
-            <?php endif;?>
-            <?php if($priceAim):?>
-                <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
-            <?php endif;?>
+        situation_lieu
+       
+        categorie_bien
+        situation
+        type_peb
+        PEB
+        PEB_double
+
+        <div class="columns">
+            <div class="colg">
+                <?php if($adresse):?>
+                    <div><p class="toggle-button accordion"><strong>Adresse : </strong><?php echo $adresse ;?></p></div>
+                <?php endif;?>
+
+                <?php if($surfHab):?>
+                    <div><p class="toggle-button accordion"><strong>Surface habitable :</strong><?php echo $surfHab . ' m²';?></p></div>
+                <?php endif;?>
+
+                <?php if($surfTot):?>
+                    <div><p class="toggle-button accordion"><strong>Propriété :</strong><?php echo $surfTot;?></p></div>
+                <?php endif;?>
+
+                <?php if($rc):?>
+                    <div><p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p></div>
+                <?php endif;?>
+                
+                <?php if($prix):?>
+                    <div><p class="toggle-button accordion"><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p></div>
+                <?php endif;?>
+
+                <?php if($charge):?>
+                    <div><p class="toggle-button accordion"><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p></div>
+                <?php endif;?>
+            </div>
+                
+            <div class="cold">
+
+                <?php if($peb):?>
+                    <div>
+                        <p class="toggle-button accordion"><strong>Label énergétique:</strong>
+                            <span class="logo_peb">
+                                <?php echo $tyPEB == 1 ? '<img src="'.get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png" alt="'. $pebDble .'" />' : '<img src="'. get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png" alt="'. $peb.'" />';?>
+                            </span>
+                        </p>
+                    </div>
+                    
+                    <?php if($tyPEB == 1):?>
+                        <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal;?></p></div>
+                    <?php else: ?>
+                        <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB_2;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg_2;?></p></div>
+                        <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal_2;?></p></div>
+                    <?php endif;?>
+                    
+                <?php endif;?>
+
+                <?php if($elec):?>
+                    <div>
+                        <p class="toggle-button accordion"><strong>Électricité : </strong><?php echo $elec;?></p>
+                    </div>
+                <?php endif;?>
+
+                <?php if($refCada):?>
+                    <div><p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p></div>
+                <?php endif;?>
+
+                <?php if($compBien['chambre']):?>
+                    <div><p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p></div>
+                <?php endif;?>
+                
+                <?php if($compBien['garage']):?>
+                    <div><p class="toggle-button accordion"><strong>Garage :</strong><?php echo $compBien['garage'];?></p></div>
+                <?php endif;?>
+
+                <?php if($compBien['salle_de_bain']):?>
+                    <div><p class="toggle-button accordion"><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p></div>
+                <?php endif;?>
+
+                <?php if($priceAim):?>
+                    <div><p class="toggle-button accordion"><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p></div>
+                <?php endif;?>
+            </div>
         </div>
     </div>
 </section>
