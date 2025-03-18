@@ -102,7 +102,7 @@ endif;
             ?>
                 <div class="card">
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
-                        <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb[0];?>');"<?php endif;?>>
+                        <div class="block-img miniature-bien" <?php if($thb):?>style="background-image:url('<?php echo $thb;?>');"<?php endif;?>>
                             <?php if($new):?><span class="statut">New</span><?php endif;?>
                             <?php if($statut === "Vendu"):?><span class="statutBien">Vendu !</span><?php endif;?>
 
