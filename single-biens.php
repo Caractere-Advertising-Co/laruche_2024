@@ -500,13 +500,53 @@ function get_html(){
             <section>
                 <div class="caracteristiques">
                 <h3> Les caractéristiques de ce bien : </h3>
-                
-                <p><strong>Localisation :</strong> <?php echo $lieu;?></p>
-                <p><strong>Surface habitable :</strong> <?php echo $surfHab;?></p>
-                <p><strong>Libre :</strong></p>
-                <p><strong>Superficie :</strong> <?php echo $surfTot;?></p>
-                <p><strong>Electricité conforme :</strong> <?php echo $peb;?></p>
-                <p><strong>Zone inondable :</strong> <?php echo $inondation;?></p>
+
+                <div class="columns">
+                    <div class="colg">
+                        <p><strong>Adresse : </strong><?php echo $adresse . ' ' . $lieu;?></p>
+                        <p><strong>Surface habitable :</strong> <?php echo $surfHab . ' m²';?></p>
+                        <p><strong>Propriété :</strong><?php echo $surfTot;?></p>
+                        <p><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p>
+                        <p><strong>Libre :</strong></p>
+                        <p><strong>Zone inondable :</strong> <?php echo $inondation;?></p>
+
+                        <p><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p>
+                        <p><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p>
+                        <p><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p>
+                    </div>
+
+                    <div class="cold">
+                        <?php if($peb):?>
+                            <p><strong>Label énergétique:</strong>
+                                <span class="logo_peb">
+                                    <?php echo $tyPEB == 1 ? '<img src="'.get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png" alt="'. $pebDble .'" />' : '<img src="'. get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png" alt="'. $peb.'" />';?>
+                                </span>
+                            </p>
+                            
+                            <?php if($tyPEB == 0):?>
+                                <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
+                                <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
+                                <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
+                            <?php else: ?>
+                                <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
+                                <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
+                                <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
+                                <p><strong>Code unique :</strong> <?php echo $codeUniPEB_2;?></p>
+                                <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg_2;?></p>
+                                <p><strong>Energie totale :</strong> <?php echo $energieTotal_2;?></p>
+                            <?php endif;?>
+                            
+                        <?php endif;?>
+
+                        <p><strong>Électricité : </strong><?php echo $elec;?></p>
+                        <p><strong>Reférence cadastral :</strong><?php echo $refCada;?></p>
+                        <p><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p>
+                        <p><strong>Garage :</strong><?php echo $compBien['garage'];?></p>
+                        <p><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p>
+                    </div>
+                </div>
+    </div>
+</section>
 
                 <span class="separator"></span>
                 </div>
