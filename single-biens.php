@@ -360,7 +360,7 @@ function get_html(){
                 }
                 
                 header{
-                    padding: 20px 50px;
+                    padding: 10px 50px;
                     background: #fcc307;
                     color: #fff;
                     height: .8cm;
@@ -374,7 +374,7 @@ function get_html(){
                 header .contact{
                     position: absolute;
                     right: 1cm;
-                    top: .7cm;
+                    top: .6cm;
                 }
 
                 header .contact a{
@@ -404,7 +404,7 @@ function get_html(){
 
                 .block-img{
                     width: 16cm;
-                    height: 8cm;
+                    height: 7cm;
                     margin:auto;
                     overflow: hidden;
                 }
@@ -458,7 +458,7 @@ function get_html(){
                     bottom: 0;
                     left: 0;
                     width: 21cm;
-                    height: 1.2cm;
+                    height: 1.5cm;
                     padding-bottom: 1cm;
                 }
 
