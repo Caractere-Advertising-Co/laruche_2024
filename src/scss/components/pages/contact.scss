@@ -123,13 +123,13 @@
         }
 
         &.cta-dark{
-          background-color:  $secondary-color;;
+          background-color:  $secondary-color;
         }
 
         &.inactif{
-          border: 1px solid  $secondary-color;;
+          border: 1px solid  $secondary-color;
           background: none;
-          color:  $secondary-color;;
+          color:  $secondary-color;
         }
       }
     }
