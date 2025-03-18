@@ -43,7 +43,7 @@ $form2       = get_field('formulaire-recherche');
             <section id="formulaire">
                 <?php 
                 
-                $valid;
+                $valid = '';
                 if(is_page(47261) || is_page(45386)):
                     $valid = 'active';
                 endif;
