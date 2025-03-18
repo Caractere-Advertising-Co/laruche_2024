@@ -448,6 +448,17 @@ function get_html(){
                     font-weight: 400;
                 }
 
+                section .columns .colg{
+                    width: 7cm;
+                    display: inline-block;
+                }
+
+                section .columns .cold{
+                    width: 7cm;
+                    left: 1cm;
+                    display: inline-block;
+                }
+
                 .separator{
                     width: 16cm;
                     height:1px;
