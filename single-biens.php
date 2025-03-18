@@ -402,6 +402,12 @@ function get_html(){
                     color: #fcc307;
                 }
 
+                .columns{
+                    display:flex;
+                    gap: 1cm;
+                    justify-content: space-between;
+                }
+
                 .block-img{
                     width: 16cm;
                     height: 7cm;
@@ -419,6 +425,11 @@ function get_html(){
                     background: #eee;
                     padding: 25px;
                     margin: 30px auto;
+                }
+
+                #blockGray .description,
+                #blockGray .description p{
+                    text-align:center;
                 }
 
                 section .description,
@@ -547,7 +558,7 @@ function get_html(){
                     <span class="separator"></span>
 
                     <div class="container price"> 
-                        Faire offre à partir de : <?php echo $prix ;?> €
+                        Faire offre à partir de : <?php echo $prix ;?> € <br>
                         <?php if($priceAim): echo 'Prix d\'achat immédiat:' . $priceAim . '€'; endif;?>
                     </div>
                 </div>
