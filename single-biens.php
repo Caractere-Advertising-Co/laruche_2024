@@ -297,24 +297,52 @@ function get_html(){
 
     // CARACT. BIEN
 
-    $title         = get_the_title();
-    $thb           = get_the_post_thumbnail_url( );
-    $tyPEB         = get_field('type_peb');
-    $peb           = get_field('PEB');
-    $lieu          = get_field('lieu');
-    $categorie     = get_field('categorie_bien');
-    $pebDble       = get_field('PEB_double');
-    $typeBien      = get_field('type_de_bien');
-    $prix          = get_field('prix');
-    $compBien      = get_field('composition_du_bien');
-    $surfHab       = get_field('surf_habitable');
-    $surfTot       = get_field('surf_totale');
-    $fairOff       = get_field('faireOffre');
-    $achatImm      = get_field('achat-immediat');
+$statut        = get_field('statut_bien');
 
-    $situation     = get_field('situation');
-    $environnement = $situation['type_denvironnement'];
-    $inondation    = $situation['inondation'];
+$title         = get_the_title();
+$thb           = get_field('miniature');
+$tyPEB         = get_field('type_peb');
+$peb           = get_field('PEB');
+
+$infoPeb       = get_field('informations_peb');
+$codeUniPEB    = $infoPeb['code_unique_peb'];
+$valEnerg      = $infoPeb['valeur_energetique'];
+$energieTotal  = $infoPeb['energie_total'];
+
+$infoPeb_2     = get_field('informations_peb_copier');
+$codeUniPEB_2  = $infoPeb_2['code_unique_peb'];
+$valEnerg_2    = $infoPeb_2['valeur_energetique'];
+$energieTotal_2= $infoPeb_2['energie_total'];
+
+$lieu          = get_field('situation_lieu');
+$categorie     = get_field('categorie_bien');
+$pebDble       = get_field('PEB_double');
+$typeBien      = get_field('type_de_bien');
+$prix          = get_field('prix');
+$priceAim      = get_field('prix_achat_im');
+$compBien      = get_field('composition_du_bien');
+$surfHab       = get_field('surf_habitable');
+$surfTot       = get_field('surf_totale');
+$fairOff       = get_field('faireOffre');
+$new           = get_field('new');
+$elec          = get_field('electricite');
+
+$situation     = get_field('situation');
+$environnement = $situation['type_denvironnement'];
+$inondation    = $situation['inondation'];
+$refCada       = $situation['ref_cada'];
+
+$charge        = get_field('charge');
+
+$rc            = get_field('rc');
+
+$icones = get_field('icones_biens','options');
+
+if($fairOff):   
+    $foapd =  'FO àpd ';
+else : 
+    $foapd = ''; 
+endif;
 
     // =========   HTML CODE BEGINS HERE AFTER PHP END TAG ====================
 ?>
