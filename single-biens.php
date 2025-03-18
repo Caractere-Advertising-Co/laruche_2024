@@ -297,58 +297,58 @@ function get_html(){
 
     // CARACT. BIEN
 
-$statut        = get_field('statut_bien');
+    $statut        = get_field('statut_bien');
 
-$title         = get_the_title();
-$thb           = get_field('miniature');
-$tyPEB         = get_field('type_peb');
-$peb           = get_field('PEB');
+    $title         = get_the_title();
+    $thb           = get_field('miniature');
+    $tyPEB         = get_field('type_peb');
+    $peb           = get_field('PEB');
 
-$infoPeb       = get_field('informations_peb');
-$codeUniPEB    = $infoPeb['code_unique_peb'];
-$valEnerg      = $infoPeb['valeur_energetique'];
-$energieTotal  = $infoPeb['energie_total'];
+    $infoPeb       = get_field('informations_peb');
+    $codeUniPEB    = $infoPeb['code_unique_peb'];
+    $valEnerg      = $infoPeb['valeur_energetique'];
+    $energieTotal  = $infoPeb['energie_total'];
 
-$infoPeb_2     = get_field('informations_peb_copier');
-$codeUniPEB_2  = $infoPeb_2['code_unique_peb'];
-$valEnerg_2    = $infoPeb_2['valeur_energetique'];
-$energieTotal_2= $infoPeb_2['energie_total'];
+    $infoPeb_2     = get_field('informations_peb_copier');
+    $codeUniPEB_2  = $infoPeb_2['code_unique_peb'];
+    $valEnerg_2    = $infoPeb_2['valeur_energetique'];
+    $energieTotal_2= $infoPeb_2['energie_total'];
 
-$lieu          = get_field('situation_lieu');
-$categorie     = get_field('categorie_bien');
-$pebDble       = get_field('PEB_double');
-$typeBien      = get_field('type_de_bien');
-$prix          = get_field('prix');
-$priceAim      = get_field('prix_achat_im');
-$compBien      = get_field('composition_du_bien');
-$surfHab       = get_field('surf_habitable');
-$surfTot       = get_field('surf_totale');
-$fairOff       = get_field('faireOffre');
-$new           = get_field('new');
-$elec          = get_field('electricite');
+    $lieu          = get_field('situation_lieu');
+    $categorie     = get_field('categorie_bien');
+    $pebDble       = get_field('PEB_double');
+    $typeBien      = get_field('type_de_bien');
+    $prix          = get_field('prix');
+    $priceAim      = get_field('prix_achat_im');
+    $compBien      = get_field('composition_du_bien');
+    $surfHab       = get_field('surf_habitable');
+    $surfTot       = get_field('surf_totale');
+    $fairOff       = get_field('faireOffre');
+    $new           = get_field('new');
+    $elec          = get_field('electricite');
 
-$situation     = get_field('situation');
-$environnement = $situation['type_denvironnement'];
-$inondation    = $situation['inondation'];
-$refCada       = $situation['ref_cada'];
+    $situation     = get_field('situation');
+    $environnement = $situation['type_denvironnement'];
+    $inondation    = $situation['inondation'];
+    $refCada       = $situation['ref_cada'];
 
-$charge        = get_field('charge');
+    $charge        = get_field('charge');
 
-$rc            = get_field('rc');
+    $rc            = get_field('rc');
 
-$icones = get_field('icones_biens','options');
+    $icones = get_field('icones_biens','options');
 
-if($fairOff):   
-    $foapd =  'FO àpd ';
-else : 
-    $foapd = ''; 
-endif;
+    if($fairOff):   
+        $foapd =  'FO àpd ';
+    else : 
+        $foapd = ''; 
+    endif;
 
     // =========   HTML CODE BEGINS HERE AFTER PHP END TAG ====================
 ?>
 <!DOCTYPE html>
     <html>
-      <head>
+        <head>
             <meta charset="UTF-8">
             <title>La Ruche Immobilière - Fiche bien</title>
 
@@ -459,7 +459,7 @@ endif;
                     left: 0;
                     width: 21cm;
                     height: 1.2cm;
-                    padding-bottom: .5cm;
+                    padding-bottom: 1cm;
                 }
 
                 footer p span{
@@ -473,7 +473,7 @@ endif;
                     text-decoration: none;
                 }
             </style>
-      </head>
+        </head>
       <body>
             <header>
                 <div class="logo"><img src="<?php echo $logo['url'];?>" class="logo"/></div>
