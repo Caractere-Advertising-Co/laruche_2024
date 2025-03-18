@@ -149,19 +149,21 @@ endif;
 
     wp_reset_postdata();?>
 
-    <div class="container columns cta-biens number-listing">
-        <?php if(!$biens->have_posts()) { echo '<p>Aucun bien trouvé.</p>'; } ?>
-        <?php 
-            $total_pages = $biens->max_num_pages;
-            if ($total_pages > 1){
-                $current_page = max(1, get_query_var('paged'));
-                echo paginate_links(array(
-                    'base' => get_pagenum_link(1) . '%_%',
-                    'format' => '/page/%#%',
-                    'current' => $current_page,
-                    'total' => $total_pages
-                ));
-            }
-        ?>
-    </div>
+    <?php if(!is_front_page(  )):?>
+        <div class="container columns cta-biens number-listing">
+            <?php if(!$biens->have_posts()) { echo '<p>Aucun bien trouvé.</p>'; } ?>
+            <?php 
+                $total_pages = $biens->max_num_pages;
+                if ($total_pages > 1){
+                    $current_page = max(1, get_query_var('paged'));
+                    echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '/page/%#%',
+                        'current' => $current_page,
+                        'total' => $total_pages
+                    ));
+                }
+            ?>
+        </div>
+    <?php endif;?>
 </section>
