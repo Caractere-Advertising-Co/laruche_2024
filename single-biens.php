@@ -193,7 +193,7 @@ endif;
                         </p>
                     </div>
                     
-                    <?php if($tyPEB == 1):?>
+                    <?php if($tyPEB == 0):?>
                         <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p></div>
                         <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p></div>
                         <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal;?></p></div>
