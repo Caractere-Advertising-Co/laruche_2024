@@ -490,70 +490,66 @@ function get_html(){
                 </div>
             </section>
 
-                <div class="block-img photo_bien"><img src="<?php echo $thb;?>"/></div>
+            <div class="block-img photo_bien"><img src="<?php echo $thb;?>"/></div>
     
             <section id="blockGray">
                 <div class="description">
                     <?php echo $introduction;?>
                 </div>
             </section>
+
             <section>
                 <div class="caracteristiques">
-                <h3> Les caractéristiques de ce bien : </h3>
+                    <h3> Les caractéristiques de ce bien : </h3>
 
-                <div class="columns">
-                    <div class="colg">
-                        <p><strong>Adresse : </strong><?php echo $adresse . ' ' . $lieu;?></p>
-                        <p><strong>Surface habitable :</strong> <?php echo $surfHab . ' m²';?></p>
-                        <p><strong>Propriété :</strong><?php echo $surfTot;?></p>
-                        <p><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p>
-                        <p><strong>Libre :</strong></p>
-                        <p><strong>Zone inondable :</strong> <?php echo $inondation;?></p>
+                    <div class="columns">
+                        <div class="colg">
+                            <?php if($adresse):?><p><strong>Adresse : </strong><?php echo $adresse . ' ' . $lieu;?></p><?php endif;?>
+                            <?php if($surfHab):?><p><strong>Surface habitable :</strong> <?php echo $surfHab . ' m²';?></p><?php endif;?>
+                            <?php if($surfTot):?><p><strong>Propriété :</strong><?php echo $surfTot;?></p><?php endif;?>
+                            <?php if($rc):?><p><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p><?php endif;?>
+                            <?php if($inondation):?><p><strong>Zone inondable :</strong> <?php echo $inondation;?></p><?php endif;?>
+                            <?php if($prix):?><p><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p><?php endif;?>
+                            <?php if($charge):?><p><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p><?php endif;?>
+                            <?php if($priceAim):?><p><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p><?php endif;?>
+                        </div>
 
-                        <p><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p>
-                        <p><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p>
-                        <p><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p>
-                    </div>
-
-                    <div class="cold">
-                        <?php if($peb):?>
-                            <p><strong>Label énergétique:</strong>
-                                <span class="logo_peb">
-                                    <?php echo $tyPEB == 1 ? '<img src="'.get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png" alt="'. $pebDble .'" />' : '<img src="'. get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png" alt="'. $peb.'" />';?>
-                                </span>
-                            </p>
-                            
-                            <?php if($tyPEB == 0):?>
-                                <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
-                                <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
-                                <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
-                            <?php else: ?>
-                                <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
-                                <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
-                                <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
-                                <p><strong>Code unique :</strong> <?php echo $codeUniPEB_2;?></p>
-                                <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg_2;?></p>
-                                <p><strong>Energie totale :</strong> <?php echo $energieTotal_2;?></p>
+                        <div class="cold">
+                            <?php if($peb):?>
+                                <p><strong>Label énergétique:</strong>
+                                    <span class="logo_peb">
+                                        <?php echo $tyPEB == 1 ? '<img src="'.get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png" alt="'. $pebDble .'" />' : '<img src="'. get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png" alt="'. $peb.'" />';?>
+                                    </span>
+                                </p>
+                                    
+                                <?php if($tyPEB == 0):?>
+                                    <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
+                                    <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
+                                    <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
+                                <?php else: ?>
+                                    <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
+                                    <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
+                                    <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
+                                    <p><strong>Code unique :</strong> <?php echo $codeUniPEB_2;?></p>
+                                    <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg_2;?></p>
+                                    <p><strong>Energie totale :</strong> <?php echo $energieTotal_2;?></p>
+                                <?php endif;?>
                             <?php endif;?>
-                            
-                        <?php endif;?>
 
-                        <p><strong>Électricité : </strong><?php echo $elec;?></p>
-                        <p><strong>Reférence cadastral :</strong><?php echo $refCada;?></p>
-                        <p><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p>
-                        <p><strong>Garage :</strong><?php echo $compBien['garage'];?></p>
-                        <p><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p>
+                            <?php if($elec):?><p><strong>Électricité : </strong><?php echo $elec;?></p><?php endif;?>
+                            <?php if($refCada):?><p><strong>Reférence cadastral :</strong><?php echo $refCada;?></p><?php endif;?>
+                            <?php if($compBien['chambre']):?><p><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p><?php endif;?> 
+                            <?php if($compBien['garage']):?><p><strong>Garage :</strong><?php echo $compBien['garage'];?></p><?php endif;?>
+                            <?php if($compBien['salle_de_bain']):?><p><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p><?php endif;?>
+                        </div>
                     </div>
-                </div>
-    </div>
-</section>
 
-                <span class="separator"></span>
-                </div>
+                    <span class="separator"></span>
 
-                <div class="container price"> 
-                    Faire offre à partir de : <?php echo $prix ;?> €
-                    <?php if($achatImm): echo 'Prix d\'achat immédiat:' . $achatImm . '€'; endif;?>
+                    <div class="container price"> 
+                        Faire offre à partir de : <?php echo $prix ;?> €
+                        <?php if($priceAim): echo 'Prix d\'achat immédiat:' . $priceAim . '€'; endif;?>
+                    </div>
                 </div>
             </section>
 
