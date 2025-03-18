@@ -457,7 +457,7 @@ function get_html(){
 
                 section .columns .cold{
                     width: 7cm;
-                    margin-left: 1cm;
+                    margin-left: 2cm;
                     margin-top: .5cm;
                     display: inline-block;
                 }
@@ -472,6 +472,8 @@ function get_html(){
                 
                 .price{
                     font-weight: 700;
+                    text-align: center;
+                    margin:auto;
                 }
 
                 footer{
@@ -573,7 +575,7 @@ function get_html(){
 
                     <div class="container price"> 
                         Faire offre à partir de : <?php echo $prix ;?> € <br>
-                        <?php if($priceAim): echo 'Prix d\'achat immédiat:' . $priceAim . '€'; endif;?>
+                        <?php if($priceAim): echo 'Prix d\'achat immédiat : ' . $priceAim . ' €'; endif;?>
                     </div>
                 </div>
             </section>
