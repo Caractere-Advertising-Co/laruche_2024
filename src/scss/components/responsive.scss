@@ -554,6 +554,16 @@
         .cold{
           width: 100%;
         }
+
+        &.-row{
+          flex-direction: column;
+          gap: 0;
+
+          .colg,
+          .cold{
+            width: 100%;
+          }
+        }
       }
   
       .content{
@@ -572,9 +582,7 @@
               width: 100%;
     
               &.half{
-                display: flex;
-                gap: 30px;
-                justify-content: space-between;
+                display: block;
     
                 span{
                   width: 50%;
