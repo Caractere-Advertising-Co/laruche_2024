@@ -237,6 +237,12 @@
         }
       }
 
+      .swiper-button-next,
+      .swiper-button-prev{
+        height: 100px;
+        width: 30px;
+      }
+
       .swiper-button-next{
         right: 0;
       }
