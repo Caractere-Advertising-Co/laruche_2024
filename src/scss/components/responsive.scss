@@ -564,6 +564,19 @@
             width: 100%;
           }
         }
+
+        .cold{
+          .cta-form{
+            gap: 20px;
+
+            .ctaVente,
+            .ctaSearch{}
+              align-items: center;
+              display: flex;
+              line-height: 1rem;
+              padding: 5px 15px;
+          }
+        }
       }
   
       .content{
