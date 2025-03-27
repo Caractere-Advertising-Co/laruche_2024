@@ -174,6 +174,7 @@ endif;
                 <?php endif;?>
                 
                 <?php if($prix):?>
+                    <?php var_dump($typeBien);?>
                     <div><p class="toggle-button accordion"><strong><?php $typeBien = 'À Vendre' ? 'Faire offre à partir de :' : 'Loyer :';?></strong><?php echo $prix .' €';?></p></div>
                 <?php endif;?>
 
