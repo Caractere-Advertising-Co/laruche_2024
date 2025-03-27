@@ -91,30 +91,26 @@ $(document).ready(function () {
 
   if (window.location.pathname.includes('/contact')) {
     const typForm = getQueryParam('sujet');
+    const formSearch = $('.wpcf7-form'); // Sélectionnez le bon formulaire
 
-    const formSearch = $('#formulaire-vendre'); // Sélectionnez le formulaire Contact Form 7 approprié ici
-    const formWpcf7 = $('#formulaire-vendre .wpcf7');
+    if (formSearch.length) {
+      if (typForm) {
+        setTimeout(function () {
+          const selectField = formSearch.find('select[name="select-142"]'); // Champ select
+          const groupProprietaire = formSearch.find('.group-propriétaire'); // Groupe conditionnel
+                
+          if (selectField.length) {
+            if (typForm === 'gestion-locative') {
+              selectField.val('gestion-locative');
+            } else if (typForm === 'vendre') {
+              selectField.val('vendre-mon-bien');
+            }
 
-    const ctaForm = $('#ctaVente');
-
-    if (formWpcf7.length) {
-        if (typForm) {
-            formSearch.addClass('active');
-            ctaForm.removeClass('inactif');
-
-            setTimeout(function () {
-                const selectField = formSearch.find('select[name="select-142"]'); // Assurez-vous de remplacer par le nom réel du champ
-
-                if (selectField.length) {
-                    if (typForm === 'gestion-locative') {
-                        selectField.val('Gestion locative'); // Sélectionne l'option correspondante pour gestion-locative
-                    } else if (typForm === 'vendre-mon-bien') {
-                        selectField.val('Vendre mon bien'); // Sélectionne l'option correspondante pour vendre mon bien
-                    }
-                    selectField.prop('readonly', true); // Désactive le champ si nécessaire
-                }
-            }, 20);
-        }
+            selectField.prop('readonly', true); // Désactive la sélection manuelle
+            groupProprietaire.show(); // Rend le groupe visible
+          }
+        }, 100);
+      }
     }
-}
+  }
 });
