@@ -95,7 +95,7 @@ $(document).ready(function () {
     const formSearch = $('#formulaire-vendre'); // Sélectionnez le formulaire Contact Form 7 approprié ici
     const formWpcf7 = $('#formulaire-vendre .wpcf7');
 
-    formSearch.classList.add('active');
+    formSearch.addClass('active');
 
     if (formWpcf7.length) {
         if (typForm) {
