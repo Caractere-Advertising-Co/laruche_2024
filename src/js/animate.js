@@ -78,16 +78,37 @@ $(document).ready(function () {
     if ( formSearch.length) {
       if (idBien) {
         setTimeout(function () {
-          if (formSearch.length) {
-            const typeDeBienField = formSearch.find('input[name="bien-a-visiter"]'); // Remplacez par le name réel du champ
+          const typeDeBienField = formSearch.find('input[name="bien-a-visiter"]'); // Remplacez par le name réel du champ
 
-            if (typeDeBienField.length) {
-              typeDeBienField.val('Je souhaite planifier une visite pour le bien située à ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
-              typeDeBienField.prop('readonly', true);
-            }
-          } 
+          if (typeDeBienField.length) {
+            typeDeBienField.val('Je souhaite planifier une visite pour le bien située à ' + idBien); // Injecte la valeur dans le champconsole.log('Champ "Type de bien" rempli avec :', idBien); // Debug
+            typeDeBienField.prop('readonly', true);
+          }
         }, 100);
       }
     }
   }
+
+  if (window.location.pathname.includes('/contact')) {
+    const typForm = getQueryParam('sujet');
+
+    const formSearch = $('#formulaire-vendre .wpcf7-form'); // Sélectionnez le formulaire Contact Form 7 approprié ici
+
+    if (formSearch.length) {
+        if (typForm) {
+            setTimeout(function () {
+                const selectField = formSearch.find('select[name="select-142"]'); // Assurez-vous de remplacer par le nom réel du champ
+
+                if (selectField.length) {
+                    if (typForm === 'gestion-locative') {
+                        selectField.val('gestion-locative'); // Sélectionne l'option correspondante pour gestion-locative
+                    } else if (typForm === 'vendre') {
+                        selectField.val('vendre-mon-bien'); // Sélectionne l'option correspondante pour vendre mon bien
+                    }
+                    selectField.prop('readonly', true); // Désactive le champ si nécessaire
+                }
+            }, 100);
+        }
+    }
+}
 });

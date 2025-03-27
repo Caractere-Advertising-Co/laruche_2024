@@ -15,6 +15,7 @@ $cta2        = get_field('cta2');
 
 $form        = get_field('formulaire');
 $form2       = get_field('formulaire-recherche');
+
 ?>
 
 <section id="contact-introduction">
