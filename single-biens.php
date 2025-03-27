@@ -96,7 +96,7 @@ endif;
 
 <section id="introduction-single-bien">
     <div class="container">
-        <h1><?php echo '<strong>' . $lieu . '</strong> - <span class="price">' . $foapd . ' '. $prix . ' €</span>';?><?php echo $typeBien == 'A louer' ? '/mois' : '';?></h1>
+        <h1><?php echo '<strong>' . $lieu . '</strong> - <span class="price">' . $foapd . ' '. $prix . ' €';?><?php echo $typeBien == 'A louer' ? '/mois</span>' : '</span>';?></h1>
         <p><?php if($adresse): echo $adresse; endif;?></p>
     </div>
 
