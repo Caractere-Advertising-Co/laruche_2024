@@ -94,23 +94,28 @@ $(document).ready(function () {
     const formSearch = $('.wpcf7-form'); // Sélectionnez le bon formulaire
 
     if (formSearch.length) {
-      if (typForm) {
-        setTimeout(function () {
-          const selectField = formSearch.find('select[name="select-142"]'); // Champ select
-          const groupProprietaire = formSearch.find('.group-propriétaire'); // Groupe conditionnel
+        if (typForm) {
+            setTimeout(function () {
+                const selectField = formSearch.find('select[name="select-142"]'); // Champ select
+                const groupProprietaire = formSearch.find('[data-id="group-propriétaire"]'); // Sélection du groupe conditionnel
                 
-          if (selectField.length) {
-            if (typForm === 'gestion-locative') {
-              selectField.val('gestion-locative');
-            } else if (typForm === 'vendre') {
-              selectField.val('vendre-mon-bien');
-            }
+                if (selectField.length) {
+                    if (typForm === 'gestion-locative') {
+                        selectField.val('gestion-locative');
+                    } else if (typForm === 'vendre') {
+                        selectField.val('vendre-mon-bien');
+                    }
 
-            selectField.prop('readonly', true); // Désactive la sélection manuelle
-            groupProprietaire.show(); // Rend le groupe visible
-          }
-        }, 100);
-      }
+                    selectField.prop('readonly', true); // Désactive la sélection manuelle
+
+                    if (groupProprietaire.length) {
+                        groupProprietaire.removeClass('wpcf7cf-hidden'); // Supprime la classe qui cache le groupe
+                        groupProprietaire.css('display', 'block'); // S'assure qu'il est bien visible
+                    }
+                }
+            }, 100);
+        }
     }
-  }
+}
+
 });
