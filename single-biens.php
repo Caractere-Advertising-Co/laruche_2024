@@ -169,11 +169,11 @@ endif;
                 <?php endif;?>
 
                 <?php if($surfTot):?>
-                    <div><p class="toggle-button accordion"><strong>Propriété :</strong><?php echo $surfTot;?></p></div>
+                    <div><p class="toggle-button accordion"><strong>Superficie de la propriété :</strong><?php echo $surfTot;?></p></div>
                 <?php endif;?>
 
                 <?php if($rc):?>
-                    <div><p class="toggle-button accordion"><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p></div>
+                    <div><p class="toggle-button accordion"><strong>Revenu cadastral net :</strong><?php echo $rc . ' €';?></p></div>
                 <?php endif;?>
                 
                 <?php if($prix):?>
@@ -181,7 +181,7 @@ endif;
                 <?php endif;?>
 
                 <?php if($charge):?>
-                    <div><p class="toggle-button accordion"><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p></div>
+                    <div><p class="toggle-button accordion"><strong>Charges locatives : </strong><?php echo $charge .' €';?></p></div>
                 <?php endif;?>
 
                 <?php if($priceAim):?>
@@ -190,7 +190,6 @@ endif;
             </div>
                 
             <div class="cold">
-
                 <?php if($peb):?>
                     <div>
                         <p class="toggle-button accordion"><strong>Label énergétique:</strong>
@@ -199,20 +198,6 @@ endif;
                             </span>
                         </p>
                     </div>
-                    
-                    <?php if($tyPEB == 0):?>
-                        <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal;?></p></div>
-                    <?php else: ?>
-                        <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Code unique :</strong> <?php echo $codeUniPEB_2;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Valeur énergétique :</strong> <?php echo $valEnerg_2;?></p></div>
-                        <div><p class="toggle-button accordion"><strong>Energie totale :</strong> <?php echo $energieTotal_2;?></p></div>
-                    <?php endif;?>
-                    
                 <?php endif;?>
 
                 <?php if($elec):?>
@@ -221,12 +206,16 @@ endif;
                     </div>
                 <?php endif;?>
 
+                <?php if($inondation):?>
+                    <div><p class="toggle-button accordion"><strong>Aléa d'inondation :</strong><?php echo $inondation;?></p></div>
+                <?php endif;?>
+
                 <?php if($refCada):?>
-                    <div><p class="toggle-button accordion"><strong>Reférence cadastral :</strong><?php echo $refCada;?></p></div>
+                    <div><p class="toggle-button accordion"><strong>Reférence cadastrale :</strong><?php echo $refCada;?></p></div>
                 <?php endif;?>
 
                 <?php if($compBien['chambre']):?>
-                    <div><p class="toggle-button accordion"><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p></div>
+                    <div><p class="toggle-button accordion"><strong>Chambre(s) : </strong><?php echo $compBien['chambre'];?></p></div>
                 <?php endif;?>
                 
                 <?php if($compBien['garage']):?>
@@ -234,10 +223,8 @@ endif;
                 <?php endif;?>
 
                 <?php if($compBien['salle_de_bain']):?>
-                    <div><p class="toggle-button accordion"><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p></div>
+                    <div><p class="toggle-button accordion"><strong>Salle(s) de bains :</strong><?php echo $compBien['salle_de_bain'];?></p></div>
                 <?php endif;?>
-
-                
             </div>
         </div>
     </div>
@@ -546,20 +533,20 @@ function get_html(){
                         <div class="colg">
                             <?php if($adresse):?><p><strong>Adresse : </strong><?php echo $adresse . ' ' . $lieu;?></p><?php endif;?>
                             <?php if($surfHab):?><p><strong>Surface habitable :</strong> <?php echo $surfHab . ' m²';?></p><?php endif;?>
-                            <?php if($surfTot):?><p><strong>Superficie terrain :</strong><?php echo $surfTot;?></p><?php endif;?>
+                            <?php if($surfTot):?><p><strong>Superficie de la propriété :</strong><?php echo $surfTot;?></p><?php endif;?>
                             <?php if($compBien['garage']):?><p><strong>Garage :</strong><?php echo $compBien['garage'];?></p><?php endif;?>
-                            <?php if($compBien['chambre']):?><p><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p><?php endif;?> 
-                            <?php if($compBien['salle_de_bain']):?><p><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p><?php endif;?>
-                            <?php if($prix):?><p><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p><?php endif;?>
-                            <?php if($charge):?><p><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p><?php endif;?>
+                            <?php if($compBien['chambre']):?><p><strong>Chambres : </strong><?php echo $compBien['chambre'];?></p><?php endif;?> 
+                            <?php if($compBien['salle_de_bain']):?><p><strong>Salles de bains :</strong><?php echo $compBien['salle_de_bain'];?></p><?php endif;?>
+                            <?php if($prix):?><p><strong><?php echo $typeBien == 'A vendre' ? 'Faire offre à partir de :</strong> ' . $prix . ' €' : 'Loyer :</strong> ' . $prix . ' €/mois';?></p><?php endif;?>
+                            <?php if($charge):?><p><strong>Charges locatives : </strong><?php echo $charge .' €';?></p><?php endif;?>
                             <?php if($priceAim):?><p><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p><?php endif;?>
                         </div>
 
                         <div class="cold">
                             <?php if($elec):?><p><strong>Électricité : </strong><?php echo $elec;?></p><?php endif;?>
-                            <?php if($refCada):?><p><strong>Reférence cadastral :</strong><?php echo $refCada;?></p><?php endif;?>
-                            <?php if($rc):?><p><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p><?php endif;?>
-                            <?php if($inondation):?><p><strong>Zone inondable :</strong> <?php echo $inondation;?></p><?php endif;?>
+                            <?php if($refCada):?><p><strong>Reférence cadastrale :</strong><?php echo $refCada;?></p><?php endif;?>
+                            <?php if($rc):?><p><strong>Revenu cadastral net :</strong><?php echo $rc . ' €';?></p><?php endif;?>
+                            <?php if($inondation):?><p><strong>Aléa d’inondation :</strong> <?php echo $inondation;?></p><?php endif;?>
 
                             <?php if($peb):?>
                                 <p><strong>Label énergétique:</strong>
@@ -579,7 +566,7 @@ function get_html(){
                             <?php if($priceAim): echo 'Prix d\'achat immédiat : ' . $priceAim . ' €'; endif;?>
                         <?php else: ?>
                             Loyer : <?php if($prix): echo $prix; endif?> € <br>
-                            Charges : <?php if($charge): echo $charge; endif;?>
+                            Charges locatives : <?php if($charge): echo $charge; endif;?>
                         <?php endif;?>
                     </p>
                 </div>
