@@ -102,7 +102,7 @@ $(document).ready(function () {
                 if (selectField.length) {
                     if (typForm === 'gestion-locative') {
                         selectField.val('gestion-locative');
-                    } else if (typForm === 'vendre') {
+                    } else if (typForm === 'vendre-mno-bien') {
                         selectField.val('vendre-mon-bien');
                     }
 
