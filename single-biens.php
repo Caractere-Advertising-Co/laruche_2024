@@ -447,7 +447,8 @@ function get_html(){
                     line-height: .9rem;
                 }
                 
-                section .description h3{
+                section .description h3,
+                section .caracteristiques h3{
                     font-size: .9rem;
                     margin: 15px 0 5px 0;
                     color: #fcc307;
