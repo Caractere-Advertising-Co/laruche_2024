@@ -108,7 +108,7 @@ $(document).ready(function () {
                 if (selectField.length) {
                     if (typForm === 'gestion-locative') {
                         selectField.val('Gestion locative'); // Sélectionne l'option correspondante pour gestion-locative
-                    } else if (typForm === 'vendre') {
+                    } else if (typForm === 'vendre-mon-bien') {
                         selectField.val('Vendre mon bien'); // Sélectionne l'option correspondante pour vendre mon bien
                     }
                     selectField.prop('readonly', true); // Désactive le champ si nécessaire
