@@ -313,9 +313,12 @@ function get_html(){
     $energieTotal  = $infoPeb['energie_total'];
 
     $infoPeb_2     = get_field('informations_peb_copier');
-    $codeUniPEB_2  = $infoPeb_2['code_unique_peb'];
-    $valEnerg_2    = $infoPeb_2['valeur_energetique'];
-    $energieTotal_2= $infoPeb_2['energie_total'];
+    if($infoPeb_2):
+        $codeUniPEB_2  = $infoPeb_2['code_unique_peb'];
+        $valEnerg_2    = $infoPeb_2['valeur_energetique'];
+        $energieTotal_2= $infoPeb_2['energie_total'];
+    endif;
+    
 
     $lieu          = get_field('situation_lieu');
     $categorie     = get_field('categorie_bien');
