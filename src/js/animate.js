@@ -91,7 +91,7 @@ $(document).ready(function () {
 
   if (window.location.pathname.includes('/contact')) {
     const typForm = getQueryParam('sujet');
-    const formSearch = $('.wpcf7-form'); // Sélectionnez le bon formulaire
+    const formSearch = $('#formulaire-vendre .wpcf7-form'); // Sélectionnez le bon formulaire
 
     if (formSearch.length) {
         if (typForm) {
