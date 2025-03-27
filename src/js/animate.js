@@ -95,18 +95,21 @@ $(document).ready(function () {
     const formSearch = $('#formulaire-vendre'); // Sélectionnez le formulaire Contact Form 7 approprié ici
     const formWpcf7 = $('#formulaire-vendre .wpcf7');
 
-    formSearch.addClass('active');
+    const ctaForm = $('#ctaVente');
 
     if (formWpcf7.length) {
         if (typForm) {
+            formSearch.addClass('active');
+            ctaForm.removeClass('inactif');
+
             setTimeout(function () {
                 const selectField = formSearch.find('select[name="select-142"]'); // Assurez-vous de remplacer par le nom réel du champ
 
                 if (selectField.length) {
                     if (typForm === 'gestion-locative') {
-                        selectField.val('gestion-locative'); // Sélectionne l'option correspondante pour gestion-locative
+                        selectField.val('Gestion locative'); // Sélectionne l'option correspondante pour gestion-locative
                     } else if (typForm === 'vendre') {
-                        selectField.val('vendre-mon-bien'); // Sélectionne l'option correspondante pour vendre mon bien
+                        selectField.val('Vendre mon bien'); // Sélectionne l'option correspondante pour vendre mon bien
                     }
                     selectField.prop('readonly', true); // Désactive le champ si nécessaire
                 }
