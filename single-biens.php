@@ -409,8 +409,8 @@ function get_html(){
                 }
 
                 .block-img{
-                    width: 16cm;
-                    height: 7cm;
+                    width: 12cm;
+                    height: 6.5cm;
                     margin:auto;
                     overflow: hidden;
                 }
@@ -510,7 +510,7 @@ function get_html(){
                 <div class="logo"><img src="<?php echo $logo['url'];?>" class="logo"/></div>
 
                 <div class="contact">
-                <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0071303052">T. 071/30 30 52</a>
+                <a href="info@larucheimmobiliere.be">info@larucheimmobiliere.be</a> • <a href="tel:0071303052">071/30 30 52</a>
                 </div>
             </header>
 
@@ -537,49 +537,41 @@ function get_html(){
                         <div class="colg">
                             <?php if($adresse):?><p><strong>Adresse : </strong><?php echo $adresse . ' ' . $lieu;?></p><?php endif;?>
                             <?php if($surfHab):?><p><strong>Surface habitable :</strong> <?php echo $surfHab . ' m²';?></p><?php endif;?>
-                            <?php if($surfTot):?><p><strong>Propriété :</strong><?php echo $surfTot;?></p><?php endif;?>
-                            <?php if($rc):?><p><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p><?php endif;?>
-                            <?php if($inondation):?><p><strong>Zone inondable :</strong> <?php echo $inondation;?></p><?php endif;?>
+                            <?php if($surfTot):?><p><strong>Superficie terrain :</strong><?php echo $surfTot;?></p><?php endif;?>
+                            <?php if($compBien['garage']):?><p><strong>Garage :</strong><?php echo $compBien['garage'];?></p><?php endif;?>
+                            <?php if($compBien['chambre']):?><p><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p><?php endif;?> 
+                            <?php if($compBien['salle_de_bain']):?><p><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p><?php endif;?>
                             <?php if($prix):?><p><strong>Faire offre à partir de : </strong><?php echo $prix .' €';?></p><?php endif;?>
                             <?php if($charge):?><p><strong>Charge(s) locative : </strong><?php echo $charge .' €';?></p><?php endif;?>
                             <?php if($priceAim):?><p><strong>Prix d'achat immédiat :</strong><?php echo $priceAim . ' €';?></p><?php endif;?>
                         </div>
 
                         <div class="cold">
+                            <?php if($elec):?><p><strong>Électricité : </strong><?php echo $elec;?></p><?php endif;?>
+                            <?php if($refCada):?><p><strong>Reférence cadastral :</strong><?php echo $refCada;?></p><?php endif;?>
+                            <?php if($rc):?><p><strong>Revenu cadastral :</strong><?php echo $rc . ' €';?></p><?php endif;?>
+                            <?php if($inondation):?><p><strong>Zone inondable :</strong> <?php echo $inondation;?></p><?php endif;?>
+
                             <?php if($peb):?>
                                 <p><strong>Label énergétique:</strong>
                                     <span class="logo_peb">
                                         <?php echo $tyPEB == 1 ? '<img src="'.get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png" alt="'. $pebDble .'" />' : '<img src="'. get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png" alt="'. $peb.'" />';?>
                                     </span>
                                 </p>
-                                    
-                                <?php if($tyPEB == 0):?>
-                                    <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
-                                    <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
-                                    <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
-                                <?php else: ?>
-                                    <p><strong>Code unique :</strong> <?php echo $codeUniPEB;?></p>
-                                    <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg;?></p>
-                                    <p><strong>Energie totale :</strong> <?php echo $energieTotal;?></p>
-                                    <p><strong>Code unique :</strong> <?php echo $codeUniPEB_2;?></p>
-                                    <p><strong>Valeur énergétique :</strong> <?php echo $valEnerg_2;?></p>
-                                    <p><strong>Energie totale :</strong> <?php echo $energieTotal_2;?></p>
-                                <?php endif;?>
                             <?php endif;?>
-
-                            <?php if($elec):?><p><strong>Électricité : </strong><?php echo $elec;?></p><?php endif;?>
-                            <?php if($refCada):?><p><strong>Reférence cadastral :</strong><?php echo $refCada;?></p><?php endif;?>
-                            <?php if($compBien['chambre']):?><p><strong>Nombre de chambre : </strong><?php echo $compBien['chambre'];?></p><?php endif;?> 
-                            <?php if($compBien['garage']):?><p><strong>Garage :</strong><?php echo $compBien['garage'];?></p><?php endif;?>
-                            <?php if($compBien['salle_de_bain']):?><p><strong>Salle de bains :</strong><?php echo $compBien['salle_de_bain'];?></p><?php endif;?>
                         </div>
                     </div>
 
                     <span class="separator"></span>
 
                     <p class="price"> 
-                        Faire offre à partir de : <?php echo $prix ;?> € <br>
-                        <?php if($priceAim): echo 'Prix d\'achat immédiat : ' . $priceAim . ' €'; endif;?>
+                        <?php if($typeBien != "À louer"):?> 
+                            Faire offre à partir de : <?php echo $prix ;?> € <br>
+                            <?php if($priceAim): echo 'Prix d\'achat immédiat : ' . $priceAim . ' €'; endif;?>
+                        <?php else: ?>
+                            Loyer : <?php if($prix): echo $prix; endif?> € <br>
+                            Charges : <?php if($charge): echo $charge; endif;?>
+                        <?php endif;?>
                     </p>
                 </div>
             </section>
