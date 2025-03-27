@@ -453,6 +453,7 @@ function get_html(){
                     margin: 15px 0 ;
                     color: #fcc307;
                     font-weight: 400;
+                    display:block;
                 }
 
                 section .columns .colg{
