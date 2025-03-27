@@ -92,9 +92,12 @@ $(document).ready(function () {
   if (window.location.pathname.includes('/contact')) {
     const typForm = getQueryParam('sujet');
 
-    const formSearch = $('#formulaire-vendre .wpcf7-form'); // Sélectionnez le formulaire Contact Form 7 approprié ici
+    const formSearch = $('#formulaire-vendre'); // Sélectionnez le formulaire Contact Form 7 approprié ici
+    const formWpcf7 = $('#formulaire-vendre .wpcf7');
 
-    if (formSearch.length) {
+    formSearch.classList.add('active');
+
+    if (formWpcf7.length) {
         if (typForm) {
             setTimeout(function () {
                 const selectField = formSearch.find('select[name="select-142"]'); // Assurez-vous de remplacer par le nom réel du champ
