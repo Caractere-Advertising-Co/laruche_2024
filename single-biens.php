@@ -561,7 +561,7 @@ function get_html(){
                     <span class="separator"></span>
 
                     <p class="price"> 
-                        <?php if($typeBien != "À louer"):?> 
+                        <?php if($typeBien != "A louer"):?> 
                             Faire offre à partir de : <?php echo $prix ;?> € <br>
                             <?php if($priceAim): echo 'Prix d\'achat immédiat : ' . $priceAim . ' €'; endif;?>
                         <?php else: ?>
