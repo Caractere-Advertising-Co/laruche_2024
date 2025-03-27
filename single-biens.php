@@ -463,7 +463,7 @@ function get_html(){
                 }
 
                 section .columns .cold img{
-                    height: 20px;
+                    height: 15px;
                 }
 
                 .separator{
