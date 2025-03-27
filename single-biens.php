@@ -387,13 +387,13 @@ function get_html(){
 
                 .container{
                     width:18cm;
-                    margin: .7cm auto;
+                    margin: .5cm auto;
                     text-align: center;
                 }
 
                 .container h1{
                     font-size: 1.5rem;
-                    margin-top: .5cm;
+                    margin-top: 0;
                     text-transform: uppercase;
                 }
 
