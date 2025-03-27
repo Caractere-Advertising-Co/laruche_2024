@@ -95,6 +95,8 @@ else :
     $foapd = ''; 
 endif;
 
+$sale = array('À vendre','A vendre');
+
 ?>
 
 <section id="introduction-single-bien">
@@ -109,7 +111,7 @@ endif;
             <button type="submit" class="cta" id="btn" name="cf-submit"
                 value=""><?php _e('Fiche du bien', 'ajd') ?></button>
         </form>
-        <?php if($ctaNotaire && ($typeBien != "A louer")):?>
+        <?php if($ctaNotaire && (!in_array($typeBien, $sale))):?>
             <a href="<?php echo $ctaNotaire['url'];?>" class="ctanotaire cta" target="_blank"><?php echo $ctaNotaire['title'];?></a>
         <?php endif;?>
     </div>
