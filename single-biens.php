@@ -464,7 +464,7 @@ function get_html(){
 
                 section .columns .cold img{
                     height: 15px;
-                    margin-top: 5px;
+                    margin-top: 10px;
                 }
 
                 .separator{
