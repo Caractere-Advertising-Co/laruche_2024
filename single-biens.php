@@ -177,7 +177,8 @@ endif;
                 <?php endif;?>
                 
                 <?php if($prix):?>
-                    <div><p class="toggle-button accordion"><strong><?php echo $typeBien == 'A vendre' ? 'Faire offre à partir de :</strong> ' . $prix . ' €' : 'Loyer :</strong> ' . $prix . ' €/mois';?></p></div>
+                    <?php $sale = array('À vendre','A vendre');?>
+                    <div><p class="toggle-button accordion"><strong><?php echo in_array($typeBien,$sale) ? 'Faire offre à partir de :</strong> ' . $prix . ' €' : 'Loyer :</strong> ' . $prix . ' €/mois';?></p></div>
                 <?php endif;?>
 
                 <?php if($charge):?>
@@ -417,7 +418,7 @@ function get_html(){
                 #blockGray{
                     background: #eee;
                     padding: 25px;
-                    margin: 30px auto;
+                    margin: 30px auto 0 ;
                 }
 
                 #blockGray .description,
