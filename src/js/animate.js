@@ -113,7 +113,7 @@ $(document).ready(function () {
                     }
                     selectField.prop('readonly', true); // Désactive le champ si nécessaire
                 }
-            }, 100);
+            }, 20);
         }
     }
 }
