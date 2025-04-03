@@ -665,6 +665,20 @@
           color : $secondary-color;
         }
       }
+
+      .columns{
+        .cta{
+          width: 50%;
+        }
+
+        form{
+          width: calc(50% + 60px);
+
+          button{
+            width: 100%;
+          }
+        }
+      }
     }
 
     #description-biens{
