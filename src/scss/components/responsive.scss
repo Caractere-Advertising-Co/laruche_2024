@@ -675,7 +675,9 @@
           width: calc(50% + 60px);
 
           button{
-            width: 100%;
+            .cta{
+              width: 100%;
+            }
           }
         }
       }
