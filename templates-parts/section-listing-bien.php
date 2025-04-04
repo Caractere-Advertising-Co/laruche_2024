@@ -120,6 +120,25 @@ wp_reset_postdata();
                     echo '<h1>Nos <strong>biens à louer</strong></h1>';
                 endif; ?>
             </div>
+
+            <div class="columns cta-biens">
+                <?php
+                $biens = new WP_Query($args);
+                if($biens->have_posts()):
+                    $total_pages = $biens->max_num_pages;
+
+                    if ($total_pages > 1){
+                        $current_page = max(1, get_query_var('paged'));
+
+                        echo paginate_links(array(
+                            'base' => get_pagenum_link(1) . '%_%',
+                            'format' => '/page/%#%',
+                            'current' => $current_page,
+                            'total' => $total_pages
+                        ));
+                    }
+                endif;?>
+            </div>
         </div>
     <?php endif; ?>
 
