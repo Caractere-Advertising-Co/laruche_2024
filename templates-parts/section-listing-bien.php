@@ -23,7 +23,7 @@ if (is_front_page()) {
         'posts_per_page' => -1, // Ou définis une valeur spécifique pour limiter les biens affichés
         'orderby'        => 'date', // Tu peux trier les biens comme tu veux
         'order'          => 'DESC',
-        'meta_queyr'     => array(
+        'meta_query'     => array(
             'relation' => 'AND', // Combine les conditions
             // Exclure les biens "Vendu"
             array(
