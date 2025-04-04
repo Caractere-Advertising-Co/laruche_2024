@@ -29,12 +29,22 @@ if (is_front_page()) {
     $args = array(
         'post_type'      => 'biens',
         'post_status'    => 'publish',
-        'posts_per_page' => -1,
+        'posts_per_page' => -1, // Ou une valeur limite
+        'orderby'        => 'date',
+        'order'          => 'DESC',
         'meta_query'     => array(
+            'relation' => 'AND', // Combine les conditions
+            // Exclure les biens "Vendu"
             array(
-                'key'     => 'type_de_bien',
-                'value'   => $type,
-                'compare' => '='
+                'key'     => 'statut_bien',
+                'value'   => 'Vendu',
+                'compare' => '!='
+            ),
+            // Exclure les biens "Loué"
+            array(
+                'key'     => 'statut_bien',
+                'value'   => 'Loué',
+                'compare' => '!='
             )
         )
     );
