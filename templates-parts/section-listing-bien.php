@@ -99,6 +99,8 @@ endif;
                 $fairOff   = get_field('faireOffre');
                 $new       = get_field('new');
                 $validLink = array('Vendu','Loué');
+
+                $aLouer = array('À louer','A louer');
             ?>
                 <div class="card">
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
@@ -138,7 +140,7 @@ endif;
                             <?php 
                                 echo $fairOff ? 'FO àpd ' : ''; 
                                 if($prix): echo $prix ; endif;
-                                echo ($typeBien == 'À louer') ? '€ / mois' : ' €';    
+                                echo in_array($typeBien,$aLouer) ? '€ / mois' : ' €';    
                             ?>
                         </div>
                     <?php echo in_array($statut,$validLink) ?  '' : '</a>' ; ?>
