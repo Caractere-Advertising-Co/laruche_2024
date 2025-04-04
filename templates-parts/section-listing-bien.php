@@ -3,31 +3,45 @@
 $btnCta       = get_field('cta_listing','options');
 $titleListing = get_field('title_listing','options');
 
-$type = '';
+// Définir le type de bien en fonction de la page
+$type = ''; // Initialisation de la variable
 
-if(is_page(28951) || is_page(843)):
+if (is_page(28951) || is_page(843)) {
     $type = "A vendre";
-elseif(is_page(28963)):
+} elseif (is_page(28963)) {
     $type = "A louer";
-endif;
+}
 
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
+$paged = max(1, $paged); // Garantit que $paged est toujours >= 1
 
-// Requête : récupérer tous les biens pour les trier ensuite
-$args = array(
-    'post_type'      => 'biens',
-    'post_status'    => 'publish',
-    'posts_per_page' => -1,
-    'meta_query'     => array(
-        array(
-            'key'     => 'type_de_bien',
-            'value'   => $type,
-            'compare' => '='
+// Requête pour la front-page (afficher les 2 types de biens)
+if (is_front_page()) {
+    $args = array(
+        'post_type'      => 'biens',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1, // Ou définis une valeur spécifique pour limiter les biens affichés
+        'orderby'        => 'date', // Tu peux trier les biens comme tu veux
+        'order'          => 'DESC'
+    );
+} else {
+    // Requête pour les pages spécifiques (un type de bien à la fois)
+    $args = array(
+        'post_type'      => 'biens',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'meta_query'     => array(
+            array(
+                'key'     => 'type_de_bien',
+                'value'   => $type,
+                'compare' => '='
+            )
         )
-    )
-);
+    );
+}
 
 $biens_query = new WP_Query($args);
+
 
 $recentAndActive = [];
 $oldSold = [];
@@ -63,14 +77,16 @@ if ($biens_query->have_posts()) {
     usort($oldSold, fn($a, $b) => $a['prix'] <=> $b['prix']);
 
     $allPosts = array_merge($recentAndActive, $oldSold);
-
-    $per_page = is_front_page() ? 6 : 15;
-    $total_posts = count($allPosts);
-    $total_pages = ceil($total_posts / $per_page);
-
-    $offset = ($paged - 1) * $per_page;
-    $displayPosts = array_slice($allPosts, $offset, $per_page);
+} else {
+    $allPosts = [];
 }
+
+$per_page = is_front_page() ? 6 : 15;
+$total_posts = count($allPosts);
+$total_pages = ceil($total_posts / $per_page);
+
+$offset = ($paged - 1) * $per_page;
+$displayPosts = array_slice($allPosts, $offset, $per_page);
 
 wp_reset_postdata();
 ?>
@@ -92,7 +108,11 @@ wp_reset_postdata();
         </div>
     <?php endif; ?>
 
-    <?php if(!empty($displayPosts)) : ?>
+
+    <?php if (is_front_page() && empty($allPosts)): ?>
+        <div class="container"><p>Aucun bien disponible pour le moment.</p></div>
+    <?php elseif(!empty($displayPosts)) : ?>
+        
         <div class="container grid grid-biens">
             <?php 
             foreach ($displayPosts as $postData) :
@@ -120,6 +140,7 @@ wp_reset_postdata();
                 $daysDiff    = intval((strtotime($currentDate) - strtotime($publishDate)) / (60 * 60 * 24));
 
                 $isNew = $daysDiff <= 30;
+                
             ?>
                 <div class="card">
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
