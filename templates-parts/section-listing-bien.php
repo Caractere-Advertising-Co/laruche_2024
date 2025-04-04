@@ -23,15 +23,6 @@ if (is_front_page()) {
         'posts_per_page' => -1, // Ou définis une valeur spécifique pour limiter les biens affichés
         'orderby'        => 'date', // Tu peux trier les biens comme tu veux
         'order'          => 'DESC'
-    );
-} else {
-    // Requête pour les pages spécifiques (un type de bien à la fois)
-    $args = array(
-        'post_type'      => 'biens',
-        'post_status'    => 'publish',
-        'posts_per_page' => -1, // Ou une valeur limite
-        'orderby'        => 'date',
-        'order'          => 'DESC',
         'meta_query'     => array(
             'relation' => 'AND', // Combine les conditions
             // Exclure les biens "Vendu"
@@ -45,6 +36,20 @@ if (is_front_page()) {
                 'key'     => 'statut_bien',
                 'value'   => 'Loué',
                 'compare' => '!='
+            )
+        )
+    );
+} else {
+    // Requête pour les pages spécifiques (un type de bien à la fois)
+    $args = array(
+        'post_type'      => 'biens',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'meta_query'     => array(
+            array(
+                'key'     => 'type_de_bien',
+                'value'   => $type,
+                'compare' => '='
             )
         )
     );
