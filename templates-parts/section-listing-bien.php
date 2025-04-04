@@ -121,24 +121,16 @@ wp_reset_postdata();
                 endif; ?>
             </div>
 
-            <div class="columns cta-biens">
-                <?php
-                $biens = new WP_Query($args);
-                if($biens->have_posts()):
-                    $total_pages = $biens->max_num_pages;
-
-                    if ($total_pages > 1){
-                        $current_page = max(1, get_query_var('paged'));
-
-                        echo paginate_links(array(
-                            'base' => get_pagenum_link(1) . '%_%',
-                            'format' => '/page/%#%',
-                            'current' => $current_page,
-                            'total' => $total_pages
-                        ));
-                    }
-                endif;?>
-            </div>
+            <?php if (!is_front_page() && $total_pages > 1): ?>
+                <div class="container columns cta-biens number-listing">
+                    <?php echo paginate_links(array(
+                        'base' => get_pagenum_link(1) . '%_%',
+                        'format' => '/page/%#%',
+                        'current' => $paged,
+                        'total' => $total_pages
+                    )); ?>
+                </div>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 
