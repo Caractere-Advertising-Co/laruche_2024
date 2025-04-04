@@ -155,6 +155,8 @@ wp_reset_postdata();
                 $daysDiff    = intval((strtotime($currentDate) - strtotime($publishDate)) / (60 * 60 * 24));
 
                 $isNew = $daysDiff <= 30;
+
+                $aLouer = array('A louer', 'À louer');
                 
             ?>
                 <div class="card">
@@ -193,7 +195,7 @@ wp_reset_postdata();
                             <?php 
                                 echo $fairOff ? 'FO àpd ' : ''; 
                                 if($prix): echo $prix ; endif;
-                                echo ($typeBien == 'À louer') ? '€ / mois' : ' €';    
+                                echo in_array($statut,$aLouer) ? '€ / mois' : ' €';    
                             ?>
                         </div>
                     <?php echo in_array($statut,$validLink) ?  '' : '</a>' ; ?>
