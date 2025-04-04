@@ -206,6 +206,7 @@ wp_reset_postdata();
                             <?php 
                                 echo $fairOff ? 'FO àpd ' : ''; 
                                 if($prix): echo $prix ; endif;
+                                var_dump($statut);
                                 echo in_array($statut,$aLouer) ? '€ / mois' : ' €';    
                             ?>
                         </div>
