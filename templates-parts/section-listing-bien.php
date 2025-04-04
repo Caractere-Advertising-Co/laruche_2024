@@ -123,7 +123,7 @@ endif;
                             endif;?>
 
                             <div class="logo_peb">
-                                <?php if($tyPEB && $pebDble): ?>
+                                <?php if($tyPEB && $pebDble && $peb != 'Ne s\'applique pas'): ?>
                                     <img src="<?php echo get_template_directory_uri().'/assets/images/20px_bi/'. $pebDble.'.png';?>" alt="<?php echo $pebDble;?>" />
                                 <?php elseif($peb): ?>
                                     <img src="<?php echo get_template_directory_uri().'/assets/images/20px_un/'. $peb.'.png';?>" alt="<?php echo $peb;?>" />
