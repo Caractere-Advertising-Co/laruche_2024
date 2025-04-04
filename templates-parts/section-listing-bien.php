@@ -36,6 +36,12 @@ if (is_front_page()) {
                 'key'     => 'statut_bien',
                 'value'   => 'Loué',
                 'compare' => '!='
+            ),
+            array(
+                'key'     => 'date_de_publication', // Si tu utilises un champ personnalisé pour la date, sinon utilise 'post_date'
+                'value'   => date('Y-m-d', strtotime('-6 weeks')), // Date limite 6 semaines avant aujourd'hui
+                'compare' => '>=',
+                'type'    => 'DATE' // Spécifier que c'est une date
             )
         )
     );
