@@ -137,8 +137,7 @@ wp_reset_postdata();
 
     <?php if (is_front_page() && empty($allPosts)): ?>
         <div class="container"><p>Aucun bien disponible pour le moment.</p></div>
-    <?php elseif(!empty($displayPosts)) : ?>
-        
+    <?php elseif(!empty($displayPosts)) : ?>      
         <div class="container grid grid-biens">
             <?php 
             foreach ($displayPosts as $postData) :
@@ -229,4 +228,6 @@ wp_reset_postdata();
             )); ?>
         </div>
     <?php endif; ?>
+
+    <?php wp_reset_postdata();?>
 </section>
