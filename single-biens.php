@@ -586,7 +586,7 @@ function get_html(){
 
     global $html;
     $html = ob_get_contents(); // get all html in buffer to the $html global variable
-    ob_end_clean(); // clean the buffer
+    if (ob_get_contents()) ob_end_clean(); // clean the buffer
     return $html; // return html
     exit;
 }
