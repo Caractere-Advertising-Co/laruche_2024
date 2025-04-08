@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Single Biens
-Template Post Type: biens, post
+Template Post Type: biens
 */
 
 // Include autoloader

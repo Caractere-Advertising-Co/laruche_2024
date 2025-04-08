@@ -150,6 +150,16 @@ function add_custom_post_biens() {
 }
 add_action( 'init', 'add_custom_post_biens', 0 );
 
+function force_template_for_biens( $template ) {
+	if ( is_singular('biens') ) {
+		$custom_template = get_theme_file_path( 'single-biens.php' );
+		if ( file_exists( $custom_template ) ) {
+			return $custom_template;
+		}
+	}
+	return $template;
+}
+add_filter( 'template_include', 'force_template_for_biens' );
 
 /*********************************
      AJAX - add more function 
