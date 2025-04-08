@@ -104,7 +104,7 @@ function add_custom_post_biens() {
 		'show_in_menu'          => true,
 		'menu_position'         => 4,
 		'menu_icon'             => 'dashicons-feedback',
-		'show_in_rest'          => false, // Important pour Gutenberg
+		'show_in_rest'          => true, // Important pour Gutenberg
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'author' ),
@@ -150,12 +150,12 @@ function add_custom_post_biens() {
 }
 add_action( 'init', 'add_custom_post_biens', 0 );
 
-add_filter( 'theme_templates', function( $post_templates, $theme, $post, $post_type ) {
-	if ( $post_type === 'biens' ) {
-		return []; // Aucune option de modèle personnalisée
-	}
-	return $post_templates;
-}, 10, 4 );
+// add_filter( 'theme_templates', function( $post_templates, $theme, $post, $post_type ) {
+// 	if ( $post_type === 'biens' ) {
+// 		return []; // Aucune option de modèle personnalisée
+// 	}
+// 	return $post_templates;
+// }, 10, 4 );
 
 function force_single_template_for_biens( $template ) {
 	if ( is_singular( 'biens' ) ) {
