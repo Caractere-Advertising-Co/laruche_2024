@@ -150,6 +150,16 @@ function add_custom_post_biens() {
 }
 add_action( 'init', 'add_custom_post_biens', 0 );
 
+function set_biens_template( $post_id ) {
+    // Assurer que l'on est bien sur un enregistrement de post de type 'biens' et que le post est enregistré
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    
+    if ( get_post_type( $post_id ) === 'biens' ) {
+        // Mettre à jour la valeur du template pour ce post
+        update_post_meta( $post_id, '_wp_page_template', 'single-biens.php' );
+    }
+}
+add_action( 'save_post', 'set_biens_template' );
 
 /*********************************
      AJAX - add more function 
