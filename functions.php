@@ -63,6 +63,15 @@ function enqueue_custom_scripts() {
  Custom Post Type ---- Biens
 **********************************/
 
+function remove_template_dropdown_for_biens() {
+    $screen = get_current_screen();
+    if ( $screen && $screen->post_type === 'biens' ) {
+        remove_post_type_support( 'biens', 'page-attributes' );
+    }
+}
+add_action( 'current_screen', 'remove_template_dropdown_for_biens' );
+
+
 function add_custom_post_biens() {
 
 	$labels = array(
@@ -104,10 +113,10 @@ function add_custom_post_biens() {
 		'show_in_menu'          => true,
 		'menu_position'         => 4,
 		'menu_icon'             => 'dashicons-feedback',
-		'show_in_rest' => true, // Important pour Gutenberg
+		'show_in_rest'          => false, // Important pour Gutenberg
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
-		'supports'				=> array('title', 'revisions', 'author', 'editor', 'thumbnail'),
+		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'author' ),
 		'can_export'            => true,
 		'has_archive'           => true,
 		'exclude_from_search'   => false,
@@ -150,8 +159,15 @@ function add_custom_post_biens() {
 }
 add_action( 'init', 'add_custom_post_biens', 0 );
 
-function force_template_for_biens( $template ) {
-	if ( is_singular('biens') ) {
+add_filter( 'theme_templates', function( $post_templates, $theme, $post, $post_type ) {
+	if ( $post_type === 'biens' ) {
+		return []; // Aucune option de modèle personnalisée
+	}
+	return $post_templates;
+}, 10, 4 );
+
+function force_single_template_for_biens( $template ) {
+	if ( is_singular( 'biens' ) ) {
 		$custom_template = get_theme_file_path( 'single-biens.php' );
 		if ( file_exists( $custom_template ) ) {
 			return $custom_template;
@@ -159,7 +175,8 @@ function force_template_for_biens( $template ) {
 	}
 	return $template;
 }
-add_filter( 'template_include', 'force_template_for_biens' );
+add_filter( 'template_include', 'force_single_template_for_biens' );
+
 
 /*********************************
      AJAX - add more function 
