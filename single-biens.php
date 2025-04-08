@@ -193,7 +193,7 @@ $sale = array('À vendre','A vendre');
             </div>
                 
             <div class="cold">
-                <?php if($peb):?>
+                <?php if($peb && $peb != "default"):?>
                     <div>
                         <p class="toggle-button accordion"><strong>Label énergétique:</strong>
                             <span class="logo_peb">

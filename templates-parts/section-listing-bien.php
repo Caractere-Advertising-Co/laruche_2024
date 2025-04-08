@@ -4,7 +4,7 @@ $btnCta       = get_field('cta_listing','options');
 $titleListing = get_field('title_listing','options');
 
 // Définir le type de bien en fonction de la page
-$type = ''; // Initialisation de la variable
+$type = '';
 
 if (is_page(28951) || is_page(843)) {
     $type = "A vendre";
@@ -13,40 +13,50 @@ if (is_page(28951) || is_page(843)) {
 }
 
 $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-$paged = max(1, $paged); // Garantit que $paged est toujours >= 1
+$paged = max(1, $paged);
 
-// Requête pour la front-page (afficher les 2 types de biens)
 if (is_front_page()) {
     $args = array(
         'post_type'      => 'biens',
         'post_status'    => 'publish',
-        'posts_per_page' => -1, // Ou définis une valeur spécifique pour limiter les biens affichés
-        'orderby'        => 'date', // Tu peux trier les biens comme tu veux
+        'posts_per_page' => 6,
+        'orderby'        => 'date',
         'order'          => 'DESC',
         'meta_query'     => array(
-            'relation' => 'AND', // Combine les conditions
-            // Exclure les biens "Vendu"
+            'relation' => 'AND',
             array(
                 'key'     => 'statut_bien',
                 'value'   => 'Vendu',
                 'compare' => '!='
             ),
-            // Exclure les biens "Loué"
             array(
                 'key'     => 'statut_bien',
                 'value'   => 'Loué',
                 'compare' => '!='
-            ),
-            array(
-                'key'     => 'date_de_publication', // Si tu utilises un champ personnalisé pour la date, sinon utilise 'post_date'
-                'value'   => date('Y-m-d', strtotime('-6 weeks')), // Date limite 6 semaines avant aujourd'hui
-                'compare' => '>=',
-                'type'    => 'DATE' // Spécifier que c'est une date
             )
         )
     );
+
+    $biens_query = new WP_Query($args);
+    $displayPosts = [];
+    $allPosts = [];
+
+    if ($biens_query->have_posts()) {
+        while ($biens_query->have_posts()) {
+            $biens_query->the_post();
+            $postData = [
+                'ID'   => get_the_ID(),
+                'post' => get_post()
+            ];
+            $displayPosts[] = $postData;
+        }
+        wp_reset_postdata();
+    }
+
+    $allPosts = $displayPosts;
+    $total_pages = 1;
+
 } else {
-    // Requête pour les pages spécifiques (un type de bien à la fois)
     $args = array(
         'post_type'      => 'biens',
         'post_status'    => 'publish',
@@ -59,95 +69,92 @@ if (is_front_page()) {
             )
         )
     );
-}
 
-$biens_query = new WP_Query($args);
+    $biens_query = new WP_Query($args);
 
+    $recentAndActive = [];
+    $oldSold = [];
 
-$recentAndActive = [];
-$oldSold = [];
+    if ($biens_query->have_posts()) {
+        while ($biens_query->have_posts()) {
+            $biens_query->the_post();
 
-if ($biens_query->have_posts()) {
-    while ($biens_query->have_posts()) {
-        $biens_query->the_post();
+            $statut      = get_field('statut_bien');
+            $prix        = get_field('prix');
+            $publishDate = get_the_date('Ymd');
+            $daysDiff    = intval((strtotime(date('Ymd')) - strtotime($publishDate)) / (60 * 60 * 24));
 
-        $statut      = get_field('statut_bien');
-        $prix        = get_field('prix');
-        $publishDate = get_the_date('Ymd');
-        $daysDiff    = intval((strtotime(date('Ymd')) - strtotime($publishDate)) / (60 * 60 * 24));
+            $group = 'recentAndActive';
+            if ($statut === 'Vendu' && $daysDiff > 180) {
+                $group = 'oldSold';
+            }
 
-        $group = 'recentAndActive';
-        if ($statut === 'Vendu' && $daysDiff > 180) {
-            $group = 'oldSold';
+            $postData = [
+                'ID'    => get_the_ID(),
+                'prix'  => $prix ? intval($prix) : 0,
+                'post'  => get_post()
+            ];
+
+            if ($group === 'recentAndActive') {
+                $recentAndActive[] = $postData;
+            } else {
+                $oldSold[] = $postData;
+            }
         }
 
-        $postData = [
-            'ID'    => get_the_ID(),
-            'prix'  => $prix ? intval($prix) : 0,
-            'post'  => $post,
-        ];
+        usort($recentAndActive, fn($a, $b) => $a['prix'] <=> $b['prix']);
+        usort($oldSold, fn($a, $b) => $a['prix'] <=> $b['prix']);
 
-        if ($group === 'recentAndActive') {
-            $recentAndActive[] = $postData;
-        } else {
-            $oldSold[] = $postData;
-        }
+        $allPosts = array_merge($recentAndActive, $oldSold);
+    } else {
+        $allPosts = [];
     }
 
-    usort($recentAndActive, fn($a, $b) => $a['prix'] <=> $b['prix']);
-    usort($oldSold, fn($a, $b) => $a['prix'] <=> $b['prix']);
-
-    $allPosts = array_merge($recentAndActive, $oldSold);
-} else {
-    $allPosts = [];
+    $per_page = 15;
+    $total_posts = count($allPosts);
+    $total_pages = ceil($total_posts / $per_page);
+    $offset = ($paged - 1) * $per_page;
+    $displayPosts = array_slice($allPosts, $offset, $per_page);
+    wp_reset_postdata();
 }
 
-$per_page = is_front_page() ? 6 : 15;
-$total_posts = count($allPosts);
-$total_pages = ceil($total_posts / $per_page);
-
-$offset = ($paged - 1) * $per_page;
-$displayPosts = array_slice($allPosts, $offset, $per_page);
-
-wp_reset_postdata();
 ?>
 
 <section id="listing-biens">
     <?php if(is_front_page()):?>
         <div class="container">
-            <div class="title-section"><?php if($titleListing): echo $titleListing; endif;?></div>
+            <div class="title-section"><?php if($titleListing) echo $titleListing; ?></div>
         </div>
     <?php else : ?>
         <div class="container columns">
             <div id="title-section">
-                <?php if(is_page(28951)):
+                <?php if(is_page(28951)) {
                     echo '<h1>Nos <strong>biens à vendre</strong></h1>';
-                else :
+                } else {
                     echo '<h1>Nos <strong>biens à louer</strong></h1>';
-                endif; ?>
+                } ?>
             </div>
 
             <?php if (!is_front_page() && $total_pages > 1): ?>
                 <div class="container columns cta-biens number-listing">
-                    <?php echo paginate_links(array(
+                    <?php echo paginate_links([
                         'base' => get_pagenum_link(1) . '%_%',
                         'format' => '/page/%#%',
                         'current' => $paged,
                         'total' => $total_pages
-                    )); ?>
+                    ]); ?>
                 </div>
             <?php endif; ?>
         </div>
     <?php endif; ?>
-
 
     <?php if (is_front_page() && empty($allPosts)): ?>
         <div class="container"><p>Aucun bien disponible pour le moment.</p></div>
     <?php elseif(!empty($displayPosts)) : ?>      
         <div class="container grid grid-biens">
             <?php 
-            foreach ($displayPosts as $postData) :
-                $post = $postData['post'];
+            foreach ($displayPosts as $data) :
+                $post = $data['post'];
                 setup_postdata($post);
 
                 $title      = get_the_title();
@@ -173,7 +180,6 @@ wp_reset_postdata();
                 $isNew = $daysDiff <= 30;
 
                 $aLouer = array('A louer', 'À louer');
-                
             ?>
                 <div class="card">
                     <?php echo in_array($statut,$validLink) ? '' :  '<a href="'.get_permalink().'">'; ?>
@@ -226,12 +232,12 @@ wp_reset_postdata();
 
     <?php if (!is_front_page() && $total_pages > 1): ?>
         <div class="container columns cta-biens number-listing">
-            <?php echo paginate_links(array(
+            <?php echo paginate_links([
                 'base' => get_pagenum_link(1) . '%_%',
                 'format' => '/page/%#%',
                 'current' => $paged,
                 'total' => $total_pages
-            )); ?>
+            ]); ?>
         </div>
     <?php endif; ?>
 
