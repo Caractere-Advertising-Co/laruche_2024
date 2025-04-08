@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Simple-page
-Template Post Type: post, page
+Template Post Type: page
 */
 
 get_header();
