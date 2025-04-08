@@ -1,9 +1,4 @@
 <?php
-/*
-Template Name: Single Biens
-Template Post Type: biens, post
-*/
-
 // Include autoloader
 require_once 'vendor/autoload.php';
 
