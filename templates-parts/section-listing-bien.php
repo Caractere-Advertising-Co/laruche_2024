@@ -188,7 +188,7 @@ wp_reset_postdata();
                                         echo '<span class="statutBien ssOption">Sous <br> option</span>';
                                         break;
                                     case 'Loué':
-                                        echo '<span class="statutBien">Loué !</span>';
+                                        echo '<span class="statutBien location">Loué !</span>';
                                         break;
                                 }
                             endif;?>
