@@ -88,10 +88,8 @@ if (is_front_page()) {
             $group = 'recentAndActive';
             if ($statut === 'Vendu') {
                 $group = 'oldSold';
-            }
-
-            if($statut === 'Sous option'){
-                $group = $recentInactive;
+            } else if($statut === 'Sous option'){
+                $group = 'recentInactive';
             }
 
             $postData = [
