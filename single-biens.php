@@ -1,4 +1,5 @@
 <?php
+
 // Include autoloader
 require_once 'vendor/autoload.php';
 

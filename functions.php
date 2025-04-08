@@ -110,7 +110,7 @@ function add_custom_post_biens() {
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'revisions', 'author' ),
 		'can_export'            => true,
 		'has_archive'           => true,
-		'exclude_from_search'   => false,
+		'exclude_from_search'   => true,
         'rewrite'               => array( 'slug' => 'biens' ), // Assure-toi que le slug est unique ici
 		'publicly_queryable'    => true,
 		'capability_type'		=> 'post',
