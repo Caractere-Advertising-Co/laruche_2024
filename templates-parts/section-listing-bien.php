@@ -73,6 +73,7 @@ if (is_front_page()) {
     $biens_query = new WP_Query($args);
 
     $recentAndActive = [];
+    $recentInactive = [];
     $oldSold = [];
 
     if ($biens_query->have_posts()) {
@@ -85,8 +86,12 @@ if (is_front_page()) {
             $daysDiff    = intval((strtotime(date('Ymd')) - strtotime($publishDate)) / (60 * 60 * 24));
 
             $group = 'recentAndActive';
-            if ($statut === 'Vendu' && $daysDiff > 180) {
+            if ($statut === 'Vendu') {
                 $group = 'oldSold';
+            }
+
+            if($statut === 'Sous option'){
+                $group = $recentInactive;
             }
 
             $postData = [
@@ -97,15 +102,18 @@ if (is_front_page()) {
 
             if ($group === 'recentAndActive') {
                 $recentAndActive[] = $postData;
+            } else if ($group === 'recentInactive') {
+                $recentInactive[] = $postData;
             } else {
                 $oldSold[] = $postData;
             }
         }
 
         usort($recentAndActive, fn($a, $b) => $a['prix'] <=> $b['prix']);
+        usort($recentInactive, fn($a,$b) => $a['prix'] <=> $b['prix']);
         usort($oldSold, fn($a, $b) => $a['prix'] <=> $b['prix']);
 
-        $allPosts = array_merge($recentAndActive, $oldSold);
+        $allPosts = array_merge($recentAndActive, $recentInactive, $oldSold);
     } else {
         $allPosts = [];
     }
