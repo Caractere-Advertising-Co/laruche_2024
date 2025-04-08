@@ -63,15 +63,6 @@ function enqueue_custom_scripts() {
  Custom Post Type ---- Biens
 **********************************/
 
-function remove_template_dropdown_for_biens() {
-    $screen = get_current_screen();
-    if ( $screen && $screen->post_type === 'biens' ) {
-        remove_post_type_support( 'biens', 'page-attributes' );
-    }
-}
-add_action( 'current_screen', 'remove_template_dropdown_for_biens' );
-
-
 function add_custom_post_biens() {
 
 	$labels = array(
