@@ -26,7 +26,6 @@ $form2       = get_field('formulaire-recherche');
                 <?php if($titre): echo $titre; endif;?>
             </div> 
             <div class="content entry-content"><?php if($intro): echo $intro; endif;?></div>
-
             <div class="contactInfos"><?php if($infoContact): echo $infoContact; endif; ?></div>
         </div>
         <div class="cold">
